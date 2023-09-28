@@ -2,26 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+@font-face {
+  font-family: VazirFont;
+  src: url(../assets/fonts/Vazir-FD.ttf);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+  font-family: "VazirFont";
+}
+
+@keyframes fadeShow {
+  from {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
+.fadeShow {
+  animation: fadeShow 0.5s;
+}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes backgroundAnimation {
+  0% {
+    scale: 1;
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1.05;
+    rotate: -4deg;
+  }
+  100% {
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+.backgroundAnimation {
+  animation: backgroundAnimation 10s infinite;
+}
+
+/* @keyframes sliderAnimation {
+  0% {
+    transform: scale(1);
+    rotate: 0deg;
+  }
+  90% {
+    rotate: 1deg;
+    transform: scale(1.06);
+  }
+  100% {
+    rotate: 0deg;
+    transform: scale(1);
+  }
+}
+.sliderAnimation {
+  animation:  sliderAnimation 4s ease-in-out infinite;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
