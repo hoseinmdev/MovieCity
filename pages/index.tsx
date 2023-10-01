@@ -5,27 +5,29 @@ import { useTranslation } from "react-i18next";
 import MovieCityLogo from "../assets//MovieCityLogo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const { i18n, t } = useTranslation();
 
   return (
     <div
-      className="w-full h-screen flex flex-col gap-4 justify-start items-center text-white bg-black"
+      className="fadeShow flex h-screen w-full flex-col items-center justify-start gap-4 bg-black text-white"
       dir={i18n.dir()}
     >
-      <div className="absolute z-[100] w-full lg:w-3/4 flex justify-between top-5 px-10 bg-black/20 pb-4">
+      <div className="absolute top-5 z-[100] flex w-full justify-between bg-black/20 px-10 pb-4 lg:w-3/4">
         <SelectLanguage />
         <Image
           src={MovieCityLogo}
-          className="lg:w-60 w-36"
+          className="w-36 lg:w-60"
           alt="Landscape picture"
         />
       </div>
 
-      <div className="w-full min-h-full lg:mt-8 flex justify-center items-center overflow-hidden relative bg-black">
+      <div className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
         <div
-          className="absolute h-full w-full backgroundAnimation brightness-75 lg:brightness-50"
+          className="backgroundAnimation absolute h-full w-full brightness-75 lg:brightness-50"
           style={{
             backgroundImage:
               "url(" +
@@ -33,9 +35,9 @@ export default function Home() {
               ")",
           }}
         ></div>
-        <div className=" p-4 lg:p-8 absolute z-10 ml-auto mr-auto right-0 left-0 bg-black/50 lg:bg-black/80  w-full h-[45%]  lg:h-[22rem] mt-auto mb-auto top-0 bottom-20 shadow-2xl flex flex-col justify-around items-center text-white">
-          <div className="w-full flex flex-col justify-center items-center gap-4">
-            <p className="text-2xl text-center lg:text-4xl font-bold">
+        <div className=" absolute bottom-20 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/80 lg:p-8">
+          <div className="flex w-full flex-col items-center justify-center gap-4">
+            <p className="text-center text-2xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
             </p>
             <p className="text-xl lg:text-xl"> {t("WatchAnywhereAnytime")}</p>
@@ -43,16 +45,16 @@ export default function Home() {
           </div>
           <Link
             href="/home"
-            className="w-[80%] lg:w-[20%] bg-red-600 lg:cursor-pointer cursor-default text-center text-white lg:p-4 p-2 rounded-lg text-xl hover:translate-y-[-0.2rem] transition duration-200 hover:scale-105"
+            className="w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-xl text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:w-[20%] lg:cursor-pointer lg:p-4"
           >
             {t("GetStarted")}
           </Link>
         </div>
       </div>
 
-      <div className="w-full min-h-2/4 flex flex-col lg:flex-row justify-around items-center p-8 bg-black text-center text-xl">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div>
-          <p className="text-3xl lg:text-5xl font-bold pb-6">
+          <p className="pb-6 text-3xl font-bold lg:text-5xl">
             {t("EnjoyOnYourTv")}
           </p>
           <p>{t("EnjoyOnYourTvDesc")}</p>
@@ -63,7 +65,7 @@ export default function Home() {
             className=" relative z-[100]"
           />
           <video
-            className="w-[75%] h-full absolute ml-auto mr-auto right-0 left-0 top-0 bottom-0 mb-auto mt-auto"
+            className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto h-full w-[75%]"
             autoPlay
             loop
             playsInline
@@ -77,14 +79,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full min-h-2/4 flex flex-col lg:flex-row justify-around items-center p-8 bg-black text-center text-xl">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
             className=" relative z-[100]"
           />
           <video
-            className="w-[65%] absolute ml-auto mr-auto right-0 left-0 top-0 bottom-20 mb-auto mt-auto"
+            className="absolute bottom-20 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto w-[65%]"
             autoPlay
             loop
             playsInline
@@ -97,35 +99,35 @@ export default function Home() {
           </video>
         </div>
         <div>
-          <p className="text-3xl lg:text-5xl font-bold pb-6">
+          <p className="pb-6 text-3xl font-bold lg:text-5xl">
             {t("WatchAnywhereAnytime")}
           </p>
           <p>{t("WatchAnywhereAnytimeDesc")}</p>
         </div>
       </div>
 
-      <div className="w-full min-h-2/4 flex flex-col lg:flex-row justify-around items-center p-8 bg-black text-center text-xl">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div>
-          <p className="text-3xl lg:text-5xl font-bold pb-6">
+          <p className="pb-6 text-3xl font-bold lg:text-5xl">
             {t("ProfileForKids")}
           </p>
           <p>{t("ProfileForKidsDesc")}</p>
         </div>
         <img
-          className="lg:w-auto lg:h-auto"
+          className="lg:h-auto lg:w-auto"
           src="https://occ-0-90-6.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55"
           alt=""
         />
       </div>
 
-      <div className="w-full min-h-2/4 flex flex-col lg:flex-row justify-around items-center p-8 bg-black text-center text-xl">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
             className=" relative z-[100]"
           />
           <video
-            className="w-[65%] absolute ml-auto mr-auto right-0 left-0 top-0 bottom-20 mb-auto mt-auto"
+            className="absolute bottom-20 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto w-[65%]"
             autoPlay
             loop
             playsInline
@@ -138,18 +140,18 @@ export default function Home() {
           </video>
         </div>
         <div>
-          <p className="text-3xl lg:text-5xl font-bold pb-6">
+          <p className="pb-6 text-3xl font-bold lg:text-5xl">
             {t("DownloadAndSeeOffline")}
           </p>
           <p>{t("DownloadAndSeeOfflineDesc")}</p>
         </div>
       </div>
 
-      <div className="w-full p-4 lg:p-0 lg:w-[40%] flex flex-col justify-center items-center gap-8 mt-10">
-        <p className="text-2xl lg:text-3xl text-center">
+      <div className="mt-10 flex w-full flex-col items-center justify-center gap-8 p-4 lg:w-[40%] lg:p-0">
+        <p className="text-center text-2xl lg:text-3xl">
           {t("FrequentlyAskedQuestions")}
         </p>
-        <div className="w-full flex flex-col justify-center items-center gap-4">
+        <div className="flex w-full flex-col items-center justify-center gap-4">
           <Accordion title={`${t("AboutMovieCity")}`}>
             <p>{t("AboutMovieCityDesc")}</p>
           </Accordion>
