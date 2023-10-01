@@ -10,6 +10,7 @@ const SelectLanguage: React.FC = () => {
   const [showLanguages, setShowLanguages] = useState(false);
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
     setShowLanguages(false);
   };
 
@@ -19,7 +20,7 @@ const SelectLanguage: React.FC = () => {
   return (
     <div className="relative ">
       <div
-        className={`flex transition-all duration-300 items-center justify-center border border-red-500 gap-2 lg:px-4 lg:py-3 p-2 lg:cursor-pointer text-white bg-black/80 ${
+        className={`flex items-center justify-center gap-2 border border-red-500 bg-black/80 p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
           !showLanguages
             ? "rounded-lg"
             : " rounded-lg rounded-bl-none rounded-br-none"
@@ -32,12 +33,12 @@ const SelectLanguage: React.FC = () => {
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow absolute left-0 top-13 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border bg-black/80 border-red-500 px-[1.35rem] lg:px-[1.85rem] py-3">
+        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-black/80 px-[1.35rem] py-3 lg:px-[1.85rem]">
           {items.map((i, index) => {
             return (
               <p
                 key={index}
-                className="lg:cursor-pointer"
+                className="text-white lg:cursor-pointer"
                 onClick={() => {
                   changeLanguage(i.value);
                 }}
@@ -49,8 +50,8 @@ const SelectLanguage: React.FC = () => {
         </div>
       )}
 
-      <div className="w-4 h-4 rounded-full bg-red-500 absolute top-[-0.5rem] right-[-0.5rem]"></div>
-      <div className="w-4 h-4 rounded-full bg-red-500 animate-ping absolute top-[-0.5rem] right-[-0.5rem]"></div>
+      <div className="absolute right-[-0.5rem] top-[-0.5rem] h-4 w-4 rounded-full bg-red-500"></div>
+      <div className="absolute right-[-0.5rem] top-[-0.5rem] h-4 w-4 animate-ping rounded-full bg-red-500"></div>
     </div>
   );
 };
