@@ -1,8 +1,3 @@
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
-
 
   # Default site wide settings
 [build.processing]
