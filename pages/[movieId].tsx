@@ -7,21 +7,28 @@ import { BsFillBellFill } from "react-icons/bs";
 import ActorAvatar from "@/components/common/ActorAvatar";
 import Comment from "@/components/Comment";
 import Skeleton from "@/components/common/Skeleton";
+import OtherMovies from "@/components/OtherMovies";
+import { useRouter } from "next/router";
+import DownloadBox from "@/components/DownloadBox";
 const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
-  const [currentMovie, setCurrentMovie] = useState<MoviePropTypes>();
+  const [currentMovie, setCurrentMovie] = useState<
+    MoviePropTypes | undefined
+  >();
+  const router = useRouter();
   useEffect(() => {
+    setCurrentMovie(undefined);
     setTimeout(
-      () => setCurrentMovie(allMovies.find((movie) => movie.id === movieId)),
+      () => setCurrentMovie(allMovies?.find((movie) => movie.id === movieId)),
       500,
     );
-  }, []);
+  }, [movieId]);
   const { t, i18n } = useTranslation();
 
   return (
     <Layout>
       {currentMovie ? (
         <div className="relative flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg p-2 text-white">
-          <div className="relative h-full w-full">
+          <div className="relative h-full w-full ">
             <div
               className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
               style={{
@@ -91,6 +98,26 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             </video>
           </div>
 
+          <div className="flex flex-col gap-4">
+            <p className="text-xl">
+              {currentMovie.downloadLinks?.length !== 0
+                ? t("downloadLinks")
+                : t("noDownloadLink")}
+            </p>
+            <div className="flex w-full flex-col gap-2 ">
+              {currentMovie.downloadLinks?.map((movie) => {
+                return (
+                  <DownloadBox
+                    link={movie.link}
+                    quality={movie.quality}
+                    size={movie.size}
+                    key={movie.link}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
           <div className="flex flex-col items-start justify-center gap-4">
             <p className="text-xl">{t("actors")}</p>
             <div className="flex items-center justify-center gap-4">
@@ -106,12 +133,19 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             </div>
           </div>
 
+          <OtherMovies allMovies={allMovies} />
+
           <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-1/2">
             <p className="text-xl">{t("usersComments")}</p>
-            <Comment sender="dsad" text="عالی بود" />
-            <Comment sender="dasds" text="عالی بود" />
-            <Comment sender="dasdas" text="عالی بود" />
-            <Comment sender="eqwewq" text="عالی بود" />
+            {currentMovie.comments?.map((comment) => {
+              return (
+                <Comment
+                  key={comment.sender}
+                  sender={`${t(comment.sender)}`}
+                  text={`${t(comment.text)}`}
+                />
+              );
+            })}
           </div>
         </div>
       ) : (
