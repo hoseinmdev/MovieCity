@@ -92,7 +92,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               poster={currentMovie?.backgroundImageUrl}
             >
               <source
-                src="https://trailer.uptvs.com/trailer/Ahsoka-2023-Trailer.mp4"
+                src={currentMovie.trailer}
                 type="video/mp4"
               ></source>
             </video>

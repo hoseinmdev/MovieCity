@@ -14,6 +14,7 @@ export interface MoviePropTypes {
   actors?: { name: string; imageUrl: string }[];
   comments?: { sender: string; text: string }[];
   downloadLinks?: { quality: number; size: number; link: string }[];
+  trailer:string
 }
 
 const allMovies = [
@@ -21,6 +22,7 @@ const allMovies = [
   {
     id: "dsdsdad3qwedasfsagfeadsaf",
     movieName: `jawan`,
+    trailer: "https://trailer.uptvs.com/trailer/Jawan Trailer.mp4",
     actors: [
       {
         name: "Shahrukh Khan",
@@ -71,6 +73,7 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqweqweqwasfsagfeadsaf",
     movieName: `theNun2`,
+    trailer: "https://trailer.uptvs.com/trailer/THE-NUN-II-2023-Trailer.mp4",
     genre: "scary",
     actors: [
       {
@@ -119,6 +122,7 @@ const allMovies = [
     id: "dsdsdad3qwedeeqweqwsfsagfeadsaf",
     movieName: `ahsoka`,
     genre: "action",
+    trailer: "https://trailer.uptvs.com/trailer/Ahsoka-2023-Trailer.mp4",
     downloadLinks: [],
     actors: [
       {
@@ -159,6 +163,9 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqweqweqwasfsagfeadsafqeqw",
     movieName: `equalizer`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/THE-EQUALIZER-3-2023-Trailer.mp4",
+
     actors: [
       {
         name: "Andrea Dodero",
@@ -206,6 +213,7 @@ const allMovies = [
   {
     id: "dsdsdad3qeqwewqeqwdsadsadasd",
     movieName: `oppenheimer`,
+    trailer: "https://trailer.uptvs.com/trailer/Oppenheimer-2023-Trailer.mp4",
     genre: "biography",
     actors: [
       {
@@ -258,6 +266,7 @@ const allMovies = [
   {
     id: "dsdsdad3qwvcxvcxweqweqwasfsagfeadsaf",
     movieName: `missionImbossible7`,
+
     actors: [
       {
         name: "Tom Cruise",
@@ -275,6 +284,8 @@ const allMovies = [
           "https://static.wikia.nocookie.net/venturebrothers/images/8/8e/Charles_Parnell.png/revision/latest?cb=20210917030348",
       },
     ],
+    trailer:
+      "https://trailer.uptvs.com/trailer/Mission-Impossible-Dead-Reckoning-Part-One-Part-2-Trailer.mp4",
     downloadLinks: [
       {
         quality: 720,
@@ -308,6 +319,9 @@ const allMovies = [
   {
     id: "d3qwedeqweqweqwasfsagfeadsaf",
     movieName: `spiderman`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/SPIDER-MAN-Across-the-Spider-Verse-Trailer.mp4",
+
     actors: [
       {
         name: "Amandla Stenberg",
@@ -354,6 +368,8 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqw456456agfeadsaf",
     movieName: `meg2`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/Meg%202-%20The%20Trench%202023%20trailer.mp4",
     genre: "action",
     actors: [
       {
@@ -406,6 +422,8 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqw456456agfeadseqweqwaf",
     movieName: `transformers`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/Transformers-Rise-of-the-Beasts-Trailer.mp4",
     director: "Steven Caple Jr",
     genre: "action",
     actors: [
@@ -453,6 +471,8 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqw456456a321321gfeadseqweqwaf",
     movieName: `littleMermaid`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/The%20Little%20Mermaid%202023%20Trailer.mp4",
     genre: "fantasy",
     actors: [
       {
@@ -496,6 +516,7 @@ const allMovies = [
     id: "dsdsdad3qw2321321g321313feadseqweqwaf",
     movieName: `elmental`,
     genre: "fantasy",
+    trailer: "https://trailer.uptvs.com/trailer/Elemental-2022-Trailer.mp4",
     actors: [
       {
         name: "Alex Kapp",
@@ -538,6 +559,7 @@ const allMovies = [
   {
     id: "d78978998qw2321321g321313feadseqweqwaf",
     movieName: `flash`,
+    trailer: "https://trailer.uptvs.com/trailer/The-Flash-2023Trailer.mp4",
     downloadLinks: [
       {
         quality: 720,
@@ -586,6 +608,7 @@ const allMovies = [
   {
     id: "d78978998qw232456453261321g321313feadseqweqwaf",
     movieName: `exteraction2`,
+    trailer: "https://trailer.uptvs.com/trailer/EXTRACTION-2-2023-Trailer.mp4",
     genre: "action",
     actors: [
       {
@@ -633,6 +656,8 @@ const allMovies = [
   {
     id: "d78978998qw2324564561321g321313feadseqweqwaf",
     movieName: `coldHearted`,
+    trailer:
+      "https://trailer.uptvs.com/trailer/Heart-of-Stone-2023-Trailer.mp4",
     genre: "action",
     actors: [
       {
