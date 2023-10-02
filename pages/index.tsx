@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 import MovieCityLogo from "../assets//MovieCityLogo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
+import {ImSpinner9} from "react-icons/im"
 export default function Home() {
   const { i18n, t } = useTranslation();
-
+  const [clicked, setClicked] = useState(false);
   return (
     <div
       className="fadeShow flex h-screen w-full flex-col items-center justify-start gap-4 bg-black text-white"
@@ -45,9 +45,16 @@ export default function Home() {
           </div>
           <Link
             href="/home"
+            onClick={() => setClicked(true)}
             className="w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-xl text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:w-[20%] lg:cursor-pointer lg:p-4"
           >
-            {t("GetStarted")}
+            {!clicked ? (
+              `${t("GetStarted")}`
+            ) : (
+              <div className="flex w-full animate-spin justify-center">
+                <ImSpinner9 />
+              </div>
+            )}
           </Link>
         </div>
       </div>
