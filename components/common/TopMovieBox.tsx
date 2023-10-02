@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TopMovieLabel from "./TopMovieLabel";
 import { BsHeartFill } from "react-icons/bs";
 import { MoviePropTypes } from "@/db";
@@ -14,14 +14,16 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
   id,
   // new
 }) => {
+  const [clicked,setClicked] = useState(false)
   return (
     <Link
       href={`${id}`}
+      onClick={() => setClicked(true)}
       className={`group/trackBox relative flex h-[11.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       <img
         src={homePageImageUrl}
-        className="h-[14rem] w-full rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50"
+        className={`h-[14rem] w-full rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${clicked ? "blur-sm" : ""}`}
         alt="Landscape pdicture"
       />
       <div
