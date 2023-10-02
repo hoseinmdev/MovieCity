@@ -27,7 +27,7 @@ export default function Home() {
 
       <div className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
         <div
-          className="backgroundAnimation absolute h-full w-full brightness-75 lg:brightness-50 scale-110 lg:scale-100"
+          className="backgroundAnimation absolute h-full w-full brightness-75 lg:brightness-50 scale-110 lg:scale-100 "
           style={{
             backgroundImage:
               "url(" +

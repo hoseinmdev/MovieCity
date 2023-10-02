@@ -13,28 +13,28 @@ const Footer: React.FC = () => {
     <div className="mt-10 flex  w-full items-center justify-center border-t border-neutral-700 p-6 text-center">
       <div className="flex h-full w-full flex-col items-center justify-center gap-8 lg:w-1/2 lg:flex-row lg:justify-between lg:gap-0">
         <div className="order-1 flex h-full w-full items-center justify-center  gap-3 text-2xl lg:order-none ">
-          <button className="text-gray-800 hover:scale-110 hover:text-white hover:opacity-100 dark:text-white dark:opacity-50 lg:text-white">
+          <button className=" hover:scale-110 hover:text-white hover:opacity-100 text-white/70">
             <AiFillInstagram />
           </button>
-          <button className="text-gray-800 hover:scale-110 hover:text-white hover:opacity-100  dark:text-white dark:opacity-50 lg:text-white">
+          <button className=" hover:scale-110 hover:text-white hover:opacity-100  text-white/70">
             <AiFillTwitterCircle />
           </button>
-          <button className="text-gray-800 hover:scale-110 hover:text-white hover:opacity-100 dark:text-white dark:opacity-50 lg:text-white">
+          <button className=" hover:scale-110 hover:text-white hover:opacity-100 text-white/70">
             <AiFillYoutube />
           </button>
-          <button className="text-gray-800 hover:scale-110 hover:text-white hover:opacity-100 dark:text-white dark:opacity-50 lg:text-white">
+          <button className=" hover:scale-110 hover:text-white hover:opacity-100 text-white/70">
             <FaTelegram />
           </button>
         </div>
-        <div className="order-1 flex w-full cursor-default flex-col items-center justify-center gap-1 border-x-stone-600 px-4 text-base text-gray-800  hover:text-white hover:opacity-100 dark:text-white dark:opacity-50 lg:order-none lg:border-x lg:text-white">
+        <div className="order-1 flex w-full cursor-default flex-col items-center justify-center gap-1 border-x-stone-600 px-4 text-base   hover:text-white hover:opacity-100 lg:order-none lg:border-x text-white/70">
           <p>{t("material")}</p>
         </div>
 
         <div className="flex h-full w-full flex-col flex-wrap items-center justify-center gap-2 ">
-          <button className="text-gray-800 hover:text-white hover:opacity-100 dark:text-white  dark:opacity-50 lg:text-white">
+          <button className=" hover:text-white hover:opacity-100  text-white/70">
             {t("myNumber")}
           </button>
-          <button className="text-gray-800 hover:text-white hover:opacity-100 dark:text-white  dark:opacity-50 lg:text-white">
+          <button className=" hover:text-white hover:opacity-100  text-white/70">
             {t("email")}
           </button>
         </div>
