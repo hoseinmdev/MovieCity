@@ -293,6 +293,7 @@ const allMovies = [
       { sender: "sam", text: "soSoCommentText" },
       { sender: "iliya", text: "badCommentText" },
     ],
+    director: "Christopher McQuarrie",
     description: "missionImbossible7Desc",
     imdbScore: 9,
     imageUrl: "https://filmr.ir/wp-content/uploads/2023/05/filmr-1.jpg",
