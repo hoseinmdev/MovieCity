@@ -12,6 +12,8 @@ export interface MoviePropTypes {
   top?: boolean;
   new?: boolean;
   actors?: { name: string; imageUrl: string }[];
+  comments?: { sender: string; text: string }[];
+  downloadLinks?: { quality: number; size: number; link: string }[];
 }
 
 const allMovies = [
@@ -34,6 +36,24 @@ const allMovies = [
         name: "Vijay Sethupathi",
         imageUrl:
           "https://in.bmscdn.com/iedb/artist/images/website/poster/large/vijay-sethupathi-32355-16-09-2017-03-30-38.jpg",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1300,
+        link: "https://uptv.upera.tv/2932379-0-720.mp4?ref=7xk&uptv=1696244549",
+      },
+      {
+        quality: 480,
+        size: 924,
+        link: "https://uptv.upera.tv/2932379-0-480.mp4?ref=7xk&uptv=1696244549",
       },
     ],
     genre: "action",
@@ -64,6 +84,24 @@ const allMovies = [
           "https://images.mubicdn.net/images/cast_member/405582/cache-269680-1607108879/image-w856.jpg?size=800x",
       },
     ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1000,
+        link: "https://uptv.upera.tv/2932354-0-720.mp4?ref=7xk&uptv=1696247829",
+      },
+      {
+        quality: 480,
+        size: 705,
+        link: "https://uptv.upera.tv/2932354-0-480.mp4?ref=7xk&uptv=1696247829",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     description: "theNun2Desc",
     director: "Michael Chaves",
     imdbScore: 9,
@@ -81,6 +119,7 @@ const allMovies = [
     id: "dsdsdad3qwedeeqweqwsfsagfeadsaf",
     movieName: `ahsoka`,
     genre: "action",
+    downloadLinks: [],
     actors: [
       {
         name: "David Tennant",
@@ -97,6 +136,12 @@ const allMovies = [
         imageUrl:
           "https://static.wikia.nocookie.net/starwars/images/1/15/EmanEsfandi.jpg/revision/latest?cb=20230409175106",
       },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
     ],
     director: "Bryan Woods",
     description: "ahsokaDesc",
@@ -125,6 +170,24 @@ const allMovies = [
         imageUrl:
           "https://m.media-amazon.com/images/M/MV5BOTA3MWZjNjAtZDIwYi00Mzc1LWE1NzItNDQ5ZDg4NmY4ZTg4XkEyXkFqcGdeQXVyMTI5MzU2Njg@._V1_.jpg",
       },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1100,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/e6c8db0c-e38f-46de-ab81-36f8ee4b4f98/HD720",
+      },
+      {
+        quality: 480,
+        size: 669,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/e6c8db0c-e38f-46de-ab81-36f8ee4b4f98/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
     ],
     director: "Antoine Fuqua",
     description: "equalizerDesc",
@@ -161,6 +224,24 @@ const allMovies = [
           "https://upload.wikimedia.org/wikipedia/commons/8/8e/David_Dastmalchian_by_Gage_Skidmore.jpg",
       },
     ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1600,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/7476e3e7-8715-4c07-8f49-941340bdcc74/HD720",
+      },
+      {
+        quality: 480,
+        size: 922,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/7476e3e7-8715-4c07-8f49-941340bdcc74/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     description: "oppenheimerDesc",
     director: "Christopher Nolan",
     imageUrl:
@@ -194,6 +275,24 @@ const allMovies = [
           "https://static.wikia.nocookie.net/venturebrothers/images/8/8e/Charles_Parnell.png/revision/latest?cb=20210917030348",
       },
     ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1400,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/225790d5-3794-41e9-b6da-e8f07559a71a/HD720",
+      },
+      {
+        quality: 480,
+        size: 821,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/225790d5-3794-41e9-b6da-e8f07559a71a/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     description: "missionImbossible7Desc",
     imdbScore: 9,
     imageUrl: "https://filmr.ir/wp-content/uploads/2023/05/filmr-1.jpg",
@@ -219,6 +318,24 @@ const allMovies = [
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Andy_Samberg.png/220px-Andy_Samberg.png",
       },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1600,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/8c2bbded-dbbb-49ed-857d-176f793a115c/HD720",
+      },
+      {
+        quality: 480,
+        size: 964,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/8c2bbded-dbbb-49ed-857d-176f793a115c/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
     ],
     director: "Joaquim Dos Santos",
     description: "spidermanDesc",
@@ -253,6 +370,24 @@ const allMovies = [
         imageUrl: "https://flxt.tmsimg.com/assets/219662_v9_bb.jpg",
       },
     ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1200,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/f7d098b6-3679-47fc-b8d2-6e040bdc1162/HD720",
+      },
+      {
+        quality: 480,
+        size: 737,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/f7d098b6-3679-47fc-b8d2-6e040bdc1162/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     description: "meg2Desc",
     director: " Ben Wheatley",
     imdbScore: 7,
@@ -271,6 +406,41 @@ const allMovies = [
     id: "dsdsdad3qwedeqw456456agfeadseqweqwaf",
     movieName: `transformers`,
     director: "Steven Caple Jr",
+    genre: "action",
+    actors: [
+      {
+        name: "Anthony Ramos",
+        imageUrl:
+          "https://m.media-amazon.com/images/M/MV5BMmM5YjA4ZDktM2I1NC00ZWRhLThjMzItZGZhNTRlMTdkZGVkXkEyXkFqcGdeQXVyNTkyMTE5Nzg@._V1_FMjpg_UX1000_.jpg",
+      },
+      {
+        name: "Dominique Fishback",
+        imageUrl: "https://flxt.tmsimg.com/assets/865444_v9_bb.jpg",
+      },
+      {
+        name: "Luna Lauren Velez",
+        imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUYf1jmNvEo-gP7hQn3EumktohcqQI58I9g&usqp=CAU",
+      },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1200,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/79541974-6a55-402d-8a40-b90ee64044c0/HD720",
+      },
+      {
+        quality: 480,
+        size: 669,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/79541974-6a55-402d-8a40-b90ee64044c0/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     imdbScore: 6,
     description: "transformersDesc",
     imageUrl:
@@ -282,6 +452,36 @@ const allMovies = [
   {
     id: "dsdsdad3qwedeqw456456a321321gfeadseqweqwaf",
     movieName: `littleMermaid`,
+    genre: "fantasy",
+    actors: [
+      {
+        name: "Art Malik",
+        imageUrl: "https://flxt.tmsimg.com/assets/72476_v9_bb.jpg",
+      },
+      {
+        name: "Awkwafina",
+        imageUrl:
+          "https://m.media-amazon.com/images/M/MV5BMTU0NTUwNjkyN15BMl5BanBnXkFtZTgwMjM0NzEzMTI@._V1_.jpg",
+      },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1200,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/47c37244-b5f6-4fc3-9834-6b599adc6b73/HSHD720",
+      },
+      {
+        quality: 480,
+        size: 657,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/47c37244-b5f6-4fc3-9834-6b599adc6b73/HSHD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     director: "Rob Marshall",
     description: "littleMermaidDesc",
     imdbScore: 7,
@@ -294,6 +494,37 @@ const allMovies = [
   {
     id: "dsdsdad3qw2321321g321313feadseqweqwaf",
     movieName: `elmental`,
+    genre: "fantasy",
+    actors: [
+      {
+        name: "Alex Kapp",
+        imageUrl:
+          "https://m.media-amazon.com/images/M/MV5BMTc4NDg4MDUzMl5BMl5BanBnXkFtZTYwODYyMDY3._V1_.jpg",
+      },
+      {
+        name: "Ben Morris",
+        imageUrl:
+          "https://m.media-amazon.com/images/M/MV5BZWYzMGIwMDItNDcwMC00OTlkLWI3ZTgtMDg2YTk3ZGQ1MmVjXkEyXkFqcGdeQXVyMTMyMDYyNTA0._V1_FMjpg_UX1000_.jpg",
+      },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 950,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/53adfb0c-e6ca-4fba-8b4f-790ca609a1b9/HD720",
+      },
+      {
+        quality: 480,
+        size: 527,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/53adfb0c-e6ca-4fba-8b4f-790ca609a1b9/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     director: "Peter Sohn",
     description: "elmentalDesc",
     imdbScore: 7,
@@ -306,6 +537,42 @@ const allMovies = [
   {
     id: "d78978998qw2321321g321313feadseqweqwaf",
     movieName: `flash`,
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1400,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/a4d1abca-7aa0-4187-a4bb-961334c9168b/HD720",
+      },
+      {
+        quality: 480,
+        size: 773,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/a4d1abca-7aa0-4187-a4bb-961334c9168b/HD480",
+      },
+    ],
+    genre: "action",
+    actors: [
+      {
+        name: "Antje Traue",
+        imageUrl:
+          "https://static.wikia.nocookie.net/newdcmovieuniverse/images/6/6b/Antje_Traue_1280027223.jpg/revision/latest/scale-to-width-down/640?cb=20110507222404",
+      },
+      {
+        name: "Ben Affleck",
+        imageUrl:
+          "https://cdn.britannica.com/33/242333-050-95A19CE8/Actor-Ben-Affleck-premiere-AIR-March-2023.jpg",
+      },
+      {
+        name: "Eric Tiede",
+        imageUrl:
+          "https://static.wikia.nocookie.net/walkingdead/images/4/41/Eric_Tiede.jpg/revision/latest?cb=20220529101104",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     director: "Eric Dean Seaton",
     description: "flashDesc",
     imdbScore: 8,
@@ -318,6 +585,41 @@ const allMovies = [
   {
     id: "d78978998qw232456453261321g321313feadseqweqwaf",
     movieName: `exteraction2`,
+    genre: "action",
+    actors: [
+      {
+        name: "Adam Bessa",
+        imageUrl: "https://flxt.tmsimg.com/assets/1189476_v9_aa.jpg",
+      },
+      {
+        name: "Chris Hemsworth",
+        imageUrl:
+          "https://publish.purewow.net/wp-content/uploads/sites/2/2023/09/chris-hemsworth-daughter-thor.jpg?resize=720%2C780",
+      },
+      {
+        name: "Golshifteh Farahani",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Golshifteh_Farahani_at_Berlinale_2023.jpg/1200px-Golshifteh_Farahani_at_Berlinale_2023.jpg",
+      },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1200,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/fd27223f-7050-4414-8826-819a0ee54fde/HD720",
+      },
+      {
+        quality: 480,
+        size: 669,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/fd27223f-7050-4414-8826-819a0ee54fde/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     director: "Sam Hargrave",
     description: "exteraction2Desc",
     imdbScore: 8,
@@ -330,6 +632,41 @@ const allMovies = [
   {
     id: "d78978998qw2324564561321g321313feadseqweqwaf",
     movieName: `coldHearted`,
+    genre: "action",
+    actors: [
+      {
+        name: "Gal Gadot",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/5/5b/Gal_Gadot_cropped_lighting_corrected_2b.jpg",
+      },
+      {
+        name: "Jamie Dornan",
+        imageUrl: "https://flxt.tmsimg.com/assets/490764_v9_bb.jpg",
+      },
+      {
+        name: "Matthias Schweighöfer",
+        imageUrl:
+          "https://wikibio.in/wp-content/uploads/2021/04/Matthias-Schweighofer.jpg",
+      },
+    ],
+    downloadLinks: [
+      {
+        quality: 720,
+        size: 1100,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/db07834f-7543-49d9-a5aa-757ecd95f702/HD720",
+      },
+      {
+        quality: 480,
+        size: 665,
+        link: "https://naabmovie.metafilm.ir/content/download/4fa2e51a-0641-4a15-b682-48f68e9bea89/db07834f-7543-49d9-a5aa-757ecd95f702/HD480",
+      },
+    ],
+    comments: [
+      { sender: "sorena", text: "greatCommentText" },
+      { sender: "kamran", text: "goodCommentText" },
+      { sender: "sam", text: "soSoCommentText" },
+      { sender: "iliya", text: "badCommentText" },
+    ],
     director: "Tom Harper",
     description: "coldHeartedDesc",
     imdbScore: 6,
