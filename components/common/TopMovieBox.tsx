@@ -23,7 +23,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
     >
       <img
         src={homePageImageUrl}
-        className={`h-[14rem] w-full rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${clicked ? "blur-sm" : ""}`}
+        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${clicked ? "blur-sm" : ""}`}
         alt="Landscape pdicture"
       />
       <div
