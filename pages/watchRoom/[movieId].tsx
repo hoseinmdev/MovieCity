@@ -20,11 +20,13 @@ const WatchRoom: React.FC<{ movieId: string }> = ({ movieId }) => {
           </p>
           <video
             controls
+            autoPlay
+            playsInline
             className="relative h-[17rem]  rounded-xl object-cover object-left lg:h-[30rem] lg:w-full lg:border-x-2 lg:border-t-2 lg:border-stone-700 lg:p-2 "
             poster={currentMovie?.backgroundImageUrl}
           >
             <source
-              src={currentMovie?.downloadLinks[1].link}
+              src={currentMovie?.downloadLinks[0].link}
               type="video/mp4"
             ></source>
           </video>
