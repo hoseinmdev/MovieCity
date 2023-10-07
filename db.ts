@@ -14,7 +14,7 @@ export interface MoviePropTypes {
   actors?: { name: string; imageUrl: string }[];
   comments?: { sender: string; text: string }[];
   downloadLinks?: { quality: number; size: number; link: string }[];
-  trailer:string
+  trailer?:string
 }
 
 const allMovies = [

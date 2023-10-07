@@ -17,7 +17,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="relative flex min-h-[29rem] w-full flex-col items-center justify-between overflow-hidden  rounded-xl bg-gray-800 brightness-90 lg:w-[32rem]">
+    <div className="relative flex min-h-[29rem] w-full flex-col items-center justify-between overflow-hidden  rounded-xl bg-gray-800 brightness-90 lg:w-[100%]">
       <Link
         href={`${id}`}
         className="relative min-h-[12rem] w-full bg-cover transition duration-300 lg:min-h-[12rem] lg:hover:opacity-70 "
@@ -27,7 +27,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
       >
         <div className="absolute top-[10rem] z-10 h-20 w-full scale-150 bg-gray-800 blur-md lg:scale-110"></div>
         <img
-          className="absolute right-2 top-6 lg:top-2 z-10 w-[23%] rounded-xl shadow-xl lg:w-[20%]"
+          className="absolute right-2 top-6 lg:top-2 z-10 w-[6rem] rounded-xl shadow-xl lg:w-[20%]"
           src={imageUrl}
           alt=""
         />
