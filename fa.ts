@@ -1,6 +1,7 @@
 export const fa = {
   translation: {
     noDownloadLink: "امکان دانلود فیلم وجود ندارد",
+    welcomeToWatchRoom: "به اتاق تماشا خوش اومدی",
     onlineWatch: "تماشای آنلاین",
     downloadLinks: "لینک های دانلود",
     quality: "کیفیت",

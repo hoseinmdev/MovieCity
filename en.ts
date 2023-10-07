@@ -1,6 +1,7 @@
 export const en = {
   translation: {
     noDownloadLink: "No Link for download...",
+    welcomeToWatchRoom:"Welcome to watch room",
     onlineWatch: "Online watch",
     downloadLinks: "Download Links",
     quality: "Quality",

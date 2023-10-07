@@ -1,13 +1,15 @@
+import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 interface DownloadBoxProps {
+  movieId:string,
   quality: number;
   size: number;
   link: string;
 }
 
-const DownloadBox: React.FC<DownloadBoxProps> = ({ size, link, quality }) => {
+const DownloadBox: React.FC<DownloadBoxProps> = ({ size, link, quality,movieId }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -37,9 +39,12 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({ size, link, quality }) => {
         >
           {t("download") + " " + t("quality") + " " + quality}
         </a>
-        <div className="flex h-full w-40 justify-center rounded-lg bg-yellow-500 p-2 lg:p-3">
+        <Link
+          href={`watchRoom/${movieId}`}
+          className="flex h-full w-40 justify-center rounded-lg bg-yellow-500 p-2 lg:p-3"
+        >
           {t("onlineWatch")}
-        </div>
+        </Link>
       </div>
     </div>
   );

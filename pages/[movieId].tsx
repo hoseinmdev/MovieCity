@@ -108,6 +108,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               {currentMovie.downloadLinks?.map((movie) => {
                 return (
                   <DownloadBox
+                    movieId={currentMovie.id}
                     link={movie.link}
                     quality={movie.quality}
                     size={movie.size}
