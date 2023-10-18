@@ -25,7 +25,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
+      <div className="relative flex min-h-[75%] w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
         <div
           className="backgroundAnimation absolute h-full w-full brightness-75 lg:brightness-50 scale-110 lg:scale-100 "
           style={{
@@ -35,7 +35,7 @@ export default function Home() {
               ")",
           }}
         ></div>
-        <div className=" absolute bottom-20 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/80 lg:p-8">
+        <div className=" absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/50 lg:p-8">
           <div className="flex w-full flex-col items-center justify-center gap-4">
             <p className="text-center text-2xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
