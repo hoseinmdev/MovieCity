@@ -14,7 +14,7 @@ import { MoviePropTypes } from "@/db";
 import MovieBox from "./common/MovieBox";
 
 const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-2">
@@ -38,7 +38,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
           })}
         </div>
 
-        <div className="w-full p-3 lg:hidden">
+        <div dir="ltr" className="w-full p-3 lg:hidden">
           <Swiper
             slidesPerView={1.15}
             grid={{
@@ -47,7 +47,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
             }}
             spaceBetween={20}
             modules={[Grid, Pagination]}
-            className="mySwiper w-ful"
+            className="mySwiper w-full"
           >
             {data?.map((item) => {
               if (item.top) {
