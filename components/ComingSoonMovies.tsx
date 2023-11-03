@@ -7,13 +7,13 @@ const ComingSoonMovies: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="hidden w-[40%] flex-col items-center justify-start gap-4 text-white lg:flex">
-      <div className="flex w-full items-center justify-start gap-2 pr-4 text-xl">
+      <div className="flex w-full items-center justify-start gap-2 pr-4 text-xl fadeShow2">
         <div>
           <BsFire />
         </div>
         <p> {t("comingSoon")} </p>
       </div>
-      <div className="flex w-full flex-col items-center justify-start gap-6">
+      <div className="flex w-full flex-col items-center justify-start gap-6 fadeShow1">
         {comingSoonMoviesList.map((item) => {
           return (
             <div

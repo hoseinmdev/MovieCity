@@ -19,7 +19,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
     <Link
       href={`${id}`}
       onClick={() => setClicked(true)}
-      className={`group/trackBox relative flex h-[11.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
+      className={`fadeShow1 group/trackBox relative flex h-[11.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       <img
         src={homePageImageUrl}

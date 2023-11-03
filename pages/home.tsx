@@ -21,7 +21,7 @@ const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
           <TopMoviesContainer data={data} />
           <div className="flex w-full items-start justify-between gap-4">
             <div className="flex w-full flex-col gap-4 text-white">
-              <p className="pr-4 text-xl">{t("lastestMovies")}</p>
+              <p className="pr-4 text-xl fadeShow2">{t("lastestMovies")}</p>
               <MoviesContainer data={data} />
             </div>
             <ComingSoonMovies />

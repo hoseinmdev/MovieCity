@@ -4,7 +4,7 @@ import MovieBox from "./common/MovieBox";
 
 const MoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
   return (
-    <div className="grid w-full  place-items-center gap-4 lg:grid-cols-2 ">
+    <div className="grid w-full  place-items-center gap-4 lg:grid-cols-2 fadeShow1">
       {data.map((item) => {
         if (!item.top) {
           return (

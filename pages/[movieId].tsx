@@ -38,13 +38,13 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             >
               <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
             </div>
-            <div className="absolute bottom-2 left-2 right-2 z-10 flex w-full items-end justify-start gap-3 text-white">
+            <div className=" absolute bottom-2 left-2 right-2 z-10 flex w-full items-end justify-start gap-3 text-white">
               <img
-                className="max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem]"
+                className="max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem] fadeShow"
                 src={currentMovie?.imageUrl}
                 alt=""
               />
-              <div className="flex flex-col items-start justify-center gap-2">
+              <div className="flex flex-col items-start justify-center gap-2 fadeShow2">
                 <p className="text-lg lg:text-2xl">
                   {t(currentMovie?.movieName || "")}
                 </p>
@@ -74,15 +74,15 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             </div>
           </div>
 
-          <p className="text-white/80 lg:w-3/4">
+          <p className="text-white/80 lg:w-3/4 fadeShow3">
             {t(currentMovie?.description || "")}
           </p>
-          <p className="flex items-center gap-2 text-sm text-yellow-500 lg:text-base">
+          <p className="flex items-center gap-2 text-sm text-yellow-500 lg:text-base fadeShow3">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>
 
-          <div className="flex w-full flex-col gap-2 overflow-hidden lg:m-3 lg:w-1/2">
+          <div className="flex w-full flex-col gap-2 overflow-hidden lg:m-3 lg:w-1/2 fadeShow3">
             <p className="text-white/80 lg:text-xl">
               {t("trailer") + " " + t(currentMovie?.movieName || "")}
             </p>

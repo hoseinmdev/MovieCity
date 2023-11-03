@@ -25,6 +25,72 @@
   animation: fadeShow 0.5s;
 }
 
+
+@keyframes fadeShow4 {
+  from {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fadeShow4 {
+  animation: fadeShow4 0.5s;
+}
+@keyframes fadeShow1 {
+  0% {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fadeShow1 {
+  animation: fadeShow1 1s;
+}
+
+@keyframes fadeShow2 {
+  1% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fadeShow2 {
+  animation: fadeShow2 1s;
+}
+
+@keyframes fadeShow3 {
+  1% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fadeShow3 {
+  animation: fadeShow3 1.8s;
+}
+
+
+
 @keyframes backgroundAnimation {
   0% {
     scale: 1;

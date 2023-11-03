@@ -18,8 +18,8 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-2">
-        <p className="text-xl text-white/80">{t("topContent")}</p>
-        <div className="container hidden w-full grid-cols-2 gap-2 lg:grid lg:grid-cols-4 lg:gap-4">
+        <p className="fadeShow2 text-xl text-white/80">{t("topContent")}</p>
+        <div className=" container hidden w-full grid-cols-2 gap-2 lg:grid lg:grid-cols-4 lg:gap-4">
           {data?.map((item) => {
             if (item.top) {
               return (

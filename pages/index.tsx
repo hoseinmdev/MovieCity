@@ -27,7 +27,7 @@ export default function Home() {
 
       <div className="relative flex min-h-[75%] w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
         <div
-          className="backgroundAnimation absolute h-full w-full brightness-75 lg:brightness-50 scale-110 lg:scale-100 "
+          className="backgroundAnimation absolute h-full w-full scale-110 brightness-75 lg:scale-100 lg:brightness-50 "
           style={{
             backgroundImage:
               "url(" +
@@ -35,8 +35,8 @@ export default function Home() {
               ")",
           }}
         ></div>
-        <div className=" absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/50 lg:p-8">
-          <div className="flex w-full flex-col items-center justify-center gap-4">
+        <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/50 lg:p-8">
+          <div className="flex w-full flex-col items-center justify-center gap-2">
             <p className="text-center text-2xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
             </p>
@@ -60,8 +60,8 @@ export default function Home() {
       </div>
 
       <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
-        <div>
-          <p className="pb-6 text-3xl font-bold lg:text-5xl">
+        <div className="fadeShow2">
+          <p className="pb-6 text-3xl font-bold lg:text-5xl ">
             {t("EnjoyOnYourTv")}
           </p>
           <p>{t("EnjoyOnYourTvDesc")}</p>
