@@ -50,6 +50,6 @@ export const getStaticPaths = () => {
 };
 export const getStaticProps = async (context: { params: any }) => {
   const { params } = context;
-  return { props: { id: params.movieId } };
+  return { props: { id: params.id } };
 };
 export default WatchRoom;
