@@ -39,12 +39,6 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({ size, link, quality,movieId }
         >
           {t("download") + " " + t("quality") + " " + quality}
         </a>
-        <Link
-          href={`watchRoom/${movieId}`}
-          className="flex h-full w-40 justify-center rounded-lg bg-yellow-500 p-2 lg:p-3"
-        >
-          {t("onlineWatch")}
-        </Link>
       </div>
     </div>
   );
