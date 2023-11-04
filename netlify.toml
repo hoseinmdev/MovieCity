@@ -1,4 +1,0 @@
-[build]
-  command   = "CI= npm run build"
-  functions = "my_functions_dir"
-  publish   = "my_publish_dir"
