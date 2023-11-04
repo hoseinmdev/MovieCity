@@ -41,7 +41,7 @@ const WatchRoom: React.FC<{ movieId: string }> = ({ movieId }) => {
 
 export const getStaticPaths = () => {
   const paths = allMovies.map((movie) => {
-    return { params: { movieId: `${movie.id}` } };
+    return { params: { id: `${movie.id}` } };
   });
   return {
     paths,
@@ -50,6 +50,6 @@ export const getStaticPaths = () => {
 };
 export const getStaticProps = async (context: { params: any }) => {
   const { params } = context;
-  return { props: { movieId: params.movieId } };
+  return { props: { id: params.movieId } };
 };
 export default WatchRoom;
