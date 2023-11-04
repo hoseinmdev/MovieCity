@@ -1,11 +1,4 @@
-
-  # Default site wide settings
-[build.processing]
-  skip_processing = true
-
-# Branch specific settings
-[context.branch-name.processing]
-  skip_processing = false
-[context.branch-name.processing.css]
-  bundle = true
-  minify = true
+[build]
+  command   = "npm run build"
+  functions = "my_functions_dir"
+  publish   = "my_publish_dir"
