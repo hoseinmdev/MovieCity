@@ -1,4 +1,5 @@
 import allMovies, { MoviePropTypes } from "@/db";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -23,7 +24,16 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
               key={movie.id}
             >
               <div className="group/trackBox relative">
-                <img className="" src={movie.imageUrl} alt="" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  blurDataURL={movie.id}
+                  width={400} 
+                  height={400}
+                  className=""
+                  src={movie.imageUrl}
+                  alt=""
+                />
                 <div className="absolute right-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4 bg-black/60 text-center opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100">
                   <p>{t(movie.movieName)}</p>
                   <div className="text-4xl">

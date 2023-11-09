@@ -3,6 +3,7 @@ import TopMovieLabel from "./TopMovieLabel";
 import { BsHeartFill } from "react-icons/bs";
 import { MoviePropTypes } from "@/db";
 import Link from "next/link";
+import Image from "next/image";
 
 const TopMovieBox: React.FC<MoviePropTypes> = ({
   imageUrl,
@@ -14,16 +15,23 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
   id,
   // new
 }) => {
-  const [clicked,setClicked] = useState(false)
+  const [clicked, setClicked] = useState(false);
   return (
     <Link
       href={`${id}`}
       onClick={() => setClicked(true)}
       className={`fadeShow1 group/trackBox relative flex h-[11.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
-      <img
-        src={homePageImageUrl}
-        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${clicked ? "blur-sm" : ""}`}
+      <Image
+        src={homePageImageUrl || ""}
+        placeholder="blur"
+        loading="lazy"
+        blurDataURL={id}
+        width={400}
+        height={400}
+        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${
+          clicked ? "blur-sm" : ""
+        }`}
         alt="Landscape pdicture"
       />
       <div

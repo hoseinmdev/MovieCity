@@ -1,4 +1,5 @@
 import { MoviePropTypes } from "@/db";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -26,8 +27,13 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         }}
       >
         <div className="absolute top-[10rem] z-10 h-20 w-full scale-150 bg-gray-800 blur-md lg:scale-110"></div>
-        <img
-          className="absolute right-2 top-6 lg:top-2 z-10 w-[6rem] rounded-xl shadow-xl lg:w-[20%]"
+        <Image
+          placeholder="blur"
+          loading="lazy"
+          blurDataURL={id}
+          width={400}
+          height={400}
+          className="absolute right-2 top-6 z-10 w-[6rem] rounded-xl shadow-xl lg:top-2 lg:w-[20%]"
           src={imageUrl}
           alt=""
         />
@@ -53,7 +59,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         </div>
         <Link
           href={`${id}`}
-          className="w-full rounded-lg bg-red-500 p-2 text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base text-center"
+          className="w-full rounded-lg bg-red-500 p-2 text-center text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base"
         >
           {t("download") + " " + t(movieName)}
         </Link>

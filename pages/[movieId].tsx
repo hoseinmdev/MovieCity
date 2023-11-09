@@ -10,6 +10,7 @@ import Skeleton from "@/components/common/Skeleton";
 import OtherMovies from "@/components/OtherMovies";
 import { useRouter } from "next/router";
 import DownloadBox from "@/components/DownloadBox";
+import Image from "next/image";
 const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
   const [currentMovie, setCurrentMovie] = useState<
     MoviePropTypes | undefined
@@ -39,12 +40,17 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
             </div>
             <div className=" absolute bottom-2 left-2 right-2 z-10 flex w-full items-end justify-start gap-3 text-white">
-              <img
-                className="max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem] fadeShow"
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                blurDataURL={movieId}
+                width={400}
+                height={400}
+                className="fadeShow max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem]"
                 src={currentMovie?.imageUrl}
                 alt=""
               />
-              <div className="flex flex-col items-start justify-center gap-2 fadeShow2">
+              <div className="fadeShow2 flex flex-col items-start justify-center gap-2">
                 <p className="text-lg lg:text-2xl">
                   {t(currentMovie?.movieName || "")}
                 </p>
@@ -74,15 +80,15 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             </div>
           </div>
 
-          <p className="text-white/80 lg:w-3/4 fadeShow3">
+          <p className="fadeShow3 text-white/80 lg:w-3/4">
             {t(currentMovie?.description || "")}
           </p>
-          <p className="flex items-center gap-2 text-sm text-yellow-500 lg:text-base fadeShow3">
+          <p className="fadeShow3 flex items-center gap-2 text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>
 
-          <div className="flex w-full flex-col gap-2 overflow-hidden lg:m-3 lg:w-1/2 fadeShow3">
+          <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden lg:m-3 lg:w-1/2">
             <p className="text-white/80 lg:text-xl">
               {t("trailer") + " " + t(currentMovie?.movieName || "")}
             </p>
@@ -91,10 +97,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-indigo-400/50 lg:p-2 "
               poster={currentMovie?.backgroundImageUrl}
             >
-              <source
-                src={currentMovie.trailer}
-                type="video/mp4"
-              ></source>
+              <source src={currentMovie.trailer} type="video/mp4"></source>
             </video>
           </div>
 
