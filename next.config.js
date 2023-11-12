@@ -12,6 +12,8 @@ const nextConfig = {
       "www.megmovie.net",
       "filmr.ir",
       "lumiere-a.akamaihd.net",
+      "4kwallpapers.com",
+      "encrypted-tbn0.gstatic.com",
     ],
     remotePatterns: [
       {
