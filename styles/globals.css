@@ -94,15 +94,12 @@
 @keyframes backgroundAnimation {
   0% {
     scale: 1;
-    rotate: 0deg;
   }
   50% {
     scale: 1.05;
-    rotate: -4deg;
   }
   100% {
     scale: 1;
-    rotate: 0deg;
   }
 }
 .backgroundAnimation {
