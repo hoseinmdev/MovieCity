@@ -7,7 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import {ImSpinner9} from "react-icons/im"
+import { ImSpinner9 } from "react-icons/im";
+import johnWick from "@/assets/johnWick.jpeg";
 export default function Home() {
   const { i18n, t } = useTranslation();
   const [clicked, setClicked] = useState(false);
@@ -16,25 +17,36 @@ export default function Home() {
       className="fadeShow flex h-screen w-full flex-col items-center justify-start gap-4 bg-black text-white"
       dir={i18n.dir()}
     >
-      <div className="absolute top-5 z-[100] flex w-full justify-between bg-black/20 px-10 pb-4 lg:w-3/4">
-        <SelectLanguage />
+      <div className="absolute z-[100] flex w-full items-center justify-between bg-black/30 px-10 py-4 lg:w-3/4">
+        <div>
+          <SelectLanguage />
+        </div>
         <Image
           src={MovieCityLogo}
-          className="w-36 lg:w-60"
+          className="h-[2.5rem] w-[55%] lg:w-60 lg:h-[3rem]"
           alt="Landscape picture"
         />
       </div>
 
-      <div className="relative flex min-h-[75%] w-full items-center justify-center overflow-hidden bg-black lg:mt-8">
-        <div
-          className="backgroundAnimation absolute h-full w-full scale-110 brightness-75 lg:scale-100 lg:brightness-50 "
-          style={{
-            backgroundImage:
-              "url(" +
-              `https://news.xbox.com/en-us/wp-content/uploads/sites/2/2023/05/Background-size1920x1080-4e1694a6-75aa-4c36-9d4d-7fb6a3102005-bc5318781aad7f5c8520.png` +
-              ")",
-          }}
-        ></div>
+      <div className="relative flex min-h-[75%] w-full items-center justify-center overflow-hidden bg-black lg:min-h-full">
+        <div className="absolute h-full w-full">
+          <img
+            src="https://static.fabrik.io/oeh/45b058d633fdc697.jpg?lossless=1&w=960&fit=crop&s=3dc534f4532e7f554dd313e51c145be5"
+            alt=""
+            className="h-full w-full blur-[1px] brightness-75 lg:hidden"
+          />
+          <Image
+            width={1000}
+            height={1000}
+            loading="lazy"
+            placeholder="blur"
+            // quality={100}
+            src={johnWick}
+            alt=""
+            className="backgroundAnimation hidden h-full w-full brightness-75 lg:block"
+          />
+        </div>
+
         <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/50 lg:p-8">
           <div className="flex w-full flex-col items-center justify-center gap-2">
             <p className="text-center text-2xl font-bold lg:text-4xl">
@@ -59,7 +71,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around  bg-black p-8 text-center text-xl lg:flex-row ">
         <div className="fadeShow2">
           <p className="pb-6 text-3xl font-bold lg:text-5xl ">
             {t("EnjoyOnYourTv")}
@@ -154,7 +166,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-10 flex w-full flex-col items-center justify-center gap-8 p-4 lg:w-[40%] lg:p-0">
+      <div className="mt-5 flex w-full flex-col items-center justify-center gap-8 bg-black p-4 lg:w-[40%] lg:p-0">
         <p className="text-center text-2xl lg:text-3xl">
           {t("FrequentlyAskedQuestions")}
         </p>

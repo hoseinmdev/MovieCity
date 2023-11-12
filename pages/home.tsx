@@ -17,7 +17,7 @@ const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
   const renderContent = () => {
     return (
       <Layout>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 bg-stone-900">
           <TopMoviesContainer data={data} />
           <div className="flex w-full items-start justify-between gap-4">
             <div className="flex w-full flex-col gap-4 text-white">
