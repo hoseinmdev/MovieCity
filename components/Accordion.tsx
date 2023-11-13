@@ -12,17 +12,17 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   return (
     <div
       className={`w-full bg-stone-950 p-4 rounded-xl  transition-all  ${
-        open && "outline outline-indigo-500"
+        open && "outline outline-red-500"
       }`}
     >
       <div
         className="text-xl lg:text-2xl w-full flex justify-between items-center lg:cursor-pointer "
         onClick={() => setOpen(!open)}
       >
-        <p className={`${open && "text-indigo-400"}`}>{title}</p>
+        <p className={`${open && "text-red-400"}`}>{title}</p>
         <div
           className={`${
-            !open ? "rotate-180 " : "text-indigo-600"
+            !open ? "rotate-180 " : "text-red-600"
           } transition duration-300`}
         >
           <AiFillCaretDown />
