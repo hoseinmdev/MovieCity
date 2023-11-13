@@ -35,10 +35,10 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
         }`}
         alt="Landscape pdicture"
       />
-      <div className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex h-24 w-24 items-center justify-center">
+      <div className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex h-24 w-24 items-center justify-center group-hover/trackBox:opacity-0">
         <img
           src={homePageImageUrl}
-          className="relative h-full  w-full blur-xl opacity-40"
+          className="relative h-full  w-full opacity-40 blur-xl"
         ></img>
         <div className="absolute text-4xl">
           <AiOutlinePlayCircle />
