@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="bg-stone-900" dir={i18n.dir()}>
       <Header />
-      <div className="fadeShow container ml-auto mr-auto bg-stone-900 p-2">
+      <div className="fadeShow bg-stone-900">
         {children}
       </div>
       <Footer />
