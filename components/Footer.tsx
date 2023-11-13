@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   const { i18n, t } = useTranslation();
 
   return (
-    <div className="mt-10 flex  w-full items-center justify-center border-t border-neutral-700 bg-black p-6 text-center">
+    <div className="mt-10 flex  w-full items-center justify-center bg-transparent p-6 text-center">
       <div className="flex h-full w-full flex-col items-center justify-center gap-8 lg:w-1/2 lg:flex-row lg:justify-between lg:gap-0">
         <div className="order-1 flex h-full w-full items-center justify-center  gap-3 text-2xl lg:order-none ">
           <button className=" text-white/70 hover:scale-110 hover:text-white hover:opacity-100">

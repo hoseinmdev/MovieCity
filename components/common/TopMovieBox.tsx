@@ -4,6 +4,7 @@ import { BsHeartFill } from "react-icons/bs";
 import { MoviePropTypes } from "@/db";
 import Link from "next/link";
 import Image from "next/image";
+import { AiOutlinePlayCircle } from "react-icons/ai";
 
 const TopMovieBox: React.FC<MoviePropTypes> = ({
   imageUrl,
@@ -34,6 +35,18 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
         }`}
         alt="Landscape pdicture"
       />
+      <div className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex h-24 w-24 items-center justify-center">
+        <img
+          src={homePageImageUrl}
+          className="relative h-full  w-full blur-xl opacity-40"
+        ></img>
+        <div className="absolute text-4xl">
+          <AiOutlinePlayCircle />
+        </div>
+        <div className="absolute animate-ping text-4xl">
+          <AiOutlinePlayCircle />
+        </div>
+      </div>
       <div
         className={`absolute  h-full flex-col items-start justify-center  p-4 pt-6 text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
       >
