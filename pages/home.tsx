@@ -6,6 +6,7 @@ import Skeleton from "@/components/common/Skeleton";
 import Layout from "@/components/Layout";
 import MoviesContainer from "@/components/MoviesContainer";
 import ComingSoonMovies from "@/components/ComingSoonMovies";
+import Line from "@/components/common/Line";
 
 const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
   const { t, i18n } = useTranslation();
@@ -17,11 +18,14 @@ const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
   const renderContent = () => {
     return (
       <Layout>
-        <div className="flex flex-col gap-10 bg-stone-900">
-          <TopMoviesContainer data={data} />
-          <div className="flex w-full items-start justify-between gap-4">
+        <div className="flex flex-col gap-10">
+          <div className="container ml-auto mr-auto p-2">
+            <TopMoviesContainer data={data} />
+          </div>
+          <Line />
+          <div className="container ml-auto mr-auto flex w-full items-start justify-between gap-4 p-2">
             <div className="flex w-full flex-col gap-4 text-white">
-              <p className="pr-4 text-xl fadeShow2">{t("lastestMovies")}</p>
+              <p className="fadeShow2 pr-4 text-xl">{t("lastestMovies")}</p>
               <MoviesContainer data={data} />
             </div>
             <ComingSoonMovies />

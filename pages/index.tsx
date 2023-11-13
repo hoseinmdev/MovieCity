@@ -10,12 +10,13 @@ import { useRouter } from "next/router";
 import { ImSpinner9 } from "react-icons/im";
 import johnWick from "@/assets/johnWick.jpeg";
 import johnWickMobile from "@/assets/johnWickMobile.jpg";
+import Line from "@/components/common/Line";
 export default function Home() {
   const { i18n, t } = useTranslation();
   const [clicked, setClicked] = useState(false);
   return (
     <div
-      className="fadeShow flex h-screen w-full flex-col items-center justify-start gap-4 bg-black text-white"
+      className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-black text-white"
       dir={i18n.dir()}
     >
       <div className="absolute z-[100] flex w-full items-center justify-between bg-black/30 px-10 py-4 lg:w-3/4">
@@ -28,8 +29,7 @@ export default function Home() {
           alt="Landscape picture"
         />
       </div>
-
-      <div className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-black lg:min-h-full">
+      <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black">
         <div className="absolute h-full w-full">
           <Image
             width={2000}
@@ -67,7 +67,7 @@ export default function Home() {
             className="w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-xl text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:w-[20%] lg:cursor-pointer lg:p-4"
           >
             {!clicked ? (
-              `${t("GetStarted")}`
+              <p className="animate-bounce">{t("GetStarted")}</p>
             ) : (
               <div className="flex w-full animate-spin justify-center">
                 <ImSpinner9 />
@@ -103,6 +103,7 @@ export default function Home() {
           </video>
         </div>
       </div>
+      <Line />
 
       <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
@@ -130,6 +131,7 @@ export default function Home() {
           <p>{t("WatchAnywhereAnytimeDesc")}</p>
         </div>
       </div>
+      <Line />
 
       <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div>
@@ -144,6 +146,7 @@ export default function Home() {
           alt=""
         />
       </div>
+      <Line />
 
       <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
@@ -171,6 +174,7 @@ export default function Home() {
           <p>{t("DownloadAndSeeOfflineDesc")}</p>
         </div>
       </div>
+      <Line />
 
       <div className="mt-5 flex w-full flex-col items-center justify-center gap-8 bg-black p-4 lg:w-[40%] lg:p-0">
         <p className="text-center text-2xl lg:text-3xl">

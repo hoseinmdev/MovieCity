@@ -11,6 +11,7 @@ import OtherMovies from "@/components/OtherMovies";
 import { useRouter } from "next/router";
 import DownloadBox from "@/components/DownloadBox";
 import Image from "next/image";
+import Line from "@/components/common/Line";
 const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
   const [currentMovie, setCurrentMovie] = useState<
     MoviePropTypes | undefined
@@ -28,8 +29,8 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
   return (
     <Layout>
       {currentMovie ? (
-        <div className="relative flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg p-2 text-white">
-          <div className="relative h-full w-full ">
+        <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
+          <div className="relative h-full w-full lg:p-2">
             <div
               className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
               style={{
@@ -79,29 +80,29 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               </div>
             </div>
           </div>
-
-          <p className="fadeShow3 text-white/80 lg:w-3/4">
+          <Line />
+          <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
             {t(currentMovie?.description || "")}
           </p>
-          <p className="fadeShow3 flex items-center gap-2 text-sm text-yellow-500 lg:text-base">
+          <p className="fadeShow3 flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>
 
-          <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden lg:m-3 lg:w-1/2">
+          <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden p-2 lg:m-3 lg:w-1/2">
             <p className="text-white/80 lg:text-xl">
               {t("trailer") + " " + t(currentMovie?.movieName || "")}
             </p>
             <video
               controls
-              className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-indigo-400/50 lg:p-2 "
+              className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-red-500 lg:p-2 "
               poster={currentMovie?.backgroundImageUrl}
             >
               <source src={currentMovie.trailer} type="video/mp4"></source>
             </video>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 p-2">
             <p className="text-xl">
               {currentMovie.downloadLinks?.length !== 0
                 ? t("downloadLinks")
@@ -121,8 +122,9 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
               })}
             </div>
           </div>
+          <Line />
 
-          <div className="flex flex-col items-start justify-center gap-4">
+          <div className="flex flex-col items-start justify-center gap-4 p-2">
             <p className="text-xl">{t("actors")}</p>
             <div className="flex items-center justify-center gap-4">
               {currentMovie?.actors?.map((item) => {
@@ -137,7 +139,10 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
             </div>
           </div>
 
-          <OtherMovies allMovies={allMovies} />
+          <div className="p-2">
+            <OtherMovies allMovies={allMovies} />
+          </div>
+          <Line />
 
           <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-1/2">
             <p className="text-xl">{t("usersComments")}</p>
@@ -161,7 +166,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
 
 const SkeletonLoading = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="container ml-auto mr-auto flex flex-col gap-8 p-2">
       <Skeleton className="h-[20rem] w-full rounded-xl lg:h-[35rem]" />
       <div className="flex flex-col gap-3 lg:gap-4">
         <Skeleton className="h-5 w-full rounded-full lg:h-7" />

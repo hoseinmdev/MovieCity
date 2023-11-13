@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <title>Movie City</title>
       </Head>
-      <body className="bg-red-800">
+      <body className="bg-current">
         <Main />
         <NextScript />
       </body>
