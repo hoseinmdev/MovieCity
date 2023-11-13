@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ImSpinner9 } from "react-icons/im";
 import johnWick from "@/assets/johnWick.jpeg";
+import johnWickMobile from "@/assets/johnWickMobile.jpg";
 export default function Home() {
   const { i18n, t } = useTranslation();
   const [clicked, setClicked] = useState(false);
@@ -23,17 +24,22 @@ export default function Home() {
         </div>
         <Image
           src={MovieCityLogo}
-          className="h-[2.5rem] w-[55%] lg:w-60 lg:h-[3rem]"
+          className="h-[2.5rem] w-[55%] lg:h-[3rem] lg:w-60"
           alt="Landscape picture"
         />
       </div>
 
-      <div className="relative flex min-h-[75%] w-full items-center justify-center overflow-hidden bg-black lg:min-h-full">
+      <div className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-black lg:min-h-full">
         <div className="absolute h-full w-full">
-          <img
-            src="https://static.fabrik.io/oeh/45b058d633fdc697.jpg?lossless=1&w=960&fit=crop&s=3dc534f4532e7f554dd313e51c145be5"
+          <Image
+            width={2000}
+            height={2000}
+            src={johnWickMobile}
+            quality={100}
+            loading="lazy"
+            placeholder="blur"
             alt=""
-            className="h-full w-full blur-[1px] brightness-75 lg:hidden"
+            className="h-full w-full brightness-50 lg:hidden"
           />
           <Image
             width={1000}
