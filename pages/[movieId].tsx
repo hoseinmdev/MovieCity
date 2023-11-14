@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import allMovies, { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/db";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
@@ -12,25 +12,27 @@ import { useRouter } from "next/router";
 import DownloadBox from "@/components/DownloadBox";
 import Image from "next/image";
 import Line from "@/components/common/Line";
-const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
+import axios from "axios";
+import { GET_MOVIES_BASEURL } from "@/redux/movies/moviesSlice";
+import getAllMovies from "@/utils/getAllMovies";
+const SingleMoviePage: React.FC<{ movieId: string, movies:MoviePropTypes[] }> = ({ movieId , movies}) => {
   const [currentMovie, setCurrentMovie] = useState<
     MoviePropTypes | undefined
   >();
-  const router = useRouter();
   useEffect(() => {
     setCurrentMovie(undefined);
-    setTimeout(
-      () => setCurrentMovie(allMovies?.find((movie) => movie.id === movieId)),
-      500,
-    );
+    setTimeout(() => {
+      setCurrentMovie(movies.find((movie) => movie.id === movieId));
+    }, 500);
   }, [movieId]);
+
   const { t, i18n } = useTranslation();
 
   return (
     <Layout>
       {currentMovie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
-          <div className="relative h-full w-full lg:p-2">
+          <div className="relative h-full w-full lg:p-2 fadeShow">
             <div
               className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
               style={{
@@ -140,7 +142,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
           </div>
 
           <div className="p-2">
-            <OtherMovies allMovies={allMovies} />
+            <OtherMovies allMovies={movies} />
           </div>
           <Line />
 
@@ -166,7 +168,7 @@ const SingleMoviePage: React.FC<{ movieId: string }> = ({ movieId }) => {
 
 const SkeletonLoading = () => {
   return (
-    <div className="container ml-auto mr-auto flex flex-col gap-8 p-2">
+    <div className="fadeShow container ml-auto mr-auto flex flex-col gap-8 p-2">
       <Skeleton className="h-[20rem] w-full rounded-xl lg:h-[35rem]" />
       <div className="flex flex-col gap-3 lg:gap-4">
         <Skeleton className="h-5 w-full rounded-full lg:h-7" />
@@ -184,8 +186,9 @@ const SkeletonLoading = () => {
   );
 };
 
-export const getStaticPaths = () => {
-  const paths = allMovies.map((movie) => {
+export const getStaticPaths = async () => {
+  const data = await getAllMovies();
+  const paths = data.map((movie: MoviePropTypes) => {
     return { params: { movieId: `${movie.id}` } };
   });
   return {
@@ -194,8 +197,9 @@ export const getStaticPaths = () => {
   };
 };
 export const getStaticProps = async (context: { params: any }) => {
+  const data = await getAllMovies();
   const { params } = context;
-  return { props: { movieId: params.movieId } };
+  return { props: { movieId: params.movieId, movies: data } };
 };
 
 export default SingleMoviePage;
