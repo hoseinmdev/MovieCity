@@ -15,6 +15,7 @@ const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
       <Layout>
         <div className="flex flex-col gap-4">
           <Slider />
+          <Line />
 
           <div className="container ml-auto mr-auto p-2">
             <TopMoviesContainer data={allMovies} />

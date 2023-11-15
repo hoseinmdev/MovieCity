@@ -60,12 +60,12 @@ const Slider: React.FC = () => {
       pagination={{ clickable: true }}
       effect="fade"
       dir="ltr"
-      className="cursor-pointer group/trackBox  mySwiper fadeShow container mt-2 flex max-h-[14rem] min-h-[14rem] w-full items-center justify-center overflow-hidden transition-all lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-xl"
+      className="cursor-pointer group/trackBox mb-4  mySwiper fadeShow container mt-2 flex max-h-[14rem] min-h-[14rem] w-full items-center justify-center overflow-hidden transition-all lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-3xl"
     >
       {slides.map((slide) => {
         return (
           <SwiperSlide key={slide.imageUrl}>
-            <Link href={`${slide.link}`} className="relative w-full h-full">
+            <Link href={`${slide.link}`} className="relative h-full w-full">
               <Image
                 width={2000}
                 height={2000}
@@ -74,10 +74,10 @@ const Slider: React.FC = () => {
                 // quality={100}
                 // placeholder="blur"
                 alt="poster"
-                className=" backgroundAnimation w-full scale-[1.15] duration-300 group-hover/trackBox:scale-100"
+                className=" backgroundAnimation w-full scale-[1.15] duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
               />
               <div className="absolute bottom-5 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[32%] ">
-                <div className="flex flex-col items-center justify-start p-2 text-white backdrop-blur-md fadeShow2 backdrop-brightness-75 duration-300 group-hover/trackBox:translate-y-[-1rem] group-hover/trackBox:scale-110 lg:p-4 lg:text-3xl">
+                <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
                   <p>{t(slide.name)}</p>
                 </div>
               </div>
