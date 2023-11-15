@@ -25,7 +25,6 @@
   animation: fadeShow 0.5s;
 }
 
-
 @keyframes fadeShow4 {
   from {
     transform: translateY(-5rem);
@@ -89,21 +88,22 @@
   animation: fadeShow3 1.8s;
 }
 
-
-
 @keyframes backgroundAnimation {
   0% {
     scale: 1;
+    rotate: 0deg;
   }
   50% {
     scale: 1.05;
+    rotate: 1deg;
   }
   100% {
     scale: 1;
+    rotate: 0deg;
   }
 }
 .backgroundAnimation {
-  animation: backgroundAnimation 10s infinite;
+  animation: backgroundAnimation 5s infinite;
 }
 
 @keyframes SinglePagebackgroundAnimation {
@@ -118,6 +118,19 @@
   100% {
     scale: 1;
     opacity: 1;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
+  margin-bottom: 0.2rem !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: red !important;
+}
+@media screen and (min-width: 1024px) {
+  .swiper-pagination-bullet {
+    scale: 1.5;
+    margin-left: 0.5rem !important;
   }
 }
 .SinglePagebackgroundAnimation {
