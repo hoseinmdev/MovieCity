@@ -74,7 +74,7 @@ const Slider: React.FC = () => {
                 // quality={100}
                 // placeholder="blur"
                 alt="poster"
-                className=" backgroundAnimation w-full scale-[1.15] duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
+                className=" backgroundAnimation w-full scale-[1.05] duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
               />
               <div className="absolute bottom-5 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[32%] ">
                 <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
