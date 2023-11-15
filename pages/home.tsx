@@ -1,19 +1,21 @@
 import TopMoviesContainer from "@/components/TopMoviesContainer";
 import { useTranslation } from "react-i18next";
-import  { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/db";
 import Skeleton from "@/components/common/Skeleton";
 import Layout from "@/components/Layout";
 import MoviesContainer from "@/components/MoviesContainer";
 import ComingSoonMovies from "@/components/ComingSoonMovies";
 import Line from "@/components/common/Line";
 import getAllMovies from "@/utils/getAllMovies";
-
+import Slider from "@/components/Slider";
 const HomePage: React.FC<{ allMovies: MoviePropTypes[] }> = ({ allMovies }) => {
   const { t, i18n } = useTranslation();
   const renderContent = () => {
     return (
       <Layout>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-4">
+          <Slider />
+
           <div className="container ml-auto mr-auto p-2">
             <TopMoviesContainer data={allMovies} />
           </div>
