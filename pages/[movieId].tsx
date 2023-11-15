@@ -15,7 +15,10 @@ import Line from "@/components/common/Line";
 import axios from "axios";
 import { GET_MOVIES_BASEURL } from "@/redux/movies/moviesSlice";
 import getAllMovies from "@/utils/getAllMovies";
-const SingleMoviePage: React.FC<{ movieId: string, movies:MoviePropTypes[] }> = ({ movieId , movies}) => {
+const SingleMoviePage: React.FC<{
+  movieId: string;
+  movies: MoviePropTypes[];
+}> = ({ movieId, movies }) => {
   const [currentMovie, setCurrentMovie] = useState<
     MoviePropTypes | undefined
   >();
@@ -32,17 +35,19 @@ const SingleMoviePage: React.FC<{ movieId: string, movies:MoviePropTypes[] }> = 
     <Layout>
       {currentMovie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
-          <div className="relative h-full w-full lg:p-2 fadeShow">
-            <div
-              className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
-              style={{
-                backgroundImage:
-                  "url(" + `${currentMovie?.backgroundImageUrl}` + ")",
-              }}
-            >
-              <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
+          <div className="fadeShow relative h-full w-full lg:p-2">
+            <div className="lg:max-h-[40rem] w-full overflow-hidden rounded-xl ">
+              <div
+                className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
+                style={{
+                  backgroundImage:
+                    "url(" + `${currentMovie?.backgroundImageUrl}` + ")",
+                }}
+              >
+                <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
+              </div>
             </div>
-            <div className=" absolute bottom-2 left-2 right-2 z-10 flex w-full items-end justify-start gap-3 text-white">
+            <div className=" absolute bottom-1 left-1 right-2 lg:left-3 lg:bottom-3 lg:right-3 z-10 flex w-full items-end justify-start gap-3 text-white">
               <Image
                 placeholder="blur"
                 loading="lazy"
@@ -58,7 +63,7 @@ const SingleMoviePage: React.FC<{ movieId: string, movies:MoviePropTypes[] }> = 
                   {t(currentMovie?.movieName || "")}
                 </p>
                 <p>{t(currentMovie?.genre || "")}</p>
-                <p className="">
+                <p className="w-[80%] lg:w-full">
                   {t("director") + " : "} {currentMovie?.director}
                 </p>
                 <div className="flex items-center justify-center gap-2 pt-4">
