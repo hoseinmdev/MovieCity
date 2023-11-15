@@ -35,7 +35,7 @@ const Slider: React.FC = () => {
       imageUrl: "https://images3.alphacoders.com/132/1324999.jpeg",
     },
     {
-      link:"dsdsdad3qeqwewqeqwdsadsadasd",
+
       name: "oppenheimer",
       imageUrl:
         "https://www.slashfilm.com/img/gallery/how-christopher-nolans-oppenheimer-recreated-a-nuclear-explosion-without-using-cgi/intro-1684863178.jpg",
@@ -60,7 +60,7 @@ const Slider: React.FC = () => {
       pagination={{ clickable: true }}
       effect="fade"
       dir="ltr"
-      className="cursor-pointer group/trackBox mb-4  mySwiper fadeShow container mt-2 flex max-h-[14rem] min-h-[14rem] w-full items-center justify-center overflow-hidden transition-all lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-3xl"
+
     >
       {slides.map((slide) => {
         return (
