@@ -1,5 +1,5 @@
 import React from "react";
-import { EffectFade, Pagination } from "swiper/modules";
+import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -56,16 +56,20 @@ const Slider: React.FC = () => {
 
   return (
     <Swiper
-      modules={[EffectFade, Pagination]}
+      modules={[EffectFade, Pagination, Autoplay]}
       pagination={{ clickable: true }}
       effect="fade"
       dir="ltr"
-      className="group/trackBox mySwiper fadeShow  container mb-4 mt-2 flex max-h-[14rem] min-h-[14rem] w-full cursor-pointer items-center justify-center overflow-hidden transition-all lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-3xl"
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      className="group/trackBox mySwiper fadeShow  container mb-4 mt-2 flex h-[50%] w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-3xl"
     >
       {slides.map((slide) => {
         return (
-          <SwiperSlide key={slide.imageUrl}>
-            <Link href={`${slide.link}`} className="relative h-full w-full">
+          <SwiperSlide key={slide.imageUrl} className="relative">
+            <Link href={`${slide.link}`} className=" h-full w-full">
               <Image
                 width={2000}
                 height={2000}
@@ -76,7 +80,7 @@ const Slider: React.FC = () => {
                 alt="poster"
                 className=" backgroundAnimation w-full scale-[1.05] duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
               />
-              <div className="absolute bottom-5 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[32%] ">
+              <div className="absolute bottom-8 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[8%] ">
                 <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
                   <p>{t(slide.name)}</p>
                 </div>

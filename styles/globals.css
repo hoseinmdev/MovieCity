@@ -122,7 +122,6 @@
 }
 .swiper-pagination-bullet {
   background-color: white !important;
-  margin-bottom: 0.2rem !important;
 }
 .swiper-pagination-bullet-active {
   background-color: red !important;
