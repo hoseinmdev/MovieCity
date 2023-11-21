@@ -11,6 +11,10 @@ const config: Config = {
       screens: {
         betterhover: { raw: "(hover: hover)" },
       },
+      fontFamily: {
+        BlackListed: ["BlackListed"],
+        VazirFont: ["VazirFont"],
+      },
     },
   },
   plugins: [],

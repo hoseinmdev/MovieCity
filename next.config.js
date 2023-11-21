@@ -29,6 +29,7 @@ const nextConfig = {
       "www.rollingstone.com",
       "gizmodo.com.au",
       "www.pixground.com",
+      "cdn.mos.cms.futurecdn.net",
     ],
     remotePatterns: [
       {

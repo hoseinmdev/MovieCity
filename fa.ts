@@ -1,5 +1,13 @@
 export const fa = {
   translation: {
+    signUp: "ثبت نام",
+    StartforFree: "سلام٬ خوش اومدی !",
+    CreateAnAccount: "ساخت حساب کاربری",
+    EnterYourEmail: "ایمیل خود را وارد کنید",
+    EnterYourPassword: "رمز عبور خود را وارد کنید",
+    SignUp: "ثبت نام",
+    SignUpWithGoogle: "ثبت نام با حساب گوگل",
+    AlreadyHaveAccount: "از قبل حساب دارید ؟",
     noDownloadLink: "امکان دانلود فیلم وجود ندارد",
     welcomeToWatchRoom: "به اتاق تماشا خوش اومدی",
     onlineWatch: "تماشای آنلاین",

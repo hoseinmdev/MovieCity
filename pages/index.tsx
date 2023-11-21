@@ -15,7 +15,7 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
   return (
     <div
-      className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-black text-white"
+      className="fadeShow font-VazirFont flex w-full flex-col items-center justify-start gap-4 bg-black text-white"
       dir={i18n.dir()}
     >
       <div className="absolute z-[100] flex w-full items-center justify-between bg-black/30 px-10 py-4 lg:w-3/4">
@@ -48,7 +48,7 @@ export default function Home() {
             // quality={100}
             src={johnWick}
             alt=""
-            className="backgroundAnimation hidden h-full w-full brightness-75 lg:block"
+            className="backgroundAnimation hidden  w-full brightness-75 lg:block"
           />
         </div>
 

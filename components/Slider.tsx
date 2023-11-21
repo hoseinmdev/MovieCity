@@ -20,19 +20,17 @@ const Slider: React.FC = () => {
     {
       link: "d78978998qw232456453261321g321313feadseqweqwaf",
       name: "exteraction2",
-      imageUrl:
-        "https://images.hdqwalls.com/wallpapers/netflix-extraction-2020-4k-jc.jpg",
+      imageUrl: "https://wallpapercave.com/wp/wp12330728.jpg",
     },
     {
       link: "dsdsdad3qwvcxvcxweqweqwasfsagfeadsaf",
       name: "missionImbossible7",
-      imageUrl:
-        "https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/a9aee6c1-875c-4efc-832c-ced5c496b183/tom-cruise-had-anxiety-fueled-sleepless-nights-about-landing-the-perfect-ending-for-mission-impossible-dead-reckoning-part-one.jpg",
+      imageUrl: "https://cdn.mos.cms.futurecdn.net/aY7EBRx2jguJHXWBYpuCYR.jpg",
     },
     {
       link: "dsdsdad3qwedeqw456456agfeadsaf",
       name: "meg2",
-      imageUrl: "https://images3.alphacoders.com/132/1324999.jpeg",
+      imageUrl: "https://images.hdqwalls.com/wallpapers/meg-2-4k-jw.jpg",
     },
     {
       link: "dsdsdad3qeqwewqeqwdsadsadasd",
@@ -64,21 +62,26 @@ const Slider: React.FC = () => {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      className="group/trackBox mySwiper fadeShow  container mb-4 mt-2 flex h-[50%] w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[40rem] lg:max-h-none lg:min-h-max 2xl:rounded-3xl"
+      className={`group/trackBox mySwiper fadeShow   mb-4 mt-2 flex h-[17rem] w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[40rem] lg:max-h-none lg:min-h-max  ${
+        i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
+      }`}
     >
       {slides.map((slide) => {
         return (
-          <SwiperSlide key={slide.imageUrl} className="relative">
-            <Link href={`${slide.link}`} className=" h-full w-full">
+          <SwiperSlide
+            key={slide.imageUrl}
+            className="relative h-full w-full"
+          >
+            <Link className="w-full h-full" href={slide.link}>
               <Image
                 width={2000}
-                height={2000}
+                height={1000}
                 src={slide.imageUrl}
                 loading="lazy"
                 // quality={100}
                 // placeholder="blur"
                 alt="poster"
-                className=" backgroundAnimation w-full scale-[1.05] duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
+                className=" backgroundAnimation h-full lg:object-top  w-full scale-[1.05] object-cover duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
               />
               <div className="absolute bottom-8 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[8%] ">
                 <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">

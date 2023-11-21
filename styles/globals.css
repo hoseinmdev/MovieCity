@@ -6,9 +6,13 @@
   font-family: VazirFont;
   src: url(../assets/fonts/Vazir.woff);
 }
+@font-face {
+  font-family: BlackListed;
+  src: url(../assets/fonts/Blacklisted.ttf);
+}
 
 * {
-  font-family: "VazirFont";
+  /* font-family: "VazirFont"; */
 }
 
 @keyframes fadeShow {
@@ -104,6 +108,27 @@
 }
 .backgroundAnimation {
   animation: backgroundAnimation 5s infinite;
+}
+
+@keyframes backgroundAnimation2 {
+  0% {
+    scale: 1;
+    filter: blur(1px);
+    filter: grayscale(0.3);
+  }
+  50% {
+    scale: 1.05;
+    filter: blur(0px);
+    filter: grayscale(0);
+  }
+  100% {
+    scale: 1;
+    filter: blur(1px);
+    filter: grayscale(0.3);
+  }
+}
+.backgroundAnimation2 {
+  animation: backgroundAnimation2 10s infinite;
 }
 
 @keyframes SinglePagebackgroundAnimation {

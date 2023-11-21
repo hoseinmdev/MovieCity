@@ -1,7 +1,15 @@
 export const en = {
   translation: {
+    signUp: "Sign Up",
+    StartforFree: "Start for Free",
+    CreateAnAccount: "Create an account",
+    EnterYourEmail: "Enter your email",
+    EnterYourPassword: "Enter your password",
+    SignUp: "Sign Up",
+    SignUpWithGoogle: "Sign Up With Google",
+    AlreadyHaveAccount: "Alraedy have an account ?",
     noDownloadLink: "No Link for download...",
-    welcomeToWatchRoom:"Welcome to watch room",
+    welcomeToWatchRoom: "Welcome to watch room",
     onlineWatch: "Online watch",
     downloadLinks: "Download Links",
     quality: "Quality",
