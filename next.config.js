@@ -30,6 +30,8 @@ const nextConfig = {
       "gizmodo.com.au",
       "www.pixground.com",
       "cdn.mos.cms.futurecdn.net",
+      "e0.pxfuel.com",
+      "wallpapercrafter.com",
     ],
     remotePatterns: [
       {
