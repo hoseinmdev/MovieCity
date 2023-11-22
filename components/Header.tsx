@@ -7,7 +7,7 @@ import Link from "next/link";
 const Header = () => {
   const { t } = useTranslation();
   return (
-    <div className="sticky top-0 z-[100] flex h-[4rem] w-full justify-between bg-black/80 p-3 lg:h-[5rem] lg:px-32">
+    <div className="sticky top-0 z-[100] flex h-[4rem] w-full justify-between bg-black/80 p-2 lg:h-[5rem] lg:px-32">
       <div className="flex w-full items-center justify-start gap-3">
         <SelectLanguage />
 
@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <Image
         src={MovieCityLogo}
-        className=" w-[8rem] lg:block  lg:w-[20rem]"
+        className=" w-[9rem] lg:block  lg:w-[20rem]"
         alt="Landscape picture"
       />
     </div>

@@ -18,9 +18,9 @@ const SelectLanguage: React.FC = () => {
     setShowLanguages(!showLanguages);
   };
   return (
-    <div className="relative ">
+    <div className="relative z-[100]">
       <div
-        className={`flex items-center justify-center gap-2 border border-red-500 bg-black/80 p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
+        className={`flex items-center justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
           !showLanguages
             ? "rounded-lg"
             : " rounded-lg rounded-bl-none rounded-br-none"
@@ -33,7 +33,7 @@ const SelectLanguage: React.FC = () => {
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-black/80 px-[1.35rem] py-3 lg:px-[1.85rem]">
+        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent backdrop-blur-md px-[1.35rem] py-3 lg:px-[1.85rem]">
           {items.map((i, index) => {
             return (
               <p
