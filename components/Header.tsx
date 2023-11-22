@@ -11,12 +11,12 @@ const Header = () => {
       <div className="flex w-full items-center justify-start gap-3">
         <SelectLanguage />
 
-        {/* <Link
+        <Link
           href={"signup"}
           className="rounded-lg border border-red-500 bg-black/80  px-2 py-2 lg:py-3"
         >
           <p className="text-white lg:cursor-pointer">{t("signUp")}</p>
-        </Link> */}
+        </Link>
       </div>
       <Image
         src={MovieCityLogo}

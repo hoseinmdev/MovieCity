@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { BiWorld } from "react-icons/bi";
-const SelectLanguage: React.FC = () => {
+import { UseFormReset } from "react-hook-form";
+
+interface ResetForm {
+  reset?: UseFormReset<{
+    email?: string | undefined;
+    password?: string | undefined;
+  }>;
+}
+
+const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
   const { i18n } = useTranslation();
   const [items] = useState([
     { label: "PERSIAN", value: "fa" },
@@ -9,6 +18,7 @@ const SelectLanguage: React.FC = () => {
   ]);
   const [showLanguages, setShowLanguages] = useState(false);
   const changeLanguage = (lang: string) => {
+    reset !== undefined ? reset() : "";
     i18n.changeLanguage(lang);
     localStorage.setItem("lang", lang);
     setShowLanguages(false);
@@ -33,7 +43,7 @@ const SelectLanguage: React.FC = () => {
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent backdrop-blur-md px-[1.35rem] py-3 lg:px-[1.85rem]">
+        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent px-[1.35rem] py-3 backdrop-blur-md lg:px-[1.85rem]">
           {items.map((i, index) => {
             return (
               <p
