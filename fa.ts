@@ -1,11 +1,16 @@
 export const fa = {
   translation: {
     signUp: "ثبت نام",
+    SignIn: "ورود",
+    SignInYourAccount: "ورود به حساب کاربری",
+    CrateAccount: "ساخت حساب",
+    welcome: "به خانواده ما خوش اومدی ✨",
     StartforFree: "سلام٬ خوش اومدی !",
     CreateAnAccount: "ساخت حساب کاربری",
     EnterYourEmail: "ایمیل خود را وارد کنید",
     EnterYourPassword: "رمز عبور خود را وارد کنید",
     SignUp: "ثبت نام",
+    pullUp: "بکش بالا !",
     SignUpWithGoogle: "ثبت نام با حساب گوگل",
     AlreadyHaveAccount: "از قبل حساب دارید ؟",
     noDownloadLink: "امکان دانلود فیلم وجود ندارد",
