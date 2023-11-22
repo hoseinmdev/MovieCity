@@ -187,6 +187,11 @@
     margin-left: 0.5rem !important;
   }
 }
+@media screen and (max-width: 1024px) {
+  a {
+    cursor: default;
+  }
+}
 .SinglePagebackgroundAnimation {
   animation: SinglePagebackgroundAnimation 10s infinite;
 }
