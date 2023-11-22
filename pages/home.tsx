@@ -78,5 +78,6 @@ export default HomePage;
 
 export const getStaticProps = async () => {
   const data = await getAllMovies();
+  console.log(data);
   return { props: { allMovies: data } };
 };
