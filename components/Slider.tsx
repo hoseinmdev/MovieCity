@@ -12,6 +12,9 @@ import "swiper/css/effect-fade";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { BsHeartFill } from "react-icons/bs";
+import TopMovieLabel from "./common/TopMovieLabel";
+import { AiOutlinePlayCircle } from "react-icons/ai";
 
 const Slider: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -60,6 +63,7 @@ const Slider: React.FC = () => {
       dir="ltr"
       autoplay={{
         delay: 4000,
+        pauseOnMouseEnter:true,
         disableOnInteraction: false,
       }}
       className={`group/trackBox mySwiper fadeShow   mb-4 mt-2 flex h-[17rem] w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[40rem] lg:max-h-none lg:min-h-max  ${
@@ -68,22 +72,66 @@ const Slider: React.FC = () => {
     >
       {slides.map((slide) => {
         return (
-          <SwiperSlide
-            key={slide.imageUrl}
-            className="relative h-full w-full"
-          >
-            <Link className="w-full h-full" href={slide.link}>
+          <SwiperSlide key={slide.imageUrl} className="relative h-full w-full">
+            <Link className="h-full w-full" href={slide.link}>
               <Image
                 width={2000}
                 height={1000}
                 src={slide.imageUrl}
                 loading="lazy"
                 // quality={100}
-                // placeholder="blur"
+                blurDataURL={slide.imageUrl}
+                placeholder="blur"
                 alt="poster"
-                className=" backgroundAnimation h-full lg:object-top  w-full scale-[1.05] object-cover duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90"
+                className=" backgroundAnimation h-full w-full  scale-[1.05] object-cover duration-300 group-hover/trackBox:scale-100 group-hover/trackBox:brightness-90 lg:object-top"
               />
-              <div className="absolute bottom-8 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[8%] ">
+
+              <div className="absolute bottom-0 backdrop-blur-md rounded-full left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex lg:h-16 lg:w-16 w-12 h-12 items-center justify-center group-hover/trackBox:opacity-0 text-white">
+                {/* <img
+                  src={homePageImageUrl}
+                  className="relative h-full  w-full opacity-40 blur-xl"
+                ></img> */}
+                <div className="absolute lg:text-6xl text-5xl">
+                  <AiOutlinePlayCircle />
+                </div>
+                <div className="absolute animate-ping lg:text-6xl text-5xl">
+                  <AiOutlinePlayCircle />
+                </div>
+              </div>
+
+              <div
+                dir={i18n.dir()}
+                className="absolute right-0  top-0 z-[100] flex h-full w-full items-center justify-center font-VazirFont duration-300 hover:bg-black/50 hover:backdrop-blur-[8px]"
+              >
+                <div
+                  className={`container h-full w-full flex-col items-start justify-center gap-6  text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
+                >
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="flex items-center justify-center gap-2">
+                      <p className="text-2xl">{"10 / " + 8}</p>
+                      <div className="rounded-md font-BlackListed text-[2rem]">
+                        IMDB
+                      </div>
+                    </div>
+                    {/* <div className="flex items-center justify-center gap-1 text-white/75">
+                      <p>{500 + "%"}</p>
+                      <BsHeartFill />
+                    </div> */}
+                  </div>
+                  <div
+                    className={`flex flex-col items-start justify-center gap-5 pt-4 ${
+                      i18n.dir() === "rtl"
+                        ? "font-VazirFont"
+                        : "font-BlackListed"
+                    } text-[2rem]`}
+                  >
+                    <p>{t(slide.name)}</p>
+                  </div>
+                  <span className="pt-4">{<TopMovieLabel />}</span>
+                </div>
+              </div>
+
+              <div className="absolute bottom-8 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[8%] lg:hidden">
                 <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
                   <p>{t(slide.name)}</p>
                 </div>
