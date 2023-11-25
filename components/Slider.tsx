@@ -101,7 +101,7 @@ const Slider: React.FC = () => {
 
               <div
                 dir={i18n.dir()}
-                className="absolute right-0  top-0 z-[100] flex h-full w-full items-center justify-center font-VazirFont duration-300 hover:bg-black/50 hover:backdrop-blur-[8px]"
+                className="absolute right-0  top-0 z-[100] flex h-full w-full items-center justify-center font-VazirFont duration-300 hover:bg-black/50 hover:backdrop-blur-[8px] lg:block hidden"
               >
                 <div
                   className={`container h-full w-full flex-col items-start justify-center gap-6  text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
