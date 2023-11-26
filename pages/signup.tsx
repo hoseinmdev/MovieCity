@@ -19,11 +19,8 @@ const SignUp: React.FC = () => {
     password: string;
   }
   const { t, i18n } = useTranslation();
-  const [inputsData, setInputsData] = useState<InputsData>({
-    email: "",
-    password: "",
-  });
-  const [touchPosition, setTouchPosition] = useState<number | null>(0);
+
+  // const [touchPosition, setTouchPosition] = useState<number | null>(0);
   const [customClass, setCustomClass] = useState({
     imageWidth: "translate-x-[0rem] opacity-100 w-full",
     formsWidth: "translate-x-[-50rem] lg:translate-x-[0rem]",
@@ -50,39 +47,32 @@ const SignUp: React.FC = () => {
   });
 
   const onSubmit = async (data: FormData) => {
-    console.log(errors.email);
-    // e.preventDefault();
-    if (inputsData.email !== "" && inputsData.password !== "") {
-      reset();
-      setClicked(true);
-      await axios
-        .post(
-          "https://sildasdasudasdassers",
-          {
-            id: new Date().getTime(),
-            email: inputsData.email,
-            password: inputsData.password,
-          },
-          { headers: { "Content-Type": "application/json" } },
-        )
-        .then((res) => {
-          toast(t("welcome"), { theme: "dark", position: "top-center" });
-          setClicked(false);
-          routes.push("/home");
-        })
-        .catch((rs) => {
-          toast.error(t("tryAgain"), {
-            theme: "dark",
-            position: "top-center",
-          });
-          setClicked(false);
+    const uniqueId = new Date().getTime()
+    reset();
+    setClicked(true);
+    await axios
+      .post(
+        "https://silent-holy-mum.glitch.me/users",
+        {
+          id: uniqueId,
+          email: data.email,
+          password: data.password,
+        },
+        { headers: { "Content-Type": "application/json" } },
+      )
+      .then((res) => {
+        toast(t("welcome"), { theme: "dark", position: "top-center" });
+        setClicked(false);
+        routes.push("/home");
+        localStorage.setItem("token", JSON.stringify(uniqueId));
+      })
+      .catch((rs) => {
+        toast.error(t("tryAgain"), {
+          theme: "dark",
+          position: "top-center",
         });
-    } else {
-      toast.warn(t("completeForms"), {
-        theme: "dark",
-        position: "top-center",
+        setClicked(false);
       });
-    }
   };
 
   // const onTouchStartHandler = (e: any) => {
@@ -145,7 +135,7 @@ const SignUp: React.FC = () => {
         className={`flex h-full items-center justify-center overflow-hidden duration-1000 lg:w-full ${customClass.formsWidth} z-[100]`}
       >
         <div className="relative flex h-full w-[80%] flex-col items-start justify-center  gap-10  md:w-[60%] md:gap-4 lg:w-[70%] lg:justify-center lg:gap-10 lg:pt-0 2xl:w-[55%]">
-          <SelectLanguage  reset={reset}/>
+          <SelectLanguage reset={reset} />
           <div className="fadeShow1 relative flex flex-col gap-6">
             <p className="text-xl lg:text-2xl">{t("StartforFree")}</p>
             <p className="text-3xl lg:text-4xl 2xl:text-5xl">
@@ -155,16 +145,10 @@ const SignUp: React.FC = () => {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className={`fadeShow2 flex w-full flex-col lg:gap-4 gap-3  text-black `}
+            className={`fadeShow2 flex w-full flex-col gap-3 text-black  lg:gap-4 `}
           >
             <input
               {...register("email", { required: "Email Address is required" })}
-              onChange={(e) =>
-                setInputsData({
-                  email: e.target.value,
-                  password: inputsData.password,
-                })
-              }
               type="text"
               className="rounded-lg border-2 border-transparent p-2 !font-VazirFont outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourEmail")}
@@ -182,12 +166,6 @@ const SignUp: React.FC = () => {
               {...register("password", {
                 required: "Email Address is required",
               })}
-              onChange={(e) =>
-                setInputsData({
-                  email: inputsData.email,
-                  password: e.target.value,
-                })
-              }
               type="text"
               className="rounded-lg border-2 border-transparent p-2 !font-VazirFont  outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourPassword")}
