@@ -42,7 +42,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
           <Swiper
             slidesPerView={1.15}
             grid={{
-              rows: 3,
+              rows: 2,
               fill: "row",
             }}
             spaceBetween={20}
