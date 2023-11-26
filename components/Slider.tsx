@@ -62,7 +62,7 @@ const Slider: React.FC = () => {
       effect="fade"
       dir="ltr"
       autoplay={{
-        delay: 4000,
+        delay: 5000,
         pauseOnMouseEnter:true,
         disableOnInteraction: false,
       }}
@@ -104,7 +104,7 @@ const Slider: React.FC = () => {
                 className="absolute right-0  top-0 z-[100] h-full w-full items-center justify-center font-VazirFont duration-300 hover:bg-black/50 hover:backdrop-blur-[8px] lg:flex hidden"
               >
                 <div
-                  className={`container h-full w-full flex-col items-start justify-center gap-6  text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
+                  className={`container p-4 h-full w-full flex-col items-start justify-center gap-6  text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
                 >
                   <div className="flex items-center justify-center gap-4">
                     <div className="flex items-center justify-center gap-2">
