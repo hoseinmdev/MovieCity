@@ -1,6 +1,9 @@
 export const fa = {
   translation: {
     signUp: "ثبت نام",
+    home: "خانه",
+    movies: "فیلم های سینمایی",
+    series: "سریال ها",
     SignIn: "ورود",
     SignInYourAccount: "ورود به حساب کاربری",
     CrateAccount: "ساخت حساب",

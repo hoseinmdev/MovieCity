@@ -1,6 +1,9 @@
 export const en = {
   translation: {
     signUp: "Sign Up",
+    home: "Home",
+    Movies: "Movies",
+    series: "Series",
     StartforFree: "Start for Free",
     CreateAnAccount: "Create an account",
     EnterYourEmail: "Enter your email",
@@ -8,7 +11,7 @@ export const en = {
     tryAgain: "Please try again",
     completeForms: "Please fill out forms",
     emailIsRequired: "Enter your email",
-    emailIsNotTrue: "Email is not true",
+    emailIsNotTrue: "Please enter a valid email",
     passwordIsRequired: "Enter your password",
     EnterYourPassword: "Enter your password",
 
@@ -36,7 +39,7 @@ export const en = {
     soSoCommentText: "Not bad",
     badCommentText: "I do not like it ...",
     fantasy: "Fantasy",
-    UnlimitedMoviesTitle: "Ultimated movies, TV shows, and more ...",
+    UnlimitedMoviesTitle: "Ultimated movies, TV shows, and ...",
     WatchAnywhereAnytime: "Watch anywhere, anytime...",
     WatchAnywhereAnytimeDesc:
       "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV",
