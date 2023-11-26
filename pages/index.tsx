@@ -15,7 +15,7 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
   return (
     <div
-      className="fadeShow font-VazirFont flex w-full flex-col items-center justify-start gap-4 bg-black text-white"
+      className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-black font-VazirFont text-white"
       dir={i18n.dir()}
     >
       <div className="absolute z-[100] flex w-full items-center justify-between bg-black/30 px-10 py-4 lg:w-3/4">
@@ -33,28 +33,29 @@ export default function Home() {
           <Image
             width={2000}
             height={2000}
-            src={johnWickMobile}
+            src="https://is.zobj.net/image-server/v1/images?r=wwsmP0x1aiPKPqH4Io0nQn2Frwfhdv59kN3vZsB9cFEQ2tqOuk1KamKsqPC4MK79hJ8SoqKsE2IRIlm4BHtx7wQPtXSZsMC_wtnxdbBLLWPOy1Jpu8WgBAsojiTUmHx4yuyT2Dk_GHdaAsQQSyQb6cz8KLULAhP8F-NKHaHoon6RISIqv9IpVhDp3_FwuFy8xkpucX-fBdR0ueGQMLY_23ceI6IbPL7g-Q4hOO1-i94UY0yLHLrcduak_vU"
             quality={100}
             loading="lazy"
-            placeholder="blur"
+            // placeholder="blur"
             alt=""
-            className="h-full w-full brightness-50 lg:hidden"
+            className="h-full w-full bg-cover object-cover brightness-50 lg:hidden"
           />
           <Image
-            width={1000}
-            height={1000}
+            width={2000}
+            height={2000}
+            quality={100}
             loading="lazy"
-            placeholder="blur"
+            // placeholder="blur"
             // quality={100}
-            src={johnWick}
+            src="https://wallpapers.com/images/featured/money-heist-segtwbhffwy01w82.jpg"
             alt=""
-            className="backgroundAnimation hidden  w-full brightness-75 lg:block"
+            className="backgroundAnimation hidden  w-full brightness-50  lg:block"
           />
         </div>
 
-        <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[45%]  w-full flex-col items-center justify-around bg-black/50 p-4 text-white shadow-2xl lg:h-[22rem] lg:bg-black/50 lg:p-8">
+        <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[30%]  w-full flex-col items-center justify-around text-white  lg:shadow-2xl backdrop-blur-[2px] lg:h-[22rem] lg:p-8 backdrop-brightness-75 p-2">
           <div className="flex w-full flex-col items-center justify-center gap-2">
-            <p className="text-center text-2xl font-bold lg:text-4xl">
+            <p className="text-center text-xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
             </p>
             <p className="text-xl lg:text-xl"> {t("WatchAnywhereAnytime")}</p>
