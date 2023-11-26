@@ -30,20 +30,22 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
   return (
     <div className="relative z-[100]">
       <div
-        className={`flex items-center justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
+        className={`flex items-center  justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
           !showLanguages
             ? "rounded-lg"
             : " rounded-lg rounded-bl-none rounded-br-none"
         }`}
         onClick={languagesIconClickHandler}
       >
-        {i18n.language === "fa" ? "PERSIAN" : "ENGLISH"}
-        <div className="text-xl">
+        <p className="text-sm lg:text-xl">
+          {i18n.language === "fa" ? "PERSIAN" : "ENGLISH"}
+        </p>
+        <div className="text-base lg:text-xl">
           <BiWorld />
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent px-[1.35rem] py-3 backdrop-blur-md lg:px-[1.85rem]">
+        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent px-[1.35rem] py-3 text-sm backdrop-blur-md lg:px-[1.85rem] lg:text-xl">
           {items.map((i, index) => {
             return (
               <p
@@ -60,8 +62,8 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
         </div>
       )}
 
-      <div className="absolute right-[-0.5rem] top-[-0.5rem] h-4 w-4 rounded-full bg-red-500"></div>
-      <div className="absolute right-[-0.5rem] top-[-0.5rem] h-4 w-4 animate-ping rounded-full bg-red-500"></div>
+      <div className={`absolute ${i18n.dir() === "rtl" ? "right-[-0.5rem]": "left-[-0.5rem]"} top-[-0.5rem] h-4 w-4 rounded-full bg-red-500`}></div>
+      <div className={`absolute ${i18n.dir() === "rtl" ? "right-[-0.5rem]": "left-[-0.5rem]"} top-[-0.5rem] h-4 w-4 animate-ping rounded-full bg-red-500`}></div>
     </div>
   );
 };
