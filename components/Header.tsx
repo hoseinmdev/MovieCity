@@ -49,14 +49,14 @@ const Header = () => {
     // { name: "series", icon: <RiMovieFill />, path: "/home" },
   ];
   return (
-    <div className=" sticky top-0 z-[100] flex h-[4rem] w-full items-center  justify-between bg-black p-2 transition-all lg:h-[5rem]  lg:px-32">
+    <div className=" sticky top-0 z-[100] flex h-[4rem] w-full items-center  justify-between bg-black p-4 transition-all lg:h-[5rem]  lg:px-32">
       <div onClick={menuBurgerHandler} className="text-2xl text-white lg:hidden">
         <CiMenuBurger />
       </div>
 
       <Image
         src={MovieCityLogo}
-        className=" w-[9rem] lg:block  lg:w-[20rem]"
+        className=" w-[9rem] lg:block h-full lg:w-[20rem]"
         alt="Landscape picture"
       />
       <SelectLanguage />
