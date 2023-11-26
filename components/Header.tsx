@@ -72,7 +72,7 @@ const Header = () => {
         </Link>
       </div> */}
 
-      <div
+      {/* <div
         className={`${customStyles.menu} fixed ${
           i18n.dir() === "rtl" ? "right-0" : "left-0"
         } top-0 z-[100]  h-screen backdrop-blur-sm backdrop-brightness-75 transition-all duration-300`}
@@ -118,7 +118,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
     </div>
   );
 };
