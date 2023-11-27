@@ -30,22 +30,22 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
   return (
     <div className="relative z-[100]">
       <div
-        className={`flex items-center  justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-4 lg:py-3 ${
+        className={`flex items-center  justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-6 lg:py-2 ${
           !showLanguages
             ? "rounded-lg"
             : " rounded-lg rounded-bl-none rounded-br-none"
         }`}
         onClick={languagesIconClickHandler}
       >
-        <p className="text-sm lg:text-xl">
-          {i18n.language === "fa" ? "PERSIAN" : "ENGLISH"}
+        <p className="text-sm lg:text-base">
+          {i18n.language === "fa" ? "فارسی" : "ENGLISH"}
         </p>
         <div className="text-base lg:text-xl">
           <BiWorld />
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent px-[1.35rem] py-3 text-sm backdrop-blur-md lg:px-[1.85rem] lg:text-xl">
+        <div className="fadeShow w-full top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-red-500 bg-transparent px-[1.35rem] py-3 text-sm backdrop-blur-md lg:px-[1.5rem] lg:text-base">
           {items.map((i, index) => {
             return (
               <p
