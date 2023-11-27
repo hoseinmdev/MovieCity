@@ -14,17 +14,12 @@ import { UseFormReset, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const SignUp: React.FC = () => {
-  interface InputsData {
-    email: string;
-    password: string;
-  }
   const { t, i18n } = useTranslation();
 
   // const [touchPosition, setTouchPosition] = useState<number | null>(0);
   const [customClass, setCustomClass] = useState({
     imageWidth: "translate-x-[0rem] opacity-100 w-full",
     formsWidth: "translate-x-[-50rem] lg:translate-x-[0rem]",
-    textFade: "opacity-100",
   });
   const [clicked, setClicked] = useState(false);
   const routes = useRouter();
@@ -98,7 +93,6 @@ const SignUp: React.FC = () => {
       setCustomClass({
         imageWidth: "w-full blur-sm brightness-50",
         formsWidth: "w-[100%] translate-x-[0rem]",
-        textFade: "opacity-0",
       });
     }, 500);
   }, []);
@@ -123,11 +117,6 @@ const SignUp: React.FC = () => {
           alt="background"
           className="relative h-full  w-full object-cover "
         />
-        {/* <p
-          className={`absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto h-min w-full animate-bounce p-3 text-center text-5xl backdrop-blur-sm duration-1000 ${customClass.textFade}`}
-        >
-          {t("pullUp")}
-        </p> */}
       </div>
 
       <div
