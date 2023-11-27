@@ -1,5 +1,7 @@
 export const en = {
   translation: {
+    foundMovies:"Found movies : ",
+    search:"Search your movie...",
     signUp: "Sign Up",
     home: "Home",
     Movies: "Movies",
