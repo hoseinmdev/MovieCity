@@ -72,7 +72,7 @@ const Slider: React.FC = () => {
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
       }}
-      className={`group/trackBox mySwiper fadeShow   mb-4 mt-2 flex h-[17rem] w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[40rem] lg:max-h-none lg:min-h-max  ${
+      className={`group/trackBox mySwiper fadeShow   mb-4 mt-2 flex h-[20rem] rounded-b-2xl w-full cursor-pointer items-center justify-center overflow-hidden transition-all sm:h-[24rem] md:h-[28rem] lg:h-[32rem] 2xl:h-[40rem] lg:max-h-none lg:min-h-max  ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
     >
