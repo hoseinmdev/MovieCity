@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-
+import { MdDomain } from "react-icons/md";
 const MenuBurger: React.FC = () => {
   const [customStyles, setCustomStyles] = useState({
     menu: "w-[0%]",
@@ -33,7 +33,8 @@ const MenuBurger: React.FC = () => {
   };
 
   const menuOptions = [
-    { name: "home", icon: <FaHome />, path: "/" },
+    { name: "mainPage", icon: <MdDomain />, path: "/" },
+    { name: "home", icon: <FaHome />, path: "/home" },
     // { name: "movies", icon: <MdLocalMovies />, path: "/home" },
     // { name: "series", icon: <RiMovieFill />, path: "/home" },
   ];
@@ -84,9 +85,13 @@ const MenuBurger: React.FC = () => {
                       href={item.path}
                       onClick={menuBurgerHandler}
                       key={item.name}
-                      className="flex w-full items-center justify-start gap-2 rounded-md border border-white/50 p-2"
+                      className={`flex w-full items-center justify-start gap-2 ${
+                        i18n.dir() === "rtl"
+                          ? "rounded-r-lg rounded-l-3xl"
+                          : "rounded-l-lg rounded-r-3xl"
+                      } border-2 border-white/50 p-2 text-white/70`}
                     >
-                      <div>{item.icon}</div>
+                      <div className="text-red-500">{item.icon}</div>
                       <div>{t(item.name)}</div>
                     </Link>
                   );

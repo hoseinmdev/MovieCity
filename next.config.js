@@ -45,6 +45,8 @@ const nextConfig = {
       "staticg.sportskeeda.com",
       "r1.ilikewallpaper.net",
       "image.winudf.com",
+      "img.freepik.com",
+      "papers.co",
     ],
     remotePatterns: [
       {

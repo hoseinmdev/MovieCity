@@ -28,7 +28,7 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
     setShowLanguages(!showLanguages);
   };
   return (
-    <div className="relative z-[100]">
+    <div className="relative z-[99]">
       <div
         className={`flex items-center  justify-center gap-2 border border-red-500 bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-6 lg:py-2 ${
           !showLanguages

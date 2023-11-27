@@ -1,5 +1,6 @@
 export const fa = {
   translation: {
+    mainPage: "صفحه اصلی",
     foundMovies: "فیلم های پیدا شده : ",
     search: "جستجوی فیلم ...",
     signUp: "ثبت نام",
