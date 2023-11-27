@@ -19,7 +19,9 @@ const SearchInput: React.FC = () => {
   }, []);
   const searchInputHandler = (e: React.FormEvent<HTMLInputElement>) => {
     const findedItems = allMovies.filter((p: any) =>
-      t(p.movieName).toLowerCase().includes(e.currentTarget.value),
+      t(p.movieName)
+        .toLowerCase()
+        .includes(e.currentTarget.value.toLowerCase()),
     );
     setFoundMovies(findedItems);
     setInputValue(e.currentTarget.value);
