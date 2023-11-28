@@ -47,6 +47,7 @@ const nextConfig = {
       "image.winudf.com",
       "img.freepik.com",
       "papers.co",
+      "cdn.vox-cdn.com",
     ],
     remotePatterns: [
       {
