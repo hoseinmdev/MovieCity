@@ -1,6 +1,8 @@
 export const en = {
   translation: {
-    later:"later",
+    note: "this method is only for getting to know the site better and we thank you in advance for your registration 😍",
+
+    later: "later",
     dearUser: "Dear user",
     forDownloadMovie: "For download movie you should signup in movie city",
     mainPage: "Main page",
