@@ -181,12 +181,12 @@ const SignUp: React.FC = () => {
                 )}
               </button>
 
-              <div className="flex gap-1 text-white/60">
+              {/* <div className="flex gap-1 text-white/60">
                 {t("AlreadyHaveAccount")}{" "}
                 <Link href={"signin"} className="text-red-500">
                   {t("SignIn")}
                 </Link>
-              </div>
+              </div> */}
             </div>
           </form>
         </div>
