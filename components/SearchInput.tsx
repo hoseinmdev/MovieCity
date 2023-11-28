@@ -7,16 +7,21 @@ import axios from "axios";
 import { MoviePropTypes } from "@/db";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SearchInput: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [allMovies, setAllMovies] = useState<MoviePropTypes[]>([]);
   const [foundMovies, setFoundMovies] = useState<MoviePropTypes[]>([]);
+  const useRouters = useRouter();
   useEffect(() => {
     axios.get("https://silent-holy-mum.glitch.me/movies").then((res) => {
       setAllMovies(res.data);
     });
   }, []);
+  useEffect(() => {
+    setInputValue("");
+  }, [useRouters.pathname]);
   const searchInputHandler = (e: React.FormEvent<HTMLInputElement>) => {
     const findedItems = allMovies.filter((p: any) =>
       t(p.movieName)
