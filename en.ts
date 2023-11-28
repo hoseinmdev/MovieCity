@@ -1,8 +1,11 @@
 export const en = {
   translation: {
-    mainPage:"Main page",
-    foundMovies:"Found movies : ",
-    search:"Search your movie...",
+    later:"later",
+    dearUser: "Dear user",
+    forDownloadMovie: "For download movie you should signup in movie city",
+    mainPage: "Main page",
+    foundMovies: "Found movies : ",
+    search: "Search your movie...",
     signUp: "Sign Up",
     home: "Home",
     Movies: "Movies",
