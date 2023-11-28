@@ -21,7 +21,7 @@ const SearchInput: React.FC = () => {
   }, []);
   useEffect(() => {
     setInputValue("");
-  }, [useRouters.pathname]);
+  }, [useRouters.asPath]);
   const searchInputHandler = (e: React.FormEvent<HTMLInputElement>) => {
     const findedItems = allMovies.filter((p: any) =>
       t(p.movieName)
@@ -35,6 +35,7 @@ const SearchInput: React.FC = () => {
     <>
       <div className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-stone-800 p-2 lg:w-3/4 lg:p-3">
         <input
+          value={inputValue}
           onChange={searchInputHandler}
           className="w-full bg-stone-800 text-white/60 outline-none"
           placeholder={t("search")}
