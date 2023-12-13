@@ -39,7 +39,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         />
       </Link>
       <div className="z-10 flex h-full w-full flex-col items-start justify-center gap-2 p-4 text-white">
-        <p>{t(movieName)}</p>
+        <p className="font-EstedadFont">{t(movieName)}</p>
         <p className="min-h-[5rem] text-sm text-white/80">
           {t(description || "")}
         </p>
@@ -59,7 +59,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         </div>
         <Link
           href={`${id}`}
-          className="w-full rounded-lg bg-red-500 p-2 text-center text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base"
+          className="font-EstedadFont w-full rounded-lg bg-red-500 p-2 text-center text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base"
         >
           {t("download") + " " + t(movieName)}
         </Link>

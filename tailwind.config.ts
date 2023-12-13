@@ -14,6 +14,7 @@ const config: Config = {
       fontFamily: {
         BlackListed: ["BlackListed"],
         VazirFont: ["VazirFont"],
+        EstedadFont: ["EstedadFont"],
       },
     },
   },

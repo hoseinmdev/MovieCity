@@ -11,11 +11,12 @@ const Header = () => {
       <div className="container flex flex-col items-center justify-between gap-2">
         <div className=" flex  w-full items-center justify-between">
           <MenuBurger />
-          <Image
+          <p className="font-EstedadFont text-red-600 text-3xl italic">Movie City</p>
+          {/* <Image
             src={MovieCityLogo}
             className=" h-full w-[9rem] lg:block lg:w-[20rem]"
             alt="Landscape picture"
-          />
+          /> */}
           <SelectLanguage />
         </div>
         <div className="flex  w-full items-center justify-between">

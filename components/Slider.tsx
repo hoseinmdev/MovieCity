@@ -130,7 +130,7 @@ const Slider: React.FC = () => {
               </div>
 
               <div className="absolute bottom-8 left-0 right-0 ml-auto mr-auto w-full lg:bottom-[8%] lg:hidden">
-                <div className="fadeShow2 flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
+                <div className="fadeShow2 font-EstedadFont flex flex-col items-center justify-start p-2 text-white backdrop-blur-sm backdrop-brightness-50 duration-300 group-hover/trackBox:translate-y-[-1rem]  lg:p-4 lg:text-3xl">
                   <p>{t(slide.name)}</p>
                 </div>
               </div>

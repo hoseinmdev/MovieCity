@@ -55,7 +55,7 @@ export default function Home() {
 
         <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[30%]  w-full flex-col items-center justify-around p-2  text-white backdrop-blur-[2px] backdrop-brightness-75 lg:h-[22rem] lg:p-8 lg:shadow-2xl">
           <div className="flex w-full flex-col items-center justify-center gap-3 lg:gap-4">
-            <p className="text-center text-xl font-bold lg:text-4xl">
+            <p className="font-EstedadFont text-center text-xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
             </p>
             <p className="text-xl lg:text-xl"> {t("WatchAnywhereAnytime")}</p>
@@ -64,10 +64,12 @@ export default function Home() {
           <Link
             href="/home"
             onClick={() => setClicked(true)}
-            className=" w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-lg text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:text-xl  lg:w-[20%] lg:cursor-pointer lg:p-4"
+            className=" w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-lg text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:w-[20%]  lg:cursor-pointer lg:p-4 lg:text-xl"
           >
             {!clicked ? (
-              <p className="animate-bounce">{t("GetStarted")}</p>
+              <p className="font-EstedadFont animate-bounce">
+                {t("GetStarted")}
+              </p>
             ) : (
               <div className="flex w-full animate-spin justify-center">
                 <ImSpinner9 />

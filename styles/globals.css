@@ -10,6 +10,10 @@
   font-family: BlackListed;
   src: url(../assets/fonts/Blacklisted.ttf);
 }
+@font-face {
+  font-family: EstedadFont;
+  src: url(../assets/fonts/Estedad-Bold.ttf);
+}
 
 * {
   /* font-family: "VazirFont"; */

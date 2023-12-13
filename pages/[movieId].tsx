@@ -36,7 +36,7 @@ const SingleMoviePage: React.FC<{
       {currentMovie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
           <div className="fadeShow relative h-full w-full lg:p-2">
-            <div className="lg:max-h-[40rem] w-full overflow-hidden rounded-xl ">
+            <div className="w-full overflow-hidden rounded-xl lg:max-h-[40rem] ">
               <div
                 className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
                 style={{
@@ -47,7 +47,7 @@ const SingleMoviePage: React.FC<{
                 <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
               </div>
             </div>
-            <div className=" absolute bottom-1 left-1 right-2 lg:left-3 lg:bottom-3 lg:right-3 z-10 flex w-full items-end justify-start gap-3 text-white">
+            <div className=" absolute bottom-1 left-1 right-2 z-10 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3">
               <Image
                 placeholder="blur"
                 loading="lazy"
@@ -59,7 +59,7 @@ const SingleMoviePage: React.FC<{
                 alt=""
               />
               <div className="fadeShow2 flex flex-col items-start justify-center gap-2">
-                <p className="text-lg lg:text-2xl">
+                <p className="font-EstedadFont w-[97%] text-lg lg:text-2xl">
                   {t(currentMovie?.movieName || "")}
                 </p>
                 <p>{t(currentMovie?.genre || "")}</p>
@@ -91,7 +91,7 @@ const SingleMoviePage: React.FC<{
           <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
             {t(currentMovie?.description || "")}
           </p>
-          <p className="fadeShow3 flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
+          <p className="fadeShow3 font-EstedadFont flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>
@@ -110,7 +110,7 @@ const SingleMoviePage: React.FC<{
           </div>
 
           <div className="flex flex-col gap-4 p-2">
-            <p className="text-xl">
+            <p className="font-EstedadFont text-xl">
               {currentMovie.downloadLinks?.length !== 0
                 ? t("downloadLinks")
                 : t("noDownloadLink")}
@@ -132,7 +132,7 @@ const SingleMoviePage: React.FC<{
           <Line />
 
           <div className="flex flex-col items-start justify-center gap-4 p-2">
-            <p className="text-xl">{t("actors")}</p>
+            <p className="font-EstedadFont text-xl">{t("actors")}</p>
             <div className="flex items-center justify-center gap-4">
               {currentMovie?.actors?.map((item) => {
                 return (
@@ -152,7 +152,7 @@ const SingleMoviePage: React.FC<{
           <Line />
 
           <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-1/2">
-            <p className="text-xl">{t("usersComments")}</p>
+            <p className="font-EstedadFont text-xl">{t("usersComments")}</p>
             {currentMovie.comments?.map((comment) => {
               return (
                 <Comment

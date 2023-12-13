@@ -13,8 +13,10 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
   const { query } = useRouter();
   const otherMovies = allMovies.filter((movie) => movie.id !== query.movieId);
   return (
-    <div className="w-full flex flex-col gap-4">
-      <p className="text-white/80 text-lg">{t("lastestMovies")}</p>
+    <div className="flex w-full flex-col gap-4">
+      <p className="font-EstedadFont text-lg text-white/80">
+        {t("lastestMovies")}
+      </p>
       <div className="grid w-full grid-cols-2 gap-4 overflow-hidden text-white lg:flex lg:items-start lg:justify-between">
         {otherMovies.slice(0, 8).map((movie) => {
           return (
@@ -28,7 +30,7 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
                   placeholder="blur"
                   loading="lazy"
                   blurDataURL={movie.id}
-                  width={400} 
+                  width={400}
                   height={400}
                   className=""
                   src={movie.imageUrl}
@@ -41,7 +43,9 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
                   </div>
                 </div>
               </div>
-              <p className="text-white/80">{t(movie.movieName)}</p>
+              <p className="font-EstedadFont text-white/80">
+                {t(movie.movieName)}
+              </p>
             </Link>
           );
         })}

@@ -9,7 +9,7 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 
 // import required modules
-import { Grid, Pagination } from "swiper/modules";
+import { Autoplay, Grid, Pagination } from "swiper/modules";
 import { MoviePropTypes } from "@/db";
 import MovieBox from "./common/MovieBox";
 
@@ -18,7 +18,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-2">
-        <p className="fadeShow2 text-xl text-white/80">{t("topContent")}</p>
+        <p className="fadeShow2 text-xl text-white/80 font-EstedadFont">{t("topContent")}</p>
         <div className=" container hidden w-full grid-cols-2 gap-2 lg:grid lg:grid-cols-4 lg:gap-4">
           {data?.map((item) => {
             if (item.top) {
@@ -45,8 +45,13 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
               rows: 2,
               fill: "row",
             }}
+            autoplay={{
+              delay: 1500,
+              pauseOnMouseEnter: true,
+              disableOnInteraction: false,
+            }}
             spaceBetween={20}
-            modules={[Grid, Pagination]}
+            modules={[Grid, Pagination,Autoplay]}
             className="mySwiper w-full"
           >
             {data?.map((item) => {
