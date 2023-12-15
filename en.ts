@@ -86,7 +86,7 @@ export const en = {
     missionImbossible7Desc:
       " In the film Mission Impossible 7: Ethan Hunt gets a mission from the MIF to prevent a mysterious technology called Entity, which is a powerful artificial intelligence, from falling into the wrong hands. In this way, he encounters enemies that he did not expect...",
     spiderman: " Spider-Man: Across the Spider-Verse 2023 ",
-    spidermanDesc: `spidermanDesc:"This is the first episode of the two-part sequel to Spider-Man: Into the Spider-Verse (2018) and is set in a shared multiverse of alternate universes called Spider-Man.`,
+    spidermanDesc: `This is the first episode of the two-part sequel to Spider-Man: Into the Spider-Verse (2018) and is set in a shared multiverse of alternate universes called Spider-Man.`,
 
     ahsoka: "Ahsoka 2023",
     ahsokaDesc:

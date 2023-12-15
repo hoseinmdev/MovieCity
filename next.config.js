@@ -11,12 +11,16 @@ const nextConfig = {
   images: {
     domains: [
       "user-images.githubusercontent.com",
+      "media.newstrack.in",
+      "www.themoviedb.org",
+      "preview.redd.it",
       "www.uptvs.com",
       "ntvb.tmsimg.com",
       "www.hindustantimes.com",
       "movies.universalpictures.com",
       "www.thestatesman.com",
       "images.thedirect.com",
+      "images.fandango.com",
       "www.megmovie.net",
       "filmr.ir",
       "lumiere-a.akamaihd.net",

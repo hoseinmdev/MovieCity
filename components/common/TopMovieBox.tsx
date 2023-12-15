@@ -5,6 +5,7 @@ import { MoviePropTypes } from "@/db";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlinePlayCircle } from "react-icons/ai";
+import i18n from "@/i18n";
 
 const TopMovieBox: React.FC<MoviePropTypes> = ({
   imageUrl,
@@ -21,7 +22,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
     <Link
       href={`${id}`}
       onClick={() => setClicked(true)}
-      className={`fadeShow1 group/trackBox relative flex h-[11.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
+      className={`fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       <Image
         src={homePageImageUrl || ""}
@@ -65,6 +66,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
           <span>{top && <TopMovieLabel />}</span>
         </div>
       </div>
+      <p dir={i18n.dir()} className="font-EstedadFont opacity-70 text-start w-full">{"- " + movieName}</p>
     </Link>
   );
 };

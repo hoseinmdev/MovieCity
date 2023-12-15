@@ -59,8 +59,8 @@ const SingleMoviePage: React.FC<{
                 alt=""
               />
               <div className="fadeShow2 flex flex-col items-start justify-center gap-2">
-                <p className="font-EstedadFont w-[97%] text-lg lg:text-2xl">
-                  {t(currentMovie?.movieName || "")}
+                <p className="font-EstedadFont w-[99&]  text-lg lg:text-2xl">
+                  {t(currentMovie?.movieName || "")}  
                 </p>
                 <p>{t(currentMovie?.genre || "")}</p>
                 <p className="w-[80%] lg:w-full">
