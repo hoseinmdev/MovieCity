@@ -85,11 +85,11 @@ const Slider: React.FC = () => {
       pagination={{ clickable: true }}
       effect="fade"
       dir="ltr"
-      // autoplay={{
-      //   delay: 5000,
-      //   pauseOnMouseEnter: true,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 5000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      }}
       className={`group/trackBox mySwiper fadeShow   mb-4 mt-2 flex h-[20rem] w-full cursor-pointer items-center justify-center overflow-hidden rounded-b-2xl transition-all sm:h-[24rem] md:h-[28rem] lg:h-[32rem] lg:max-h-none lg:min-h-max 2xl:h-[40rem]  ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
