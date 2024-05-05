@@ -102,10 +102,6 @@ const Slider: React.FC = () => {
                 width={2000}
                 height={1000}
                 src={slide.imageUrl}
-                loading="lazy"
-                // quality={100}
-                blurDataURL={slide.imageUrl}
-                placeholder="blur"
                 alt="poster"
                 className=" backgroundAnimation h-full w-full  object-cover duration-300 group-hover/trackBox:brightness-90 lg:object-top"
               />

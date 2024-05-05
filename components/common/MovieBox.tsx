@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 
 const MovieBox: React.FC<MoviePropTypes> = ({
-  id,
+  _id,
   imageUrl,
   imdbScore,
   movieName,
@@ -20,7 +20,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
   return (
     <div className="relative flex min-h-[29rem] w-full flex-col items-center justify-between overflow-hidden  rounded-xl bg-stone-800 brightness-90 lg:w-[100%]">
       <Link
-        href={`${id}`}
+        href={`${_id}`}
         className="relative min-h-[12rem] w-full bg-cover transition duration-300 lg:min-h-[12rem] lg:hover:opacity-70 "
         style={{
           backgroundImage: "url(" + `${backgroundImageUrl}` + ")",
@@ -28,9 +28,6 @@ const MovieBox: React.FC<MoviePropTypes> = ({
       >
         <div className="absolute top-[10rem] z-10 h-20 w-full scale-150 bg-stone-800 blur-md lg:scale-110"></div>
         <Image
-          placeholder="blur"
-          loading="lazy"
-          blurDataURL={id}
           width={400}
           height={400}
           className="absolute right-2 top-6 z-10 w-[6rem] rounded-xl shadow-xl lg:top-2 lg:w-[20%]"
@@ -58,7 +55,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
           </div>
         </div>
         <Link
-          href={`${id}`}
+          href={`${_id}`}
           className="font-EstedadFont w-full rounded-lg bg-red-500 p-2 text-center text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base"
         >
           {t("download") + " " + t(movieName)}

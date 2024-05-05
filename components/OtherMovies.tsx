@@ -11,7 +11,7 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const { query } = useRouter();
-  const otherMovies = allMovies.filter((movie) => movie.id !== query.movieId);
+  const otherMovies = allMovies.filter((movie) => movie._id !== query.movieId);
   return (
     <div className="flex w-full flex-col gap-4">
       <p className="font-EstedadFont text-lg text-white/80">
@@ -21,15 +21,12 @@ const OtherMovies: React.FC<{ allMovies: MoviePropTypes[] }> = ({
         {otherMovies.slice(0, 8).map((movie) => {
           return (
             <Link
-              href={`${movie.id}`}
+              href={`${movie._id}`}
               className=" flex w-full flex-col gap-3 overflow-hidden rounded-lg"
-              key={movie.id}
+              key={movie._id}
             >
               <div className="group/trackBox relative">
                 <Image
-                  placeholder="blur"
-                  loading="lazy"
-                  blurDataURL={movie.id}
                   width={400}
                   height={400}
                   className=""

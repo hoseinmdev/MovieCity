@@ -1,5 +1,5 @@
 export interface MoviePropTypes {
-  id: string;
+  _id: string;
   imageUrl: string;
   backgroundImageUrl?: string;
   homePageImageUrl?: string;

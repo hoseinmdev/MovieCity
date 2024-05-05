@@ -24,7 +24,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
             if (item.top) {
               return (
                 <TopMovieBox
-                  id={item.id}
+                  _id={item._id}
                   key={item.imageUrl}
                   homePageImageUrl={item.homePageImageUrl}
                   imageUrl={item.imageUrl}
@@ -59,7 +59,7 @@ const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
                 return (
                   <SwiperSlide key={item.imageUrl}>
                     <TopMovieBox
-                      id={item.id}
+                      _id={item._id}
                       homePageImageUrl={item.homePageImageUrl}
                       imageUrl={item.imageUrl}
                       imdbScore={item.imdbScore}

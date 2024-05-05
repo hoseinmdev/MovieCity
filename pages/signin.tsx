@@ -77,8 +77,6 @@ const SignIn: React.FC = () => {
           width={2000}
           height={2000}
           src={Johnwick}
-          loading="lazy"
-          placeholder="blur"
           alt="dsa"
           className="backgroundAnimation2 h-full w-full object-cover"
         />

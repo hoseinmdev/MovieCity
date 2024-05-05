@@ -14,21 +14,18 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
   popularity,
   top,
   homePageImageUrl,
-  id,
+  _id,
   // new
 }) => {
   const [clicked, setClicked] = useState(false);
   return (
     <Link
-      href={`${id}`}
+      href={`${_id}`}
       onClick={() => setClicked(true)}
       className={`fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       <Image
         src={homePageImageUrl || ""}
-        placeholder="blur"
-        loading="lazy"
-        blurDataURL={id}
         width={400}
         height={400}
         className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${

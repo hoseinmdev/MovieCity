@@ -9,8 +9,8 @@ const MoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
         if (!item.top) {
           return (
             <MovieBox
-              key={item.id}
-              id={item.id}
+              key={item._id}
+              _id={item._id}
               imageUrl={item.imageUrl}
               imdbScore={item.imdbScore}
               movieName={item.movieName}

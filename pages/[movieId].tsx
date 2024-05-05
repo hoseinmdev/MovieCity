@@ -16,24 +16,17 @@ import axios from "axios";
 import { GET_MOVIES_BASEURL } from "@/redux/movies/moviesSlice";
 import getAllMovies from "@/utils/getAllMovies";
 const SingleMoviePage: React.FC<{
-  movieId: string;
+  movie: MoviePropTypes;
   movies: MoviePropTypes[];
-}> = ({ movieId, movies }) => {
-  const [currentMovie, setCurrentMovie] = useState<
-    MoviePropTypes | undefined
-  >();
-  useEffect(() => {
-    setCurrentMovie(undefined);
-    setTimeout(() => {
-      setCurrentMovie(movies.find((movie) => movie.id === movieId));
-    }, 500);
-  }, [movieId]);
+}> = ({ movie, movies }) => {
+
 
   const { t, i18n } = useTranslation();
 
   return (
     <Layout>
-      {currentMovie ? (
+      dsa
+      {movie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
           <div className="fadeShow relative h-full w-full lg:p-2">
             <div className="w-full overflow-hidden rounded-xl lg:max-h-[40rem] ">
@@ -41,7 +34,7 @@ const SingleMoviePage: React.FC<{
                 className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
                 style={{
                   backgroundImage:
-                    "url(" + `${currentMovie?.backgroundImageUrl}` + ")",
+                    "url(" + `${movie?.backgroundImageUrl}` + ")",
                 }}
               >
                 <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
@@ -49,22 +42,19 @@ const SingleMoviePage: React.FC<{
             </div>
             <div className=" absolute bottom-1 left-1 right-2 z-10 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3">
               <Image
-                placeholder="blur"
-                loading="lazy"
-                blurDataURL={movieId}
                 width={400}
                 height={400}
                 className="fadeShow max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem]"
-                src={currentMovie?.imageUrl}
+                src={movie?.imageUrl}
                 alt=""
               />
               <div className="fadeShow2 flex flex-col items-start justify-center gap-2">
                 <p className="font-EstedadFont w-[99&]  text-lg lg:text-2xl">
-                  {t(currentMovie?.movieName || "")}  
+                  {t(movie?.movieName || "")}  
                 </p>
-                <p>{t(currentMovie?.genre || "")}</p>
+                <p>{t(movie?.genre || "")}</p>
                 <p className="w-[80%] lg:w-full">
-                  {t("director") + " : "} {currentMovie?.director}
+                  {t("director") + " : "} {movie?.director}
                 </p>
                 <div className="flex items-center justify-center gap-2 pt-4">
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
@@ -72,7 +62,7 @@ const SingleMoviePage: React.FC<{
                       <AiFillHeart />
                     </div>
                     <p className="text-sm text-red-500">
-                      {currentMovie?.popularity + "%"}
+                      {movie?.popularity + "%"}
                     </p>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
@@ -80,7 +70,7 @@ const SingleMoviePage: React.FC<{
                       <AiFillStar />
                     </div>
                     <p className="text-sm text-yellow-500">
-                      {"10 / " + currentMovie?.imdbScore}
+                      {"10 / " + movie?.imdbScore}
                     </p>
                   </div>
                 </div>
@@ -89,7 +79,7 @@ const SingleMoviePage: React.FC<{
           </div>
           <Line />
           <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
-            {t(currentMovie?.description || "")}
+            {t(movie?.description || "")}
           </p>
           <p className="fadeShow3 font-EstedadFont flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
@@ -98,32 +88,32 @@ const SingleMoviePage: React.FC<{
 
           <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden p-2 lg:m-3 lg:w-1/2">
             <p className="text-white/80 lg:text-xl">
-              {t("trailer") + " " + t(currentMovie?.movieName || "")}
+              {t("trailer") + " " + t(movie?.movieName || "")}
             </p>
             <video
               controls
               className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-red-500 lg:p-2 "
-              poster={currentMovie?.backgroundImageUrl}
+              poster={movie?.backgroundImageUrl}
             >
-              <source src={currentMovie.trailer} type="video/mp4"></source>
+              <source src={movie.trailer} type="video/mp4"></source>
             </video>
           </div>
 
           <div className="flex flex-col gap-4 p-2">
             <p className="font-EstedadFont text-xl">
-              {currentMovie.downloadLinks?.length !== 0
+              {movie.downloadLinks?.length !== 0
                 ? t("downloadLinks")
                 : t("noDownloadLink")}
             </p>
             <div className="flex w-full flex-col gap-2 ">
-              {currentMovie.downloadLinks?.map((movie) => {
+              {movie.downloadLinks?.map((item) => {
                 return (
                   <DownloadBox
-                    movieId={currentMovie.id}
-                    link={movie.link}
-                    quality={movie.quality}
-                    size={movie.size}
-                    key={movie.link}
+                    movieId={movie._id}
+                    link={item.link}
+                    quality={item.quality}
+                    size={item.size}
+                    key={item.link}
                   />
                 );
               })}
@@ -134,7 +124,7 @@ const SingleMoviePage: React.FC<{
           <div className="flex flex-col items-start justify-center gap-4 p-2">
             <p className="font-EstedadFont text-xl">{t("actors")}</p>
             <div className="flex items-center justify-center gap-4">
-              {currentMovie?.actors?.map((item) => {
+              {movie?.actors?.map((item) => {
                 return (
                   <ActorAvatar
                     key={item.imageUrl}
@@ -153,7 +143,7 @@ const SingleMoviePage: React.FC<{
 
           <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-1/2">
             <p className="font-EstedadFont text-xl">{t("usersComments")}</p>
-            {currentMovie.comments?.map((comment) => {
+            {movie.comments?.map((comment) => {
               return (
                 <Comment
                   key={comment.sender}
@@ -191,20 +181,14 @@ const SkeletonLoading = () => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const data = await getAllMovies();
-  const paths = data.map((movie: MoviePropTypes) => {
-    return { params: { movieId: `${movie.id}` } };
-  });
-  return {
-    paths,
-    fallback: false, // false or "blocking"
-  };
-};
-export const getStaticProps = async (context: { params: any }) => {
-  const data = await getAllMovies();
-  const { params } = context;
-  return { props: { movieId: params.movieId, movies: data } };
+export const getServerSideProps = async (context:any) => {
+  const allMoviesRes = await fetch("https://movie-city-api.liara.run/api/movies");
+  const allMoviesData = await allMoviesRes.json();
+  const movieRes = await fetch(
+    `https://movie-city-api.liara.run/api/movies/${context.params.movieId}`,
+  );
+  const MovieData = await movieRes.json();
+  return { props: { movie: MovieData.data, movies: allMoviesData.data } };
 };
 
 export default SingleMoviePage;

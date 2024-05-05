@@ -35,8 +35,6 @@ export default function Home() {
             height={2000}
             src="https://is.zobj.net/image-server/v1/images?r=wwsmP0x1aiPKPqH4Io0nQn2Frwfhdv59kN3vZsB9cFEQ2tqOuk1KamKsqPC4MK79hJ8SoqKsE2IRIlm4BHtx7wQPtXSZsMC_wtnxdbBLLWPOy1Jpu8WgBAsojiTUmHx4yuyT2Dk_GHdaAsQQSyQb6cz8KLULAhP8F-NKHaHoon6RISIqv9IpVhDp3_FwuFy8xkpucX-fBdR0ueGQMLY_23ceI6IbPL7g-Q4hOO1-i94UY0yLHLrcduak_vU"
             quality={100}
-            loading="lazy"
-            // placeholder="blur"
             alt=""
             className="h-full w-full bg-cover object-cover brightness-50 lg:hidden"
           />
@@ -44,9 +42,6 @@ export default function Home() {
             width={2000}
             height={2000}
             quality={100}
-            loading="lazy"
-            // placeholder="blur"
-            // quality={100}
             src="https://wallpapers.com/images/featured/money-heist-segtwbhffwy01w82.jpg"
             alt=""
             className="backgroundAnimation hidden  w-full brightness-50  lg:block"

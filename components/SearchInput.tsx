@@ -52,8 +52,8 @@ const SearchInput: React.FC = () => {
               {foundMovies.map((m) => {
                 return (
                   <SearchedMovie
-                    key={m.id}
-                    id={m.id}
+                    key={m._id}
+                    id={m._id}
                     imageUrl={m.imageUrl}
                     movieName={m.movieName}
                     backgroundImageUrl={m.backgroundImageUrl}
@@ -92,9 +92,6 @@ const SearchedMovie: React.FC<SearchedMovieProps> = ({
         width={1000}
         height={1000}
         quality={100}
-        blurDataURL={backgroundImageUrl || ""}
-        loading="lazy"
-        placeholder="blur"
         src={backgroundImageUrl || ""}
         alt="sa"
         className="h-full w-full bg-current object-cover object-left blur-sm brightness-75 lg:blur-md lg:brightness-50"
@@ -104,9 +101,6 @@ const SearchedMovie: React.FC<SearchedMovieProps> = ({
           width={200}
           height={200}
           src={imageUrl}
-          blurDataURL={imageUrl || ""}
-          loading="lazy"
-          placeholder="blur"
           quality={100}
           alt="sa"
           className=" max-w-20 max-h-28 rounded-xl bg-cover object-cover lg:max-h-full lg:max-w-[10rem]"
