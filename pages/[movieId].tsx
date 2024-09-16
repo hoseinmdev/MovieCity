@@ -22,10 +22,8 @@ const SingleMoviePage: React.FC<{
 
 
   const { t, i18n } = useTranslation();
-
   return (
     <Layout>
-      dsa
       {movie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
           <div className="fadeShow relative h-full w-full lg:p-2">
@@ -40,7 +38,7 @@ const SingleMoviePage: React.FC<{
                 <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
               </div>
             </div>
-            <div className=" absolute bottom-1 left-1 right-2 z-10 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3">
+            <div className=" absolute bottom-1 left-1 right-2 z-10 lg:h-72 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3">
               <Image
                 width={400}
                 height={400}
@@ -48,14 +46,14 @@ const SingleMoviePage: React.FC<{
                 src={movie?.imageUrl}
                 alt=""
               />
-              <div className="fadeShow2 flex flex-col items-start justify-center gap-2">
-                <p className="font-EstedadFont w-[99&]  text-lg lg:text-2xl">
+              <div className="fadeShow2 flex flex-col items-start justify-between h-full gap-2">
+                <p className="font-EstedadFont w-[97%]  text-lg lg:text-2xl">
                   {t(movie?.movieName || "")}  
                 </p>
                 <p>{t(movie?.genre || "")}</p>
-                <p className="w-[80%] lg:w-full">
+                {/* <p className="w-[80%] lg:w-full">
                   {t("director") + " : "} {movie?.director}
-                </p>
+                </p> */}
                 <div className="flex items-center justify-center gap-2 pt-4">
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
                     <div className="rounded-lg bg-red-500 px-2 py-1 text-2xl">
@@ -92,7 +90,7 @@ const SingleMoviePage: React.FC<{
             </p>
             <video
               controls
-              className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-red-500 lg:p-2 "
+              className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-primary lg:p-2 "
               poster={movie?.backgroundImageUrl}
             >
               <source src={movie.trailer} type="video/mp4"></source>

@@ -15,8 +15,8 @@ const SearchInput: React.FC = () => {
   const [foundMovies, setFoundMovies] = useState<MoviePropTypes[]>([]);
   const useRouters = useRouter();
   useEffect(() => {
-    axios.get("https://silent-holy-mum.glitch.me/movies").then((res) => {
-      setAllMovies(res.data);
+    axios.get("https://movie-city-api.liara.run/api/movies").then((res) => {
+      setAllMovies(res.data.data);
     });
   }, []);
   useEffect(() => {

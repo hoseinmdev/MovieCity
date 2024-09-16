@@ -8,12 +8,13 @@ import ComingSoonMovies from "@/components/ComingSoonMovies";
 import Line from "@/components/common/Line";
 import getAllMovies from "@/utils/getAllMovies";
 import Slider from "@/components/Slider";
-const HomePage: React.FC = ({allMovies}:any) => {
+import UsersComments from "@/components/UsersComments";
+const HomePage: React.FC = ({ allMovies }: any) => {
   const { t, i18n } = useTranslation();
   const renderContent = () => {
     return (
       <Layout>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-8">
           <Slider />
           <Line />
 
@@ -21,20 +22,22 @@ const HomePage: React.FC = ({allMovies}:any) => {
             <TopMoviesContainer data={allMovies} />
           </div>
           <Line />
-          {/* <div className="container ml-auto mr-auto flex w-full items-start justify-between gap-4 p-2">
+          <div className="container ml-auto mr-auto flex w-full items-start justify-between gap-4 p-2">
             <div className="flex w-full flex-col gap-4 text-white">
-              <p className="fadeShow2 font-EstedadFont pr-4 text-xl">
+              <p className="fadeShow2 pr-4 font-EstedadFont text-xl">
                 {t("lastestMovies")}
               </p>
               <MoviesContainer data={allMovies} />
             </div>
             <ComingSoonMovies />
-          </div> */}
+          </div>
+          <Line />
+          <UsersComments />
         </div>
       </Layout>
     );
   };
-  return ( 
+  return (
     <div>{allMovies.length !== 0 ? renderContent() : <HomePageLoading />}</div>
   );
 };
@@ -84,10 +87,10 @@ export default HomePage;
 //   return { props: { allMovies: data } };
 // };
 
-export const getServerSideProps = (async () => {
+export const getServerSideProps = async () => {
   // Fetch data from external API
-  const res = await fetch('https://movie-city-api.liara.run/api/movies')
-  const data = await res.json()
+  const res = await fetch("https://movie-city-api.liara.run/api/movies");
+  const data = await res.json();
   // Pass data to the page via props
-  return { props: { allMovies:data.data } }
-}) 
+  return { props: { allMovies: data.data } };
+};

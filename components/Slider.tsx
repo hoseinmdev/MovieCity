@@ -15,13 +15,14 @@ import { useTranslation } from "react-i18next";
 import { BsHeartFill } from "react-icons/bs";
 import TopMovieLabel from "./common/TopMovieLabel";
 import { AiOutlinePlayCircle } from "react-icons/ai";
+import Button from "./common/Button";
 
 const Slider: React.FC = () => {
   const { t, i18n } = useTranslation();
 
   const slides = [
     {
-      link: "d78978998qw232456453261321g321313feadseqweqwaf",
+      link: "661ec8daa21065e66b3fb0e1",
       name: "exteraction2",
       imageUrl: "https://wallpapercave.com/wp/wp12330728.jpg",
       image2Url:
@@ -30,7 +31,7 @@ const Slider: React.FC = () => {
       desc: "exteraction2Desc",
     },
     {
-      link: "dsdsdad3qwvcxvcxweqweqwasfsagfeadsaf",
+      link: "661ec8daa21065e66b3fb09e",
       name: "missionImbossible7",
       imageUrl: "https://cdn.mos.cms.futurecdn.net/aY7EBRx2jguJHXWBYpuCYR.jpg",
       image2Url:
@@ -39,7 +40,7 @@ const Slider: React.FC = () => {
       desc: "missionImbossible7Desc",
     },
     {
-      link: "dsdsdad3qwedeqw456456agfeadsaf",
+      link: "661ec8daa21065e66b3fb0b1",
       name: "meg2",
       imageUrl: "https://images.hdqwalls.com/wallpapers/meg-2-4k-jw.jpg",
       image2Url:
@@ -48,7 +49,7 @@ const Slider: React.FC = () => {
       desc: "meg2Desc",
     },
     {
-      link: "dsdsdad3qeqwewqeqwdsadsadasd",
+      link: "661ec8daa21065e66b3fb094",
       name: "oppenheimer",
       imageUrl:
         "https://www.slashfilm.com/img/gallery/how-christopher-nolans-oppenheimer-recreated-a-nuclear-explosion-without-using-cgi/intro-1684863178.jpg",
@@ -58,7 +59,7 @@ const Slider: React.FC = () => {
       desc: "oppenheimerDesc",
     },
     {
-      link: "d3qwedeqweqweqwasfsagfeadsaf",
+      link: "661ec8daa21065e66b3fb0a8",
       name: "spiderman",
       imageUrl:
         "https://i.pinimg.com/originals/f3/17/5b/f3175b3ecba9dd763a2660da4c2d5a0f.jpg",
@@ -68,7 +69,7 @@ const Slider: React.FC = () => {
       desc: "spidermanDesc",
     },
     {
-      link: "dsdsdad3qwedeqw456456a321321gfeadseqweqwaf",
+      link: "661ec8daa21065e66b3fb0c5",
       name: "littleMermaid",
       imageUrl:
         "https://www.pixground.com/wp-content/uploads/2023/04/The-Little-Mermaid-2023-4K-Wallpaper-jpg.webp",
@@ -122,13 +123,11 @@ const Slider: React.FC = () => {
                 <div
                   className={`container flex h-full w-full  items-center justify-between gap-6 p-4  text-base text-white  opacity-100 transition-all duration-300 `}
                 >
-                  <div className="flex w-max flex-col items-start gap-3 lg:gap-8">
+                  <div className="flex w-max flex-col items-start gap-3 lg:gap-6">
                     <div className="flex items-center justify-center gap-4">
                       <div className="flex items-center justify-center gap-2">
-                        <p className="lg:text-2xl">{"10 / " + slide.imdb}</p>
-                        <div className="rounded-md text-yellow-500 lg:text-[2rem]">
-                          IMDB
-                        </div>
+                        <Image width={50} height={50} className="lg:w-auto w-10" src={"/icons/imdb.svg"} alt=""/>
+                        <p className="text-xs lg:text-2xl">{"10 / " + slide.imdb}</p>
                       </div>
                     </div>
                     <div
@@ -151,8 +150,21 @@ const Slider: React.FC = () => {
                           : t(slide.desc)
                         : ""}
                     </p>
+                      <Button
+                        type="primary"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <Image
+                          width={15}
+                          height={15}
+                          alt=""
+                          src={"/icons/play.svg"}
+                          className="w-5 lg:w-auto"
+                        />
+                        <p className="lg:text-2xl">{t("watchNow")}</p>
+                      </Button>
                   </div>
-                  <div className="self-start lg:self-center">
+                  <div className="self-start lg:self-center lg:block hidden">
                     <Image
                       width={600}
                       height={600}

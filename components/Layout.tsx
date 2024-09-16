@@ -9,9 +9,9 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="font-VazirFont bg-stone-900" dir={i18n.dir()}>
+    <div className="font-VazirFont bg-background" dir={i18n.dir()}>
       <Header />
-      <div className="fadeShow bg-stone-900">{children}</div>
+      <div className="fadeShow bg-background">{children}</div>
       <Footer />
     </div>
   );

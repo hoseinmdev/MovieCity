@@ -12,6 +12,7 @@ import { ImSpinner9 } from "react-icons/im";
 import * as Yup from "yup";
 import { UseFormReset, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Button from "@/components/common/Button";
 
 const SignUp: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -139,7 +140,7 @@ const SignUp: React.FC = () => {
             <input
               {...register("email", { required: "Email Address is required" })}
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourEmail")}
             />
             {errors.email && (
@@ -156,7 +157,7 @@ const SignUp: React.FC = () => {
                 required: "Email Address is required",
               })}
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont  outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont  outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourPassword")}
             />
             {errors.password && (
@@ -168,18 +169,13 @@ const SignUp: React.FC = () => {
               </p>
             )}
             <div className="fadeShow3 mt-10 flex w-full flex-col gap-4">
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-red-500 py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-red-600 lg:py-3 lg:text-xl 2xl:text-2xl"
+              <Button
+              isLoading={clicked}
+                type="primary"
+                className="w-full rounded-lg py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  lg:py-3 lg:text-xl 2xl:text-2xl"
               >
-                {!clicked ? (
-                  t("SignUp")
-                ) : (
-                  <div className="flex w-full animate-spin justify-center">
-                    <ImSpinner9 />
-                  </div>
-                )}
-              </button>
+                {t("SignUp")}
+              </Button>
 
               {/* <div className="flex gap-1 text-white/60">
                 {t("AlreadyHaveAccount")}{" "}

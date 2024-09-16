@@ -34,10 +34,14 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
         alt="Landscape pdicture"
       />
       <div className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex h-24 w-24 items-center justify-center group-hover/trackBox:opacity-0">
-        <img
-          src={homePageImageUrl}
+        <Image
+          width={50}
+          height={50}
+          alt=""
+          src={homePageImageUrl || ""}
           className="relative h-full  w-full opacity-40 blur-xl"
-        ></img>
+        />
+
         <div className="absolute text-4xl">
           <AiOutlinePlayCircle />
         </div>
@@ -63,7 +67,12 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
           <span>{top && <TopMovieLabel />}</span>
         </div>
       </div>
-      <p dir={i18n.dir()} className="font-EstedadFont opacity-70 text-start w-full">{"- " + movieName}</p>
+      <p
+        dir={i18n.dir()}
+        className="w-full text-start font-EstedadFont opacity-70"
+      >
+        {movieName}
+      </p>
     </Link>
   );
 };

@@ -10,6 +10,7 @@ import { ImSpinner9 } from "react-icons/im";
 import johnWick from "@/assets/johnWick.jpeg";
 import johnWickMobile from "@/assets/johnWickMobile.jpg";
 import Line from "@/components/common/Line";
+import Button from "@/components/common/Button";
 export default function Home() {
   const { i18n, t } = useTranslation();
   const [clicked, setClicked] = useState(false);
@@ -50,26 +51,16 @@ export default function Home() {
 
         <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[30%]  w-full flex-col items-center justify-around p-2  text-white backdrop-blur-[2px] backdrop-brightness-75 lg:h-[22rem] lg:p-8 lg:shadow-2xl">
           <div className="flex w-full flex-col items-center justify-center gap-3 lg:gap-4">
-            <p className="font-EstedadFont text-center text-xl font-bold lg:text-4xl">
+            <p className="text-center font-EstedadFont text-xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
             </p>
             <p className="text-xl lg:text-xl"> {t("WatchAnywhereAnytime")}</p>
             <p className="text-xl lg:text-4xl">{t("ReadyToWatch")}</p>
           </div>
-          <Link
-            href="/home"
-            onClick={() => setClicked(true)}
-            className=" w-[80%] cursor-default rounded-lg bg-red-600 p-2 text-center text-lg text-white transition duration-200 hover:translate-y-[-0.2rem] hover:scale-105 lg:w-[20%]  lg:cursor-pointer lg:p-4 lg:text-xl"
-          >
-            {!clicked ? (
-              <p className="font-EstedadFont animate-bounce">
-                {t("GetStarted")}
-              </p>
-            ) : (
-              <div className="flex w-full animate-spin justify-center">
-                <ImSpinner9 />
-              </div>
-            )}
+          <Link href="/home" onClick={() => setClicked(true)}>
+            <Button isLoading={clicked} type="primary" className="!text-3xl animate-bounce !p-4 !px-20">
+              {t("GetStarted")}
+            </Button>
           </Link>
           {/* <Image
             width={350}

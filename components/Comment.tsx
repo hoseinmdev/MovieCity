@@ -16,7 +16,7 @@ const Comment: React.FC<CommentProps> = ({ sender, text }) => {
       }  bg-neutral-800/80 p-2 text-white/80`}
     >
       <div className="flex items-center justify-center gap-2">
-        <div className="rounded-full border-2 border-indigo-500 p-2">
+        <div className="rounded-full border-2 border-primary p-2">
           <FaUserAlt />
         </div>
         <p className="text-white/60 ">{t("aCommentFrom") + sender}</p>

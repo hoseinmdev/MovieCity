@@ -2,6 +2,7 @@ import { t } from "i18next";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
+import Button from "./common/Button";
 
 const SignupButton: React.FC = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -13,16 +14,20 @@ const SignupButton: React.FC = () => {
     <div
       className={`${
         isLogin ? "hidden" : ""
-      } flex w-1/2 items-center justify-end gap-3`}
+      } flex w-auto whitespace-nowrap items-center justify-end gap-3`}
     >
       <Link
         href={"signup"}
-        className="flex items-center gap-2 rounded-lg bg-red-600 px-2 py-1 text-white lg:py-2 lg:px-6"
       >
-        <p className="lg:cursor-pointer">{t("signUp")}</p>
-        <span>
-          <FaUser />
-        </span>
+        <Button
+          type="primary"
+          className="flex items-center justify-center gap-2 !px-3"
+        >
+          <p className="lg:cursor-pointer">{t("signUp")}</p>
+          <span>
+            <FaUser />
+          </span>
+        </Button>
       </Link>
     </div>
   );

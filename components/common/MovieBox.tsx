@@ -56,7 +56,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         </div>
         <Link
           href={`${_id}`}
-          className="font-EstedadFont w-full rounded-lg bg-red-500 p-2 text-center text-sm text-white transition-all duration-300 hover:bg-red-600 lg:text-base"
+          className="font-EstedadFont w-full rounded-lg bg-primary p-2 text-center text-sm text-white transition-all duration-300 hover:brightness-110 lg:text-base"
         >
           {t("download") + " " + t(movieName)}
         </Link>

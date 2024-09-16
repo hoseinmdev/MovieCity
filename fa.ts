@@ -134,5 +134,6 @@ export const fa = {
     aCommentFrom: "یک نظر از ",
     usersComments: "نظرات کاربران",
     fantasy: "فانتزی",
+    watchNow: "بریم واسه تماشا",
   },
 };

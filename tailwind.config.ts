@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#7c3aed",
+        primary: "#f43f5e",
+        gold:"#EAB308",
+        background: "#18181B",
       },
       screens: {
         betterhover: { raw: "(hover: hover)" },

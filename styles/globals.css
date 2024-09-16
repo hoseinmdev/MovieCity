@@ -180,10 +180,10 @@
   }
 }
 .swiper-pagination-bullet {
-  background-color: white !important;
+  @apply !bg-white lg:!mx-2 transition-all duration-300;
 }
 .swiper-pagination-bullet-active {
-  background-color: red !important;
+  @apply !w-7 !rounded-md !bg-primary  transition-all duration-300;
 }
 @media screen and (min-width: 1024px) {
   .swiper-pagination-bullet {

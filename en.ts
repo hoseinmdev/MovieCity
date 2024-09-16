@@ -140,5 +140,6 @@ export const en = {
     trailer: "Trailer",
     aCommentFrom: "A comment from ",
     usersComments: "Users Comments",
+    watchNow: "Watch Now",
   },
 };
