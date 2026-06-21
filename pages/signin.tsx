@@ -27,11 +27,11 @@ const SignIn: React.FC = () => {
       >
         <div className="relative flex h-full w-[80%] flex-col items-start justify-start  gap-10 pt-10 md:w-[60%] md:gap-4 lg:w-[70%] lg:justify-center lg:gap-10 lg:pt-0 2xl:w-[55%]">
           <SelectLanguage />
-          <div className="fadeShow1 flex flex-col gap-6">
+          {/* <div className="fadeShow1 flex flex-col gap-6">
             <p className="text-3xl lg:text-4xl 2xl:text-4xl">
               {t("SignInYourAccount")}{" "}
             </p>
-          </div>
+          </div> */}
 
           <div className="fadeShow2 flex w-full flex-col gap-4  text-black">
             <input

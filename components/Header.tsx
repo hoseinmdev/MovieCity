@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div
       className={createConditionalClass(
-        "sticky top-0 z-[100] flex  h-[7rem] w-full flex-col items-center justify-between gap-2 bg-black/50 p-4 backdrop-blur-md transition-all lg:h-[8rem]  lg:px-32",
+        "sticky top-0 z-[100] flex  h-[7rem] w-full flex-col items-center justify-between gap-2 bg-black/50 p-4 backdrop-blur-md transition-all lg:h-[8rem] ",
         { "!bg-neutral-700/50": scrollY > 300 },
       )}
     >
@@ -40,7 +40,7 @@ const Header = () => {
         </div>
         <div className="flex  w-full items-center justify-between gap-3">
           <SearchInput />
-          <SignupButton />
+          {/* <SignupButton /> */}
         </div>
       </div>
     </div>
