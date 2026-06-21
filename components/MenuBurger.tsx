@@ -1,6 +1,5 @@
 import i18n from "@/i18n";
 import { t } from "i18next";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
@@ -59,12 +58,9 @@ const MenuBurger: React.FC = () => {
           <div
             className={`${customStyles.menuImage} relative w-full overflow-hidden duration-300`}
           >
-            <Image
+            <img
               alt=""
               src="https://image.winudf.com/v2/image1/Y29tLm1vYmVhc3lhcHAuYXBwOTA5MTkyMjQ1MjNfc2NyZWVuXzBfMTY3Njg0OTU1Ml8wMzA/screen-0.webp?fakeurl=1&type=.webp"
-              width={1000}
-              height={1000}
-              quality={100}
               className="h-full w-full bg-cover object-cover object-right"
             />
             <div
