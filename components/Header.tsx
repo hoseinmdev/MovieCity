@@ -1,6 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
 import SelectLanguage from "./common/SelectLanguage";
-import MovieCityLogo from "@/assets/MovieCityLogo.png";
 import SearchInput from "./SearchInput";
 import MenuBurger from "./MenuBurger";
 import SignupButton from "./SignupButton";
@@ -11,7 +10,7 @@ const Header = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", (e) => {
+    window.addEventListener("scroll", () => {
       setScrollY(window.scrollY);
     });
   }, [scrollY]);
@@ -26,9 +25,12 @@ const Header = () => {
       <div className="container flex flex-col items-center justify-between gap-2">
         <div className=" flex  w-full items-center justify-between">
           <MenuBurger />
-          <p className="font-EstedadFont text-3xl italic text-primary">
+          <Link
+            href="/"
+            className="font-EstedadFont text-3xl italic text-primary"
+          >
             Movie City
-          </p>
+          </Link>
           {/* <Image
             src={MovieCityLogo}
             className=" h-full w-[9rem] lg:block lg:w-[20rem]"

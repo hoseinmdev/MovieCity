@@ -43,7 +43,7 @@ const SignUp: React.FC = () => {
   });
 
   const onSubmit = async (data: FormData) => {
-    const uniqueId = new Date().getTime()
+    const uniqueId = new Date().getTime();
     reset();
     setClicked(true);
     await axios
@@ -109,14 +109,11 @@ const SignUp: React.FC = () => {
         <Image
           width={2000}
           height={2000}
-          // onTouchStart={(e) => onTouchStartHandler(e)}
-          // onTouchMove={(e) => onTouchMoveHandler(e)}
-          src="https://i.redd.it/mdphmi1pulf41.jpg"
+          src={Johnwick}
           loading="lazy"
           placeholder="blur"
-          blurDataURL="https://i.redd.it/mdphmi1pulf41.jpg"
           alt="background"
-          className="relative h-full  w-full object-cover "
+          className="relative h-full w-full object-cover"
         />
       </div>
 
@@ -170,7 +167,7 @@ const SignUp: React.FC = () => {
             )}
             <div className="fadeShow3 mt-10 flex w-full flex-col gap-4">
               <Button
-              isLoading={clicked}
+                isLoading={clicked}
                 type="primary"
                 className="w-full rounded-lg py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  lg:py-3 lg:text-xl 2xl:text-2xl"
               >
