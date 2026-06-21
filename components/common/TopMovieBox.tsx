@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TopMovieLabel from "./TopMovieLabel";
 import { BsHeartFill } from "react-icons/bs";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlinePlayCircle } from "react-icons/ai";

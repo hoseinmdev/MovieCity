@@ -1,6 +1,6 @@
 import TopMoviesContainer from "@/components/TopMoviesContainer";
 import { useTranslation } from "react-i18next";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import Skeleton from "@/components/common/Skeleton";
 import Layout from "@/components/Layout";
 import MoviesContainer from "@/components/MoviesContainer";

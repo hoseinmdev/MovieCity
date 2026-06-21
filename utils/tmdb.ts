@@ -1,4 +1,4 @@
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 
 const BASE = "https://api.themoviedb.org/3";
 const IMG = "https://image.tmdb.org/t/p";

@@ -2,7 +2,6 @@ import Link from "next/link";
 import SelectLanguage from "./common/SelectLanguage";
 import SearchInput from "./SearchInput";
 import MenuBurger from "./MenuBurger";
-import SignupButton from "./SignupButton";
 import { useEffect, useState } from "react";
 import createConditionalClass from "@/utils/createConditionalClass";
 

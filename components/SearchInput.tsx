@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import Modal from "./common/Modal";
 import axios from "axios";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";

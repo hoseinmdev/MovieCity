@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import { useTranslation } from "react-i18next";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { BsFillBellFill } from "react-icons/bs";

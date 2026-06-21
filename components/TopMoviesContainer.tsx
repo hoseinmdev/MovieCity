@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Grid, Pagination } from "swiper/modules";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import MovieBox from "./common/MovieBox";
 
 const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {

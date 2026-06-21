@@ -1,4 +1,4 @@
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 import React from "react";
 import MovieBox from "./common/MovieBox";
 

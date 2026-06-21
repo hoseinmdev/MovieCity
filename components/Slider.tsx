@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import TopMovieLabel from "./common/TopMovieLabel";
 import Button from "./common/Button";
-import { MoviePropTypes } from "@/db";
+import { MoviePropTypes } from "@/types";
 
 const BLUR_URL =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
