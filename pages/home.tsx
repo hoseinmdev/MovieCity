@@ -6,7 +6,13 @@ import Layout from "@/components/Layout";
 import MoviesContainer from "@/components/MoviesContainer";
 import ComingSoonMovies from "@/components/ComingSoonMovies";
 import Line from "@/components/common/Line";
-import Slider from "@/components/Slider";
+import dynamic from "next/dynamic";
+const Slider = dynamic(() => import("@/components/Slider"), {
+  ssr: false,
+  loading: () => (
+    <div className="mb-4 mt-2 h-[20rem] w-full animate-pulse rounded-b-2xl bg-stone-800 sm:h-[24rem] md:h-[28rem] lg:h-[32rem] 2xl:h-[40rem]" />
+  ),
+});
 import UsersComments from "@/components/UsersComments";
 import {
   getPopularMovies,
@@ -25,8 +31,7 @@ const HomePage: React.FC<HomePageProps> = ({
   sliderMovies,
   comingSoonMovies,
 }) => {
-
-  console.log({allMovies});
+  console.log({ allMovies });
   const { t } = useTranslation();
   const renderContent = () => {
     return (

@@ -7,6 +7,9 @@ import Image from "next/image";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import i18n from "@/i18n";
 
+const BLUR_URL =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+
 const TopMovieBox: React.FC<MoviePropTypes> = ({
   imageUrl,
   imdbScore,
@@ -15,33 +18,39 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
   top,
   homePageImageUrl,
   _id,
-  // new
 }) => {
   const [clicked, setClicked] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <Link
       href={`${_id}`}
       onClick={() => setClicked(true)}
       className={`fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
+      {!loaded && (
+        <div className="absolute inset-0 z-10 h-[14rem] animate-pulse rounded-lg bg-stone-700" />
+      )}
       <Image
-        src={homePageImageUrl || ""}
+        src={homePageImageUrl || imageUrl}
         width={400}
         height={400}
-        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-300 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${
+        placeholder="blur"
+        blurDataURL={BLUR_URL}
+        onLoad={() => setLoaded(true)}
+        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-500 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${
           clicked ? "blur-sm" : ""
-        }`}
-        alt="Landscape pdicture"
+        } ${loaded ? "opacity-100" : "opacity-0"}`}
+        alt={movieName}
       />
       <div className="absolute bottom-0 left-0 right-0 top-0 mb-auto ml-auto mr-auto mt-auto flex h-24 w-24 items-center justify-center group-hover/trackBox:opacity-0">
         <Image
           width={50}
           height={50}
           alt=""
-          src={homePageImageUrl || ""}
-          className="relative h-full  w-full opacity-40 blur-xl"
+          src={homePageImageUrl || imageUrl}
+          className="relative h-full w-full opacity-40 blur-xl"
         />
-
         <div className="absolute text-4xl">
           <AiOutlinePlayCircle />
         </div>
@@ -50,7 +59,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
         </div>
       </div>
       <div
-        className={`absolute  h-full flex-col items-start justify-center  p-4 pt-6 text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex `}
+        className={`absolute h-full flex-col items-start justify-center p-4 pt-6 text-base text-white opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100 lg:flex`}
       >
         <div className="flex items-center justify-center gap-4">
           <div className="flex items-center justify-center gap-2">

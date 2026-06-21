@@ -96,14 +96,14 @@ const SingleMoviePage: React.FC<{
             {t("RevisedSiteContent")}
           </p>
 
-          <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden p-2 lg:m-3 lg:w-1/2">
+          <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden p-2 lg:m-3">
             <p className="text-white/80 lg:text-xl">
               {t("trailer") + " " + movie?.movieName}
             </p>
             {movie.trailer ? (
               <iframe
                 src={movie.trailer}
-                className="h-[13rem] rounded-xl lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-primary lg:p-2"
+                className="aspect-video w-full rounded-xl "
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
