@@ -17,7 +17,7 @@ const SignIn: React.FC = () => {
   });
   return (
     <div
-      className={` fadeShow flex h-screen w-full items-center justify-between bg-stone-900 text-white  ${
+      className={` fadeShow flex h-screen w-full items-center justify-between bg-surface text-white  ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
     >
@@ -42,7 +42,7 @@ const SignIn: React.FC = () => {
                 })
               }
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourEmail")}
             />
             <input
@@ -53,19 +53,19 @@ const SignIn: React.FC = () => {
                 })
               }
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-red-500  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
               placeholder={t("EnterYourPassword")}
             />
           </div>
 
           <div className="fadeShow3 flex w-full flex-col gap-4">
-            <button className="w-full rounded-lg bg-red-500 py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-red-600 lg:py-3 lg:text-xl 2xl:text-2xl">
+            <button className="w-full rounded-lg bg-primary py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-primaryHover lg:py-3 lg:text-xl 2xl:text-2xl">
               {t("SignIn")}
             </button>
-            <button className="w-full rounded-lg bg-red-500 py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-red-600 lg:py-3 lg:text-xl 2xl:text-2xl">
+            <button className="w-full rounded-lg bg-primary py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-primaryHover lg:py-3 lg:text-xl 2xl:text-2xl">
               {t("SignUpWithGoogle")}
             </button>
-            <Link href={"signup"} className="w-max text-red-500">
+            <Link href={"signup"} className="w-max text-primary">
               {t("CrateAccount")}
             </Link>
           </div>

@@ -9,9 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#f43f5e",
-        gold:"#EAB308",
-        background: "#18181B",
+        primary: "var(--color-primary)",
+        primaryHover: "var(--color-primary-hover)",
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+        surface2: "var(--color-surface2)",
+        surface3: "var(--color-surface3)",
+        gold: "var(--color-gold)",
       },
       screens: {
         betterhover: { raw: "(hover: hover)" },

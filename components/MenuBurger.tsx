@@ -69,7 +69,7 @@ const MenuBurger: React.FC = () => {
               } top-0 flex w-full flex-col items-start justify-start gap-6 bg-black p-4 text-white duration-300`}
             >
               <div
-                className="text-3xl text-red-500"
+                className="text-3xl text-primary"
                 onClick={menuBurgerHandler}
               >
                 <IoMdClose />
@@ -87,7 +87,7 @@ const MenuBurger: React.FC = () => {
                           : "rounded-l-lg rounded-r-3xl"
                       } border-2 border-white/50 p-2 text-white/70`}
                     >
-                      <div className="text-red-500">{item.icon}</div>
+                      <div className="text-primary">{item.icon}</div>
                       <div>{t(item.name)}</div>
                     </Link>
                   );

@@ -29,7 +29,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
       className={`fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       {!loaded && (
-        <div className="absolute inset-0 z-10 h-[14rem] animate-pulse rounded-lg bg-stone-700" />
+        <div className="absolute inset-0 z-10 h-[14rem] animate-pulse rounded-lg bg-surface3" />
       )}
       <Image
         src={homePageImageUrl || imageUrl}

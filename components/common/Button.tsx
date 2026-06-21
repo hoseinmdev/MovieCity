@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
           'border-gray4 border bg-white text-black hover:opacity-80':
             type === 'cancel',
           'bg-warning-400 text-white hover:opacity-80': type === 'yellow',
-          'text-white bg-red-400 hover:opacity-80':
+          'text-white bg-primary hover:opacity-80':
             type === 'red',
           'cursor-not-allowed opacity-50': isDisabled || isLoading,
           [className as string]: Boolean(className),

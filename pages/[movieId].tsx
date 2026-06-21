@@ -50,7 +50,7 @@ const SingleMoviePage: React.FC<{
                     "url(" + `${movie?.backgroundImageUrl}` + ")",
                 }}
               >
-                <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
+                <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-surface/50 blur-3xl lg:w-[30%]"></div>
               </div>
             </div>
             <div className=" absolute bottom-1 left-1 right-2 z-10 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3 lg:h-72">
@@ -68,18 +68,18 @@ const SingleMoviePage: React.FC<{
                 <p>{movie?.genre}</p>
                 <div className="flex items-center justify-center gap-2 pt-4">
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
-                    <div className="rounded-lg bg-red-500 px-2 py-1 text-2xl">
+                    <div className="rounded-lg bg-primary px-2 py-1 text-2xl">
                       <AiFillHeart />
                     </div>
-                    <p className="text-sm text-red-500">
+                    <p className="text-sm text-primary">
                       {movie?.popularity + "%"}
                     </p>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
-                    <div className="rounded-lg bg-yellow-500 px-2 py-1 text-2xl">
+                    <div className="rounded-lg bg-gold px-2 py-1 text-2xl">
                       <AiFillStar />
                     </div>
-                    <p className="text-sm text-yellow-500">
+                    <p className="text-sm text-gold">
                       {"10 / " + movie?.imdbScore}
                     </p>
                   </div>
@@ -91,7 +91,7 @@ const SingleMoviePage: React.FC<{
           <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
             {movie?.description}
           </p>
-          <p className="fadeShow3 flex items-center gap-2 p-2 font-EstedadFont text-sm text-yellow-500 lg:text-base">
+          <p className="fadeShow3 flex items-center gap-2 p-2 font-EstedadFont text-sm text-gold lg:text-base">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>

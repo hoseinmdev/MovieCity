@@ -21,7 +21,7 @@ const MovieBox: React.FC<MoviePropTypes> = ({
   const [posterLoaded, setPosterLoaded] = useState(false);
 
   return (
-    <div className="relative flex min-h-[29rem] w-full flex-col items-center justify-between overflow-hidden rounded-xl bg-stone-800 brightness-90 lg:w-[100%]">
+    <div className="relative flex min-h-[29rem] w-full flex-col items-center justify-between overflow-hidden rounded-xl bg-surface2 brightness-90 lg:w-[100%]">
       <Link
         href={`${_id}`}
         className="relative min-h-[12rem] w-full bg-cover transition duration-300 lg:min-h-[12rem] lg:hover:opacity-70"
@@ -31,10 +31,10 @@ const MovieBox: React.FC<MoviePropTypes> = ({
             : undefined,
         }}
       >
-        <div className="absolute top-[10rem] z-10 h-20 w-full scale-150 bg-stone-800 blur-md lg:scale-110"></div>
+        <div className="absolute top-[10rem] z-10 h-20 w-full scale-150 bg-surface2 blur-md lg:scale-110"></div>
 
         {!posterLoaded && (
-          <div className="absolute right-2 top-6 z-10 h-[9rem] w-[6rem] animate-pulse rounded-xl bg-stone-600 lg:top-2 lg:w-[20%]" />
+          <div className="absolute right-2 top-6 z-10 h-[9rem] w-[6rem] animate-pulse rounded-xl bg-surface3 lg:top-2 lg:w-[20%]" />
         )}
         <Image
           width={400}
@@ -58,16 +58,16 @@ const MovieBox: React.FC<MoviePropTypes> = ({
         </p>
         <div className="flex items-center justify-center gap-2 pt-4">
           <div className="flex flex-col items-center justify-center gap-1 text-white">
-            <div className="rounded-lg bg-red-500 px-2 py-1 text-2xl">
+            <div className="rounded-lg bg-primary px-2 py-1 text-2xl">
               <AiFillHeart />
             </div>
-            <p className="text-sm text-red-500">{popularity + "%"}</p>
+            <p className="text-sm text-primary">{popularity + "%"}</p>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 text-white">
-            <div className="rounded-lg bg-yellow-500 px-2 py-1 text-2xl">
+            <div className="rounded-lg bg-gold px-2 py-1 text-2xl">
               <AiFillStar />
             </div>
-            <p className="text-sm text-yellow-500">{"10 / " + imdbScore}</p>
+            <p className="text-sm text-gold">{"10 / " + imdbScore}</p>
           </div>
         </div>
         <Link

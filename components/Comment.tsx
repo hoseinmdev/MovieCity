@@ -13,7 +13,7 @@ const Comment: React.FC<CommentProps> = ({ sender, text }) => {
     <div
       className={`flex w-full flex-col items-start justify-start gap-2 p-3 ${
         i18n.dir() === "rtl" ? "rounded-l-full" : "rounded-r-full"
-      }  bg-neutral-800/80 p-2 text-white/80`}
+      }  bg-surface2/80 p-2 text-white/80`}
     >
       <div className="flex items-center justify-center gap-2">
         <div className="rounded-full border-2 border-primary p-2">

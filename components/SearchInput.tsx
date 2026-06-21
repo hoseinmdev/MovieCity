@@ -37,11 +37,11 @@ const SearchInput: React.FC = () => {
 
   return (
     <>
-      <div className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-stone-800 p-2 lg:w-3/4 lg:p-3">
+      <div className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-surface2 p-2 lg:w-3/4 lg:p-3">
         <input
           value={inputValue}
           onChange={searchInputHandler}
-          className="w-full bg-stone-800 text-white/60 outline-none"
+          className="w-full bg-surface2 text-white/60 outline-none"
           placeholder={t("search")}
         />
         <div className="animate-bounce text-xl text-white/60 lg:text-2xl">

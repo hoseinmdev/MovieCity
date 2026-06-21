@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #7C3AED;
+  --color-primary-hover: #A855F7;
+  --color-background: #0A0A0F;
+  --color-surface: #12121A;
+  --color-surface2: #1C1C28;
+  --color-surface3: #252535;
+  --color-gold: #F59E0B;
+}
+
 @font-face {
   font-family: VazirFont;
   src: url(../assets/fonts/Vazir.woff);
@@ -225,17 +235,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #12121A;
   border-radius: 8px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #7C3AED;
   border-radius: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #A855F7;
 }

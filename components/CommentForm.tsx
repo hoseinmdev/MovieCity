@@ -37,7 +37,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col gap-3 rounded-xl bg-stone-900 p-4"
+      className="flex w-full flex-col gap-3 rounded-xl bg-surface p-4"
     >
       <p className="font-EstedadFont text-white/70">{t("leaveAComment")}</p>
       <input
@@ -45,7 +45,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
         onChange={(e) => setSender(e.target.value)}
         placeholder={t("yourName")}
         maxLength={50}
-        className="w-full rounded-lg bg-stone-800 p-3 text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-primary"
+        className="w-full rounded-lg bg-surface2 p-3 text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-primary"
       />
       <textarea
         value={text}
@@ -53,7 +53,7 @@ const CommentForm: React.FC<CommentFormProps> = ({
         placeholder={t("yourComment")}
         rows={3}
         maxLength={500}
-        className="w-full resize-none rounded-lg bg-stone-800 p-3 text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-primary"
+        className="w-full resize-none rounded-lg bg-surface2 p-3 text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-primary"
       />
       <div className="flex items-center gap-4">
         <Button
