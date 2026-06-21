@@ -141,5 +141,11 @@ export const en = {
     aCommentFrom: "A comment from ",
     usersComments: "Users Comments",
     watchNow: "Watch Now",
+    leaveAComment: "Leave a comment",
+    yourName: "Your name",
+    yourComment: "Your comment...",
+    submitComment: "Submit",
+    noComments: "No comments yet. Be the first!",
+    commentAdded: "Comment added!",
   },
 };

@@ -5,18 +5,38 @@ import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { BsFillBellFill } from "react-icons/bs";
 import ActorAvatar from "@/components/common/ActorAvatar";
 import Comment from "@/components/Comment";
+import CommentForm from "@/components/CommentForm";
 import Skeleton from "@/components/common/Skeleton";
 import OtherMovies from "@/components/OtherMovies";
 import DownloadBox from "@/components/DownloadBox";
 import Image from "next/image";
 import Line from "@/components/common/Line";
 import { getMovieDetail, getSimilarMovies } from "@/utils/tmdb";
+import { getComments, CommentData } from "@/utils/comments";
+import { useEffect, useState, useCallback } from "react";
 
 const SingleMoviePage: React.FC<{
   movie: MoviePropTypes;
   movies: MoviePropTypes[];
 }> = ({ movie, movies }) => {
   const { t } = useTranslation();
+  const [comments, setComments] = useState<CommentData[]>([]);
+  const [commentsLoading, setCommentsLoading] = useState(true);
+
+  const fetchComments = useCallback(async () => {
+    if (!movie?._id) return;
+    setCommentsLoading(true);
+    try {
+      const data = await getComments(movie._id);
+      setComments(data);
+    } finally {
+      setCommentsLoading(false);
+    }
+  }, [movie?._id]);
+
+  useEffect(() => {
+    fetchComments();
+  }, [fetchComments]);
   return (
     <Layout>
       {movie ? (
@@ -26,13 +46,14 @@ const SingleMoviePage: React.FC<{
               <div
                 className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
                 style={{
-                  backgroundImage: "url(" + `${movie?.backgroundImageUrl}` + ")",
+                  backgroundImage:
+                    "url(" + `${movie?.backgroundImageUrl}` + ")",
                 }}
               >
                 <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
               </div>
             </div>
-            <div className=" absolute bottom-1 left-1 right-2 z-10 lg:h-72 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3">
+            <div className=" absolute bottom-1 left-1 right-2 z-10 flex w-full items-end justify-start gap-3 text-white lg:bottom-3 lg:left-3 lg:right-3 lg:h-72">
               <Image
                 width={400}
                 height={400}
@@ -40,8 +61,8 @@ const SingleMoviePage: React.FC<{
                 src={movie?.imageUrl}
                 alt=""
               />
-              <div className="fadeShow2 flex flex-col items-start justify-between h-full gap-2">
-                <p className="font-EstedadFont w-[97%]  text-lg lg:text-2xl">
+              <div className="fadeShow2 flex h-full flex-col items-start justify-between gap-2">
+                <p className="w-[97%] font-EstedadFont  text-lg lg:text-2xl">
                   {movie?.movieName}
                 </p>
                 <p>{movie?.genre}</p>
@@ -70,7 +91,7 @@ const SingleMoviePage: React.FC<{
           <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
             {movie?.description}
           </p>
-          <p className="fadeShow3 font-EstedadFont flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
+          <p className="fadeShow3 flex items-center gap-2 p-2 font-EstedadFont text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
             {t("RevisedSiteContent")}
           </p>
@@ -135,15 +156,23 @@ const SingleMoviePage: React.FC<{
 
           <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-1/2">
             <p className="font-EstedadFont text-xl">{t("usersComments")}</p>
-            {movie.comments?.map((comment) => {
-              return (
+            <CommentForm movieId={movie._id} onCommentAdded={fetchComments} />
+            {commentsLoading ? (
+              <div className="flex w-full flex-col gap-3">
+                <Skeleton className="h-16 w-full rounded-xl" />
+                <Skeleton className="h-16 w-full rounded-xl" />
+              </div>
+            ) : comments.length === 0 ? (
+              <p className="text-white/40">{t("noComments")}</p>
+            ) : (
+              comments.map((comment) => (
                 <Comment
-                  key={comment.sender}
+                  key={comment.id}
                   sender={comment.sender}
                   text={comment.text}
                 />
-              );
-            })}
+              ))
+            )}
           </div>
         </div>
       ) : (
