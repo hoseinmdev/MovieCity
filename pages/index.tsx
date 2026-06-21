@@ -4,8 +4,8 @@ import SelectLanguage from "@/components/common/SelectLanguage";
 import { useTranslation } from "react-i18next";
 import MovieCityLogo from "../assets//MovieCityLogo.png";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { ImSpinner9 } from "react-icons/im";
 import johnWick from "@/assets/johnWick.jpeg";
 import johnWickMobile from "@/assets/johnWickMobile.jpg";
@@ -13,7 +13,14 @@ import Line from "@/components/common/Line";
 import Button from "@/components/common/Button";
 export default function Home() {
   const { i18n, t } = useTranslation();
+  const router = useRouter();
   const [clicked, setClicked] = useState(false);
+
+  const handleGetStarted = () => {
+    setClicked(true);
+    router.push("/home");
+  };
+
   return (
     <div
       className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-black font-VazirFont text-white"
@@ -57,11 +64,15 @@ export default function Home() {
             <p className="text-xl lg:text-xl"> {t("WatchAnywhereAnytime")}</p>
             <p className="text-xl lg:text-4xl">{t("ReadyToWatch")}</p>
           </div>
-          <Link href="/home" onClick={() => setClicked(true)}>
-            <Button isLoading={clicked} type="primary" className="!text-3xl animate-bounce !p-4 !px-20">
-              {t("GetStarted")}
-            </Button>
-          </Link>
+          <Button
+            isLoading={clicked}
+            onClick={handleGetStarted}
+            htmlType="button"
+            type="primary"
+            className="animate-bounce !p-4 !px-20 !text-3xl"
+          >
+            {t("GetStarted")}
+          </Button>
           {/* <Image
             width={350}
             height={350}

@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout";
 import { MoviePropTypes } from "@/db";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { BsFillBellFill } from "react-icons/bs";
@@ -8,20 +7,16 @@ import ActorAvatar from "@/components/common/ActorAvatar";
 import Comment from "@/components/Comment";
 import Skeleton from "@/components/common/Skeleton";
 import OtherMovies from "@/components/OtherMovies";
-import { useRouter } from "next/router";
 import DownloadBox from "@/components/DownloadBox";
 import Image from "next/image";
 import Line from "@/components/common/Line";
-import axios from "axios";
-import { GET_MOVIES_BASEURL } from "@/redux/movies/moviesSlice";
-import getAllMovies from "@/utils/getAllMovies";
+import { getMovieDetail, getSimilarMovies } from "@/utils/tmdb";
+
 const SingleMoviePage: React.FC<{
   movie: MoviePropTypes;
   movies: MoviePropTypes[];
 }> = ({ movie, movies }) => {
-
-
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Layout>
       {movie ? (
@@ -31,8 +26,7 @@ const SingleMoviePage: React.FC<{
               <div
                 className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
                 style={{
-                  backgroundImage:
-                    "url(" + `${movie?.backgroundImageUrl}` + ")",
+                  backgroundImage: "url(" + `${movie?.backgroundImageUrl}` + ")",
                 }}
               >
                 <div className="absolute bottom-0 h-[50%] w-[80%] scale-125 bg-stone-900/50 blur-3xl lg:w-[30%]"></div>
@@ -48,12 +42,9 @@ const SingleMoviePage: React.FC<{
               />
               <div className="fadeShow2 flex flex-col items-start justify-between h-full gap-2">
                 <p className="font-EstedadFont w-[97%]  text-lg lg:text-2xl">
-                  {t(movie?.movieName || "")}  
+                  {movie?.movieName}
                 </p>
-                <p>{t(movie?.genre || "")}</p>
-                {/* <p className="w-[80%] lg:w-full">
-                  {t("director") + " : "} {movie?.director}
-                </p> */}
+                <p>{movie?.genre}</p>
                 <div className="flex items-center justify-center gap-2 pt-4">
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
                     <div className="rounded-lg bg-red-500 px-2 py-1 text-2xl">
@@ -77,7 +68,7 @@ const SingleMoviePage: React.FC<{
           </div>
           <Line />
           <p className="fadeShow3 p-2 text-white/80 lg:w-3/4">
-            {t(movie?.description || "")}
+            {movie?.description}
           </p>
           <p className="fadeShow3 font-EstedadFont flex items-center gap-2 p-2 text-sm text-yellow-500 lg:text-base">
             <BsFillBellFill />
@@ -86,15 +77,18 @@ const SingleMoviePage: React.FC<{
 
           <div className="fadeShow3 flex w-full flex-col gap-2 overflow-hidden p-2 lg:m-3 lg:w-1/2">
             <p className="text-white/80 lg:text-xl">
-              {t("trailer") + " " + t(movie?.movieName || "")}
+              {t("trailer") + " " + movie?.movieName}
             </p>
-            <video
-              controls
-              className="h-[13rem] rounded-xl  object-cover object-left lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-primary lg:p-2 "
-              poster={movie?.backgroundImageUrl}
-            >
-              <source src={movie.trailer} type="video/mp4"></source>
-            </video>
+            {movie.trailer ? (
+              <iframe
+                src={movie.trailer}
+                className="h-[13rem] rounded-xl lg:h-[20rem] lg:w-[40rem] lg:border-x-2 lg:border-t-2 lg:border-primary lg:p-2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <p className="text-white/50">{t("noDownloadLink")}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-4 p-2">
@@ -125,7 +119,7 @@ const SingleMoviePage: React.FC<{
               {movie?.actors?.map((item) => {
                 return (
                   <ActorAvatar
-                    key={item.imageUrl}
+                    key={item.name}
                     name={item.name}
                     imageUrl={item.imageUrl}
                   />
@@ -145,8 +139,8 @@ const SingleMoviePage: React.FC<{
               return (
                 <Comment
                   key={comment.sender}
-                  sender={`${t(comment.sender)}`}
-                  text={`${t(comment.text)}`}
+                  sender={comment.sender}
+                  text={comment.text}
                 />
               );
             })}
@@ -179,14 +173,17 @@ const SkeletonLoading = () => {
   );
 };
 
-export const getServerSideProps = async (context:any) => {
-  const allMoviesRes = await fetch("https://movie-city-api.liara.run/api/movies");
-  const allMoviesData = await allMoviesRes.json();
-  const movieRes = await fetch(
-    `https://movie-city-api.liara.run/api/movies/${context.params.movieId}`,
-  );
-  const MovieData = await movieRes.json();
-  return { props: { movie: MovieData.data, movies: allMoviesData.data } };
+export const getServerSideProps = async (context: any) => {
+  try {
+    const id = context.params.movieId as string;
+    const [movie, movies] = await Promise.all([
+      getMovieDetail(id),
+      getSimilarMovies(id),
+    ]);
+    return { props: { movie, movies } };
+  } catch {
+    return { notFound: true };
+  }
 };
 
 export default SingleMoviePage;

@@ -6,16 +6,33 @@ import Layout from "@/components/Layout";
 import MoviesContainer from "@/components/MoviesContainer";
 import ComingSoonMovies from "@/components/ComingSoonMovies";
 import Line from "@/components/common/Line";
-import getAllMovies from "@/utils/getAllMovies";
 import Slider from "@/components/Slider";
 import UsersComments from "@/components/UsersComments";
-const HomePage: React.FC = ({ allMovies }: any) => {
-  const { t, i18n } = useTranslation();
+import {
+  getPopularMovies,
+  getTrendingMovies,
+  getUpcomingMovies,
+} from "@/utils/tmdb";
+
+interface HomePageProps {
+  allMovies: MoviePropTypes[];
+  sliderMovies: MoviePropTypes[];
+  comingSoonMovies: { movieName: string; imageUrl: string }[];
+}
+
+const HomePage: React.FC<HomePageProps> = ({
+  allMovies,
+  sliderMovies,
+  comingSoonMovies,
+}) => {
+
+  console.log({allMovies});
+  const { t } = useTranslation();
   const renderContent = () => {
     return (
       <Layout>
         <div className="flex flex-col gap-8">
-          <Slider />
+          <Slider movies={sliderMovies} />
           <Line />
 
           <div className="container ml-auto mr-auto p-2">
@@ -29,7 +46,7 @@ const HomePage: React.FC = ({ allMovies }: any) => {
               </p>
               <MoviesContainer data={allMovies} />
             </div>
-            <ComingSoonMovies />
+            <ComingSoonMovies movies={comingSoonMovies} />
           </div>
           <Line />
           <UsersComments />
@@ -81,16 +98,21 @@ const HomePageLoading = () => {
 };
 export default HomePage;
 
-// export const getStaticProps = async () => {
-//   const data = await getAllMovies();
-//   console.log(data);
-//   return { props: { allMovies: data } };
-// };
-
-export const getServerSideProps = async () => {
-  // Fetch data from external API
-  const res = await fetch("https://movie-city-api.liara.run/api/movies");
-  const data = await res.json();
-  // Pass data to the page via props
-  return { props: { allMovies: data.data } };
+export const getStaticProps = async () => {
+  try {
+    const [allMovies, sliderMovies, comingSoonMovies] = await Promise.all([
+      getPopularMovies(),
+      getTrendingMovies(),
+      getUpcomingMovies(),
+    ]);
+    return {
+      props: { allMovies, sliderMovies, comingSoonMovies },
+      revalidate: 3600,
+    };
+  } catch {
+    return {
+      props: { allMovies: [], sliderMovies: [], comingSoonMovies: [] },
+      revalidate: 60,
+    };
+  }
 };

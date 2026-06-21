@@ -10,7 +10,6 @@ export default function Document() {
           href="https://www.pngmart.com/files/11/Sad-Pepe-The-Frog-Meme-PNG-Transparent-Picture.png"
         ></link>
         <meta name="theme-color" content="#000" />
-        <title>Movie City</title>
       </Head>
       <body className="bg-current">
         <Main />

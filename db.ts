@@ -20,7 +20,7 @@ export interface MoviePropTypes {
 const allMovies = [
   // TOP
   {
-    id: "dsdsdad3qwedasfsagfeadsaf",
+    _id:"dsdsdad3qwedasfsagfeadsaf",
     movieName: `jawan`,
     trailer: "https://trailer.uptvs.com/trailer/Jawan Trailer.mp4",
     actors: [
@@ -71,7 +71,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qwedeqweqweqwasfsagfeadsaf",
+    _id:"dsdsdad3qwedeqweqweqwasfsagfeadsaf",
     movieName: `theNun2`,
     trailer: "https://trailer.uptvs.com/trailer/THE-NUN-II-2023-Trailer.mp4",
     genre: "scary",
@@ -119,7 +119,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qwedeeqweqwsfsagfeadsaf",
+    _id:"dsdsdad3qwedeeqweqwsfsagfeadsaf",
     movieName: `ahsoka`,
     genre: "action",
     trailer: "https://trailer.uptvs.com/trailer/Ahsoka-2023-Trailer.mp4",
@@ -161,7 +161,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qwedeqweqweqwasfsagfeadsafqeqw",
+    _id:"dsdsdad3qwedeqweqweqwasfsagfeadsafqeqw",
     movieName: `equalizer`,
     trailer:
       "https://trailer.uptvs.com/trailer/THE-EQUALIZER-3-2023-Trailer.mp4",
@@ -211,7 +211,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qeqwewqeqwdsadsadasd",
+    _id:"dsdsdad3qeqwewqeqwdsadsadasd",
     movieName: `oppenheimer`,
     trailer: "https://trailer.uptvs.com/trailer/Oppenheimer-2023-Trailer.mp4",
     genre: "biography",
@@ -264,7 +264,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qwvcxvcxweqweqwasfsagfeadsaf",
+    _id:"dsdsdad3qwvcxvcxweqweqwasfsagfeadsaf",
     movieName: `missionImbossible7`,
 
     actors: [
@@ -317,7 +317,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "d3qwedeqweqweqwasfsagfeadsaf",
+    _id:"d3qwedeqweqweqwasfsagfeadsaf",
     movieName: `spiderman`,
     trailer:
       "https://trailer.uptvs.com/trailer/SPIDER-MAN-Across-the-Spider-Verse-Trailer.mp4",
@@ -366,7 +366,7 @@ const allMovies = [
     new: true,
   },
   {
-    id: "dsdsdad3qwedeqw456456agfeadsaf",
+    _id:"dsdsdad3qwedeqw456456agfeadsaf",
     movieName: `meg2`,
     trailer:
       "https://trailer.uptvs.com/trailer/Meg%202-%20The%20Trench%202023%20trailer.mp4",
@@ -420,7 +420,7 @@ const allMovies = [
 
   // Common
   {
-    id: "dsdsdad3qwedeqw456456agfeadseqweqwaf",
+    _id:"dsdsdad3qwedeqw456456agfeadseqweqwaf",
     movieName: `transformers`,
     trailer:
       "https://trailer.uptvs.com/trailer/Transformers-Rise-of-the-Beasts-Trailer.mp4",
@@ -469,7 +469,7 @@ const allMovies = [
     popularity: 79,
   },
   {
-    id: "dsdsdad3qwedeqw456456a321321gfeadseqweqwaf",
+    _id:"dsdsdad3qwedeqw456456a321321gfeadseqweqwaf",
     movieName: `littleMermaid`,
     trailer:
       "https://trailer.uptvs.com/trailer/The%20Little%20Mermaid%202023%20Trailer.mp4",
@@ -513,7 +513,7 @@ const allMovies = [
     popularity: 85,
   },
   {
-    id: "dsdsdad3qw2321321g321313feadseqweqwaf",
+    _id:"dsdsdad3qw2321321g321313feadseqweqwaf",
     movieName: `elmental`,
     genre: "fantasy",
     trailer: "https://trailer.uptvs.com/trailer/Elemental-2022-Trailer.mp4",
@@ -557,7 +557,7 @@ const allMovies = [
     popularity: 86,
   },
   {
-    id: "d78978998qw2321321g321313feadseqweqwaf",
+    _id:"d78978998qw2321321g321313feadseqweqwaf",
     movieName: `flash`,
     trailer: "https://trailer.uptvs.com/trailer/The-Flash-2023Trailer.mp4",
     downloadLinks: [
@@ -606,7 +606,7 @@ const allMovies = [
     popularity: 83,
   },
   {
-    id: "d78978998qw232456453261321g321313feadseqweqwaf",
+    _id:"d78978998qw232456453261321g321313feadseqweqwaf",
     movieName: `exteraction2`,
     trailer: "https://trailer.uptvs.com/trailer/EXTRACTION-2-2023-Trailer.mp4",
     genre: "action",
@@ -654,7 +654,7 @@ const allMovies = [
     popularity: 45,
   },
   {
-    id: "d78978998qw2324564561321g321313feadseqweqwaf",
+    _id:"d78978998qw2324564561321g321313feadseqweqwaf",
     movieName: `coldHearted`,
     trailer:
       "https://trailer.uptvs.com/trailer/Heart-of-Stone-2023-Trailer.mp4",
