@@ -1,6 +1,6 @@
- 👋🏻 Hi, this is a Movie site, like Netflix
+👋🏻 Hi, this is a Movie site, like Netflix
 
-***😵‍💫 With amazing feauters***
+**_😵‍💫 With amazing feauters_**
 
 1️ - This is Multi language 🌱<br />
 2 - Full Responsive 💥<br />
@@ -9,9 +9,10 @@
 5 - You Can Download Movies 👌🏻<br />
 6 - And ...
 
+### You can visit Movie-City online in : [LiveDemo](https://movie-city-sigma.vercel.app/)<br />
 
-### You can visit Movie-City online in : [LiveDemo](https://movie-city-nextjs.netlify.app/)<br />
-### ***Enjoy it 😉***
+### **_Enjoy it 😉_**
+
 <br />
 <br />
 
