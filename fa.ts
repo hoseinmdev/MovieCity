@@ -135,5 +135,11 @@ export const fa = {
     usersComments: "نظرات کاربران",
     fantasy: "فانتزی",
     watchNow: "بریم واسه تماشا",
+    leaveAComment: "نظر بگذارید",
+    yourName: "نام شما",
+    yourComment: "نظر شما...",
+    submitComment: "ثبت نظر",
+    noComments: "هنوز نظری ثبت نشده. اولین نفر باش!",
+    commentAdded: "نظر ثبت شد!",
   },
 };
