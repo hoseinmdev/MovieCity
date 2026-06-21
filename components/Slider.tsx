@@ -51,7 +51,7 @@ const SlideContent: React.FC<{
         >
           <div className="container flex h-full w-full items-center justify-between gap-6 p-4 text-base text-white opacity-100 transition-all duration-300">
             <div className="flex w-max flex-col items-start gap-3 lg:gap-6">
-              <div className="flex items-center justify-center gap-4">
+              {movie.imdbScore > 0 && (
                 <div className="flex items-center justify-center gap-2">
                   <Image
                     width={50}
@@ -64,7 +64,7 @@ const SlideContent: React.FC<{
                     {"10 / " + movie.imdbScore}
                   </p>
                 </div>
-              </div>
+              )}
               <div className="flex flex-col items-start justify-center gap-5 font-EstedadFont text-sm lg:text-[2rem]">
                 <p>{movie.movieName}</p>
               </div>

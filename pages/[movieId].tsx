@@ -75,14 +75,16 @@ const SingleMoviePage: React.FC<{
                       {movie?.popularity + "%"}
                     </p>
                   </div>
-                  <div className="flex flex-col items-center justify-center gap-1 text-white">
-                    <div className="rounded-lg bg-gold px-2 py-1 text-2xl">
-                      <AiFillStar />
+                  {movie?.imdbScore > 0 && (
+                    <div className="flex flex-col items-center justify-center gap-1 text-white">
+                      <div className="rounded-lg bg-gold px-2 py-1 text-2xl">
+                        <AiFillStar />
+                      </div>
+                      <p className="text-sm text-gold">
+                        {"10 / " + movie?.imdbScore}
+                      </p>
                     </div>
-                    <p className="text-sm text-gold">
-                      {"10 / " + movie?.imdbScore}
-                    </p>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
