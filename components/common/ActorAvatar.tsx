@@ -9,7 +9,7 @@ const ActorAvatar: React.FC<ActorProps> = ({ imageUrl, name }) => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-2  text-center text-sm text-white/80 lg:text-base ">
       <img
-        className="h-28 w-28 rounded-full object-cover transition duration-300 hover:opacity-70 bg-stone-700"
+        className="h-28 w-28 rounded-full object-cover transition duration-300 hover:opacity-70 bg-surface3"
         src={imageUrl || "/icons/user.svg"}
         alt=""
       />

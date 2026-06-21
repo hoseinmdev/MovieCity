@@ -20,7 +20,7 @@ const OtherMovieItem: React.FC<{ movie: MoviePropTypes }> = ({ movie }) => {
     >
       <div className="group/trackBox relative">
         {!loaded && (
-          <div className="absolute inset-0 animate-pulse rounded-lg bg-stone-700" />
+          <div className="absolute inset-0 animate-pulse rounded-lg bg-surface3" />
         )}
         <Image
           width={400}

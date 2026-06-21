@@ -99,7 +99,7 @@ const SignUp: React.FC = () => {
   }, []);
   return (
     <div
-      className={` fadeShow relative flex h-screen w-full items-center justify-between bg-stone-900 text-white ${
+      className={` fadeShow relative flex h-screen w-full items-center justify-between bg-surface text-white ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
     >
@@ -145,7 +145,7 @@ const SignUp: React.FC = () => {
             />
             {errors.email && (
               <p
-                className="rounded-md px-1 font-VazirFont text-red-500  backdrop-blur-sm"
+                className="rounded-md px-1 font-VazirFont text-primary  backdrop-blur-sm"
                 role="alert"
               >
                 {errors.email.message}
@@ -162,7 +162,7 @@ const SignUp: React.FC = () => {
             />
             {errors.password && (
               <p
-                className="rounded-md px-1 font-VazirFont text-red-500  backdrop-blur-sm"
+                className="rounded-md px-1 font-VazirFont text-primary  backdrop-blur-sm"
                 role="alert"
               >
                 {errors.password.message}
@@ -179,7 +179,7 @@ const SignUp: React.FC = () => {
 
               {/* <div className="flex gap-1 text-white/60">
                 {t("AlreadyHaveAccount")}{" "}
-                <Link href={"signin"} className="text-red-500">
+                <Link href={"signin"} className="text-primary">
                   {t("SignIn")}
                 </Link>
               </div> */}

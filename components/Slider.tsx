@@ -29,7 +29,7 @@ const SlideContent: React.FC<{
   return (
     <>
       {!loaded && (
-        <div className="absolute inset-0 z-20 animate-pulse bg-stone-800" />
+        <div className="absolute inset-0 z-20 animate-pulse bg-surface2" />
       )}
       <Link className="block h-full w-full" href={`/${movie._id}`}>
         <Image

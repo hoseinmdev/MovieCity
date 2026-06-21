@@ -11,7 +11,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
 
   return (
     <div
-      className={`w-full bg-stone-950 p-4 rounded-xl  transition-all  ${
+      className={`w-full bg-surface p-4 rounded-xl  transition-all  ${
         open && "outline outline-primary"
       }`}
     >
