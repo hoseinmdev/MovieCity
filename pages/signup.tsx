@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Johnwick from "@/assets/johnWick.jpg";
 import Image from "next/image";
+
+const SIGNUP_BG =
+  "https://assets-prd.ignimgs.com/2025/03/18/ballerina-blogroll-1742318298042.jpg";
 import SelectLanguage from "@/components/common/SelectLanguage";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
@@ -109,9 +111,9 @@ const SignUp: React.FC = () => {
         <Image
           width={2000}
           height={2000}
-          src={Johnwick}
+          src={SIGNUP_BG}
           loading="lazy"
-          placeholder="blur"
+          quality={100}
           alt="background"
           className="relative h-full w-full object-cover"
         />
@@ -189,10 +191,10 @@ const SignUp: React.FC = () => {
         <Image
           width={2000}
           height={2000}
-          src={Johnwick}
+          src={SIGNUP_BG}
           loading="lazy"
-          placeholder="blur"
-          alt="dsa"
+          quality={100}
+          alt=""
           className="backgroundAnimation2 h-full w-full object-cover"
         />
       </div>

@@ -11,6 +11,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "image.tmdb.org" },
+      { protocol: "https", hostname: "assets-prd.ignimgs.com" },
       { protocol: "https", hostname: "is.zobj.net" },
       { protocol: "https", hostname: "wallpapers.com" },
       { protocol: "https", hostname: "assets.nflxext.com" },
