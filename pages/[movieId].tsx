@@ -1,6 +1,8 @@
+import Head from "next/head";
 import Layout from "@/components/Layout";
 import { MoviePropTypes } from "@/types";
 import { useTranslation } from "react-i18next";
+import { GetServerSidePropsContext } from "next";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { BsFillBellFill } from "react-icons/bs";
 import ActorAvatar from "@/components/common/ActorAvatar";
@@ -39,6 +41,13 @@ const SingleMoviePage: React.FC<{
   }, [fetchComments]);
   return (
     <Layout>
+      <Head>
+        <title>{movie?.movieName ? `${movie.movieName} | Movie City` : "Movie City"}</title>
+        <meta name="description" content={movie?.description ?? ""} />
+        <meta property="og:title" content={movie?.movieName ?? "Movie City"} />
+        <meta property="og:description" content={movie?.description ?? ""} />
+        <meta property="og:image" content={movie?.backgroundImageUrl ?? movie?.imageUrl ?? ""} />
+      </Head>
       {movie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
           <div className="fadeShow relative h-full w-full lg:p-2">
@@ -204,12 +213,13 @@ const SkeletonLoading = () => {
   );
 };
 
-export const getServerSideProps = async (context: any) => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const lang = context.req.cookies.lang === "fa" ? "fa-IR" : "en-US";
   try {
-    const id = context.params.movieId as string;
+    const id = context.params!.movieId as string;
     const [movie, movies] = await Promise.all([
-      getMovieDetail(id),
-      getSimilarMovies(id),
+      getMovieDetail(id, lang),
+      getSimilarMovies(id, lang),
     ]);
     return { props: { movie, movies } };
   } catch {
