@@ -73,8 +73,13 @@ export function mapMovie(m: TmdbMovie): MoviePropTypes {
   };
 }
 
-async function tmdbGet(path: string, params: Record<string, string> = {}) {
+async function tmdbGet(
+  path: string,
+  params: Record<string, string> = {},
+  language = "en-US"
+) {
   const url = new URL(`${BASE}${path}`);
+  url.searchParams.set("language", language);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
   const res = await fetch(url.toString(), {
     headers: {
@@ -86,39 +91,50 @@ async function tmdbGet(path: string, params: Record<string, string> = {}) {
   return res.json();
 }
 
-export async function getPopularMovies(): Promise<MoviePropTypes[]> {
-  const data = await tmdbGet("/movie/popular");
+export async function getPopularMovies(language = "en-US"): Promise<MoviePropTypes[]> {
+  const data = await tmdbGet("/movie/popular", {}, language);
   return data.results.map(mapMovie);
 }
 
-export async function getTrendingMovies(): Promise<MoviePropTypes[]> {
-  const data = await tmdbGet("/trending/movie/week");
+export async function getTrendingMovies(language = "en-US"): Promise<MoviePropTypes[]> {
+  const data = await tmdbGet("/trending/movie/week", {}, language);
   return data.results.slice(0, 6).map(mapMovie);
 }
 
-export async function getUpcomingMovies(): Promise<
-  { movieName: string; imageUrl: string }[]
-> {
-  const data = await tmdbGet("/movie/upcoming");
+export async function getUpcomingMovies(
+  language = "en-US"
+): Promise<{ movieName: string; imageUrl: string }[]> {
+  const data = await tmdbGet("/movie/upcoming", {}, language);
   return data.results.slice(0, 7).map((m: TmdbMovie) => ({
     movieName: m.title,
     imageUrl: img("w500", m.poster_path),
   }));
 }
 
-export async function getMovieDetail(id: string): Promise<MoviePropTypes> {
-  const data = await tmdbGet(`/movie/${id}`, {
-    append_to_response: "credits,videos",
-  });
+export async function getMovieDetail(
+  id: string,
+  language = "en-US"
+): Promise<MoviePropTypes> {
+  const data = await tmdbGet(
+    `/movie/${id}`,
+    { append_to_response: "credits,videos" },
+    language
+  );
   return mapMovie(data);
 }
 
-export async function getSimilarMovies(id: string): Promise<MoviePropTypes[]> {
-  const data = await tmdbGet(`/movie/${id}/similar`);
+export async function getSimilarMovies(
+  id: string,
+  language = "en-US"
+): Promise<MoviePropTypes[]> {
+  const data = await tmdbGet(`/movie/${id}/similar`, {}, language);
   return data.results.slice(0, 8).map(mapMovie);
 }
 
-export async function searchMovies(query: string): Promise<MoviePropTypes[]> {
-  const data = await tmdbGet("/search/movie", { query });
+export async function searchMovies(
+  query: string,
+  language = "en-US"
+): Promise<MoviePropTypes[]> {
+  const data = await tmdbGet("/search/movie", { query }, language);
   return data.results.map(mapMovie);
 }

@@ -21,6 +21,7 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
     reset !== undefined ? reset() : "";
     i18n.changeLanguage(lang);
     localStorage.setItem("lang", lang);
+    document.cookie = `lang=${lang}; path=/; max-age=31536000; SameSite=Lax`;
     setShowLanguages(false);
   };
 

@@ -10,7 +10,8 @@ export default async function handler(
     return res.status(400).json({ error: "query is required" });
   }
   try {
-    const movies = await searchMovies(query);
+    const lang = req.cookies.lang === "fa" ? "fa-IR" : "en-US";
+    const movies = await searchMovies(query, lang);
     res.status(200).json(movies);
   } catch {
     res.status(500).json({ error: "Search failed" });
