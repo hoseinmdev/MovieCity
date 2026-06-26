@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import Modal from "./common/Modal";
 import axios from "axios";
@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 const SearchInput: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [foundMovies, setFoundMovies] = useState<MoviePropTypes[]>([]);
+  const debounceRef = useRef<NodeJS.Timeout>();
   const useRouters = useRouter();
 
   useEffect(() => {
@@ -18,21 +19,24 @@ const SearchInput: React.FC = () => {
     setFoundMovies([]);
   }, [useRouters.asPath]);
 
-  const searchInputHandler = async (e: React.FormEvent<HTMLInputElement>) => {
+  const searchInputHandler = (e: React.FormEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
     setInputValue(value);
+    clearTimeout(debounceRef.current);
     if (!value.trim()) {
       setFoundMovies([]);
       return;
     }
-    try {
-      const res = await axios.get(
-        `/api/search?query=${encodeURIComponent(value)}`
-      );
-      setFoundMovies(res.data);
-    } catch {
-      setFoundMovies([]);
-    }
+    debounceRef.current = setTimeout(async () => {
+      try {
+        const res = await axios.get(
+          `/api/search?query=${encodeURIComponent(value)}`
+        );
+        setFoundMovies(res.data);
+      } catch {
+        setFoundMovies([]);
+      }
+    }, 300);
   };
 
   return (
