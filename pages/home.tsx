@@ -31,7 +31,6 @@ const HomePage: React.FC<HomePageProps> = ({
   sliderMovies,
   comingSoonMovies,
 }) => {
-  console.log({ allMovies });
   const { t } = useTranslation();
   const renderContent = () => {
     return (
@@ -103,21 +102,18 @@ const HomePageLoading = () => {
 };
 export default HomePage;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (context: import("next").GetServerSidePropsContext) => {
+  const lang = context.req.cookies.lang === "fa" ? "fa-IR" : "en-US";
   try {
     const [allMovies, sliderMovies, comingSoonMovies] = await Promise.all([
-      getPopularMovies(),
-      getTrendingMovies(),
-      getUpcomingMovies(),
+      getPopularMovies(lang),
+      getTrendingMovies(lang),
+      getUpcomingMovies(lang),
     ]);
-    return {
-      props: { allMovies, sliderMovies, comingSoonMovies },
-      revalidate: 3600,
-    };
+    return { props: { allMovies, sliderMovies, comingSoonMovies } };
   } catch {
     return {
       props: { allMovies: [], sliderMovies: [], comingSoonMovies: [] },
-      revalidate: 60,
     };
   }
 };
