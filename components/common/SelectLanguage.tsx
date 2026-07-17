@@ -23,6 +23,7 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
     localStorage.setItem("lang", lang);
     document.cookie = `lang=${lang}; path=/; max-age=31536000; SameSite=Lax`;
     setShowLanguages(false);
+    window.location.reload();
   };
 
   const languagesIconClickHandler = () => {
@@ -31,7 +32,7 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
   return (
     <div className="relative z-[99]">
       <div
-        className={`flex items-center  justify-center gap-2 border border-primary bg-transparent p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-6 lg:py-2 ${
+        className={`glass glass-hover flex items-center justify-center gap-2 p-2 text-white transition-all duration-300 lg:cursor-pointer lg:px-6 lg:py-2 ${
           !showLanguages
             ? "rounded-lg"
             : " rounded-lg rounded-bl-none rounded-br-none"
@@ -41,12 +42,12 @@ const SelectLanguage: React.FC<ResetForm> = ({ reset }) => {
         <p className="text-sm lg:text-base">
           {i18n.language === "fa" ? "فارسی" : "ENGLISH"}
         </p>
-        <div className="text-base lg:text-xl">
+        <div className="text-base text-primary lg:text-xl">
           <BiWorld />
         </div>
       </div>
       {showLanguages && (
-        <div className="fadeShow w-full top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl border border-primary bg-transparent px-[1.35rem] py-3 text-sm backdrop-blur-md lg:px-[1.5rem] lg:text-base">
+        <div className="glass-strong fadeShow w-full top-13 absolute left-0 flex flex-col items-center justify-center gap-2 rounded-bl-xl rounded-br-xl px-[1.35rem] py-3 text-sm lg:px-[1.5rem] lg:text-base">
           {items.map((i, index) => {
             return (
               <p
