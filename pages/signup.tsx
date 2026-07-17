@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const SIGNUP_BG =
@@ -18,12 +18,6 @@ import Button from "@/components/common/Button";
 
 const SignUp: React.FC = () => {
   const { t, i18n } = useTranslation();
-
-  // const [touchPosition, setTouchPosition] = useState<number | null>(0);
-  const [customClass, setCustomClass] = useState({
-    imageWidth: "translate-x-[0rem] opacity-100 w-full",
-    formsWidth: "translate-x-[-50rem] lg:translate-x-[0rem]",
-  });
   const [clicked, setClicked] = useState(false);
   const routes = useRouter();
 
@@ -73,57 +67,29 @@ const SignUp: React.FC = () => {
       });
   };
 
-  // const onTouchStartHandler = (e: any) => {
-  //   setTouchPosition(e.touches[0].clientY);
-  // };
-  // const onTouchMoveHandler = (e: any) => {
-  //   if (touchPosition === null) return;
-  //   const currentTouch = e.touches[0].clientY;
-  //   const diff = touchPosition - currentTouch;
-  //   if (diff > 5) {
-  //     setCustomClass({
-  //       imageWidth: "w-full blur-sm brightness-50",
-  //       formsWidth: "w-[100%] translate-x-[0rem]",
-  //       textFade: "opacity-0",
-  //     });
-  //   }
-  //   // if (diff < -5)  console.log("down");
-  //   setTouchPosition(null);
-  // };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCustomClass({
-        imageWidth: "w-full blur-sm brightness-50",
-        formsWidth: "w-[100%] translate-x-[0rem]",
-      });
-    }, 500);
-  }, []);
   return (
     <div
-      className={` fadeShow relative flex h-screen w-full items-center justify-between bg-surface text-white ${
+      className={` fadeShow relative flex h-screen w-full items-center justify-center bg-background text-white ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
     >
-      <div
-        className={`h-full  ${customClass.imageWidth} absolute right-0 top-0 overflow-hidden duration-1000 lg:hidden`}
-      >
+      <div className="absolute inset-0 h-full w-full overflow-hidden">
         <Image
           width={2000}
           height={2000}
           src={SIGNUP_BG}
           loading="lazy"
           quality={100}
-          alt="background"
-          className="relative h-full w-full object-cover"
+          alt=""
+          className="backgroundAnimation2 h-full w-full object-cover brightness-[0.35]"
         />
       </div>
 
       <div
         dir={i18n.dir()}
-        className={`flex h-full items-center justify-center overflow-hidden duration-1000 lg:w-full ${customClass.formsWidth} z-[100]`}
+        className="relative z-10 flex h-full items-center justify-center"
       >
-        <div className="relative flex h-full w-[80%] flex-col items-start justify-center  gap-10  md:w-[60%] md:gap-4 lg:w-[70%] lg:justify-center lg:gap-10 lg:pt-0 2xl:w-[55%]">
+        <div className="glass-strong relative flex h-fit w-[90%] flex-col items-start justify-center gap-8 rounded-2xl p-8 md:w-[60%] lg:w-[70%] lg:gap-10 2xl:w-[45%]">
           <SelectLanguage reset={reset} />
           <div className="fadeShow1 relative flex flex-col gap-6">
             <p className="text-xl lg:text-2xl">{t("StartforFree")}</p>
@@ -134,12 +100,12 @@ const SignUp: React.FC = () => {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className={`fadeShow2 flex w-full flex-col gap-3 text-black  lg:gap-4 `}
+            className={`fadeShow2 flex w-full flex-col gap-3 lg:gap-4 `}
           >
             <input
               {...register("email", { required: "Email Address is required" })}
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="glass w-full rounded-lg p-3 !font-VazirFont text-white outline-none duration-150 placeholder:text-white/40 focus-within:border-primary lg:text-xl"
               placeholder={t("EnterYourEmail")}
             />
             {errors.email && (
@@ -155,8 +121,8 @@ const SignUp: React.FC = () => {
               {...register("password", {
                 required: "Email Address is required",
               })}
-              type="text"
-              className="rounded-lg border-2 border-transparent p-2 !font-VazirFont  outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              type="password"
+              className="glass w-full rounded-lg p-3 !font-VazirFont text-white outline-none duration-150 placeholder:text-white/40 focus-within:border-primary lg:text-xl"
               placeholder={t("EnterYourPassword")}
             />
             {errors.password && (
@@ -185,18 +151,6 @@ const SignUp: React.FC = () => {
             </div>
           </form>
         </div>
-      </div>
-
-      <div className="hidden h-full overflow-hidden lg:block lg:w-[80%] 2xl:w-full">
-        <Image
-          width={2000}
-          height={2000}
-          src={SIGNUP_BG}
-          loading="lazy"
-          quality={100}
-          alt=""
-          className="backgroundAnimation2 h-full w-full object-cover"
-        />
       </div>
 
       <ToastContainer bodyClassName={"font-VazirFont"} />

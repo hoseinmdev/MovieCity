@@ -51,9 +51,9 @@ const SingleMoviePage: React.FC<{
       {movie ? (
         <div className="container relative ml-auto mr-auto flex h-full w-full flex-col gap-8 overflow-hidden rounded-lg text-white">
           <div className="fadeShow relative h-full w-full lg:p-2">
-            <div className="w-full overflow-hidden rounded-xl lg:max-h-[40rem] ">
+            <div className="glass w-full overflow-hidden rounded-2xl lg:max-h-[40rem] ">
               <div
-                className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full rounded-xl bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
+                className="SinglePagebackgroundAnimation relative min-h-[22rem] w-full bg-cover brightness-75 transition duration-300 lg:min-h-[40rem]"
                 style={{
                   backgroundImage:
                     "url(" + `${movie?.backgroundImageUrl}` + ")",
@@ -66,7 +66,7 @@ const SingleMoviePage: React.FC<{
               <Image
                 width={400}
                 height={400}
-                className="fadeShow max-w-[8rem] rounded-xl shadow-xl lg:max-w-[13rem]"
+                className="fadeShow max-w-[8rem] rounded-xl shadow-xl ring-1 ring-white/10 lg:max-w-[13rem]"
                 src={movie?.imageUrl}
                 alt=""
               />
@@ -77,7 +77,7 @@ const SingleMoviePage: React.FC<{
                 <p>{movie?.genre}</p>
                 <div className="flex items-center justify-center gap-2 pt-4">
                   <div className="flex flex-col items-center justify-center gap-1 text-white">
-                    <div className="rounded-lg bg-primary px-2 py-1 text-2xl">
+                    <div className="glow-primary-sm rounded-lg bg-primary px-2 py-1 text-2xl">
                       <AiFillHeart />
                     </div>
                     <p className="text-sm text-primary">
@@ -86,7 +86,7 @@ const SingleMoviePage: React.FC<{
                   </div>
                   {movie?.imdbScore > 0 && (
                     <div className="flex flex-col items-center justify-center gap-1 text-white">
-                      <div className="rounded-lg bg-gold px-2 py-1 text-2xl">
+                      <div className="glow-gold rounded-lg bg-gold px-2 py-1 text-2xl">
                         <AiFillStar />
                       </div>
                       <p className="text-sm text-gold">
@@ -114,7 +114,7 @@ const SingleMoviePage: React.FC<{
             {movie.trailer ? (
               <iframe
                 src={movie.trailer}
-                className="aspect-video w-full rounded-xl "
+                className="glass aspect-video w-full rounded-2xl "
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

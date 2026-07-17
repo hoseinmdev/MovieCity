@@ -23,10 +23,10 @@ export default function Home() {
 
   return (
     <div
-      className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-black font-VazirFont text-white"
+      className="fadeShow flex w-full flex-col items-center justify-start gap-4 bg-background font-VazirFont text-white"
       dir={i18n.dir()}
     >
-      <div className="absolute z-[100] flex w-full items-center justify-between bg-black/30 px-10 py-4 lg:w-3/4">
+      <div className="glass absolute z-[100] flex w-full items-center justify-between border-x-0 border-t-0 px-10 py-4 lg:w-3/4 lg:rounded-b-2xl">
         <div>
           <SelectLanguage />
         </div>
@@ -36,7 +36,7 @@ export default function Home() {
           alt="Landscape picture"
         />
       </div>
-      <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black">
+      <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background">
         <div className="absolute h-full w-full">
           <Image
             width={2000}
@@ -46,17 +46,26 @@ export default function Home() {
             alt=""
             className="h-full w-full bg-cover object-cover brightness-50 lg:hidden"
           />
-          <Image
+          {/* <Image
             width={2000}
             height={2000}
             quality={100}
             src="https://wallpapers.com/images/featured/money-heist-segtwbhffwy01w82.jpg"
             alt=""
             className="backgroundAnimation hidden  w-full brightness-50  lg:block"
+          /> */}
+                    <Image
+            width={2000}
+            height={2000}
+            quality={100}
+            src="/spider.jpg"
+            alt=""
+            className="backgroundAnimation hidden  w-full brightness-50  lg:block"
           />
+          
         </div>
 
-        <div className="fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto  flex h-[30%]  w-full flex-col items-center justify-around p-2  text-white backdrop-blur-[2px] backdrop-brightness-75 lg:h-[22rem] lg:p-8 lg:shadow-2xl">
+        <div className="glass fadeShow4 absolute bottom-0 left-0 right-0 top-0 z-10 mb-auto ml-auto mr-auto mt-auto flex h-[30%] w-full flex-col items-center justify-around rounded-2xl p-2 text-white lg:h-[22rem] lg:w-[90%] lg:p-8">
           <div className="flex w-full flex-col items-center justify-center gap-3 lg:gap-4">
             <p className="text-center font-EstedadFont text-xl font-bold lg:text-4xl">
               {t("UnlimitedMoviesTitle")}
@@ -69,7 +78,7 @@ export default function Home() {
             onClick={handleGetStarted}
             htmlType="button"
             type="primary"
-            className="animate-bounce !p-4 !px-20 !text-3xl"
+            className="!p-4 !px-20 !text-3xl"
           >
             {t("GetStarted")}
           </Button>
@@ -84,7 +93,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-2/4 flex w-full flex-col items-center justify-around  bg-black p-8 text-center text-xl lg:flex-row ">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around  bg-background p-8 text-center text-xl lg:flex-row ">
         <div className="fadeShow2">
           <p className="pb-6 text-3xl font-bold lg:text-5xl ">
             {t("EnjoyOnYourTv")}
@@ -112,7 +121,7 @@ export default function Home() {
       </div>
       <Line />
 
-      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-background p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
@@ -140,7 +149,7 @@ export default function Home() {
       </div>
       <Line />
 
-      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-background p-8 text-center text-xl lg:flex-row">
         <div>
           <p className="pb-6 text-3xl font-bold lg:text-5xl">
             {t("ProfileForKids")}
@@ -155,7 +164,7 @@ export default function Home() {
       </div>
       <Line />
 
-      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-black p-8 text-center text-xl lg:flex-row">
+      <div className="min-h-2/4 flex w-full flex-col items-center justify-around bg-background p-8 text-center text-xl lg:flex-row">
         <div className="relative order-1 lg:order-none ">
           <img
             src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
@@ -183,7 +192,7 @@ export default function Home() {
       </div>
       <Line />
 
-      <div className="mt-5 flex w-full flex-col items-center justify-center gap-8 bg-black p-4 lg:w-[40%] lg:p-0">
+      <div className="mt-5 flex w-full flex-col items-center justify-center gap-8 bg-background p-4 lg:w-[40%] lg:p-0">
         <p className="text-center text-2xl lg:text-3xl">
           {t("FrequentlyAskedQuestions")}
         </p>

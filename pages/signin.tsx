@@ -17,15 +17,15 @@ const SignIn: React.FC = () => {
   });
   return (
     <div
-      className={` fadeShow flex h-screen w-full items-center justify-between bg-surface text-white  ${
+      className={` fadeShow relative flex h-screen w-full items-center justify-between bg-background text-white  ${
         i18n.dir() === "rtl" ? "font-VazirFont" : "font-BlackListed"
       }`}
     >
       <div
         dir={i18n.dir()}
-        className="flex h-full w-full items-center justify-center "
+        className="relative z-10 flex h-full w-full items-center justify-center "
       >
-        <div className="relative flex h-full w-[80%] flex-col items-start justify-start  gap-10 pt-10 md:w-[60%] md:gap-4 lg:w-[70%] lg:justify-center lg:gap-10 lg:pt-0 2xl:w-[55%]">
+        <div className="glass-strong relative flex h-fit w-[90%] flex-col items-start justify-start gap-8 rounded-2xl p-8 md:w-[60%] lg:w-[70%] lg:gap-10 2xl:w-[45%]">
           <SelectLanguage />
           {/* <div className="fadeShow1 flex flex-col gap-6">
             <p className="text-3xl lg:text-4xl 2xl:text-4xl">
@@ -33,7 +33,7 @@ const SignIn: React.FC = () => {
             </p>
           </div> */}
 
-          <div className="fadeShow2 flex w-full flex-col gap-4  text-black">
+          <div className="fadeShow2 flex w-full flex-col gap-4">
             <input
               onChange={(e) =>
                 setInputsData({
@@ -42,7 +42,7 @@ const SignIn: React.FC = () => {
                 })
               }
               type="text"
-              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              className="glass w-full rounded-lg p-3 text-lg text-white outline-none duration-150 placeholder:text-white/40 focus-within:border-primary lg:text-xl"
               placeholder={t("EnterYourEmail")}
             />
             <input
@@ -52,17 +52,17 @@ const SignIn: React.FC = () => {
                   password: e.target.value,
                 })
               }
-              type="text"
-              className="rounded-lg border-2 border-transparent p-2 text-lg outline-none duration-150 focus-within:border-primary  focus-within:shadow-[1px_10px_14px_rgba(0,0,0,1)] lg:text-xl"
+              type="password"
+              className="glass w-full rounded-lg p-3 text-lg text-white outline-none duration-150 placeholder:text-white/40 focus-within:border-primary lg:text-xl"
               placeholder={t("EnterYourPassword")}
             />
           </div>
 
           <div className="fadeShow3 flex w-full flex-col gap-4">
-            <button className="w-full rounded-lg bg-primary py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-primaryHover lg:py-3 lg:text-xl 2xl:text-2xl">
+            <button className="glow-primary-sm w-full rounded-lg bg-primary py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-primaryHover lg:py-3 lg:text-xl 2xl:text-2xl">
               {t("SignIn")}
             </button>
-            <button className="w-full rounded-lg bg-primary py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem]  hover:bg-primaryHover lg:py-3 lg:text-xl 2xl:text-2xl">
+            <button className="glass glass-hover w-full rounded-lg py-2 text-xl text-white duration-200  hover:translate-y-[-0.2rem] lg:py-3 lg:text-xl 2xl:text-2xl">
               {t("SignUpWithGoogle")}
             </button>
             <Link href={"signup"} className="w-max text-primary">
@@ -72,13 +72,13 @@ const SignIn: React.FC = () => {
         </div>
       </div>
 
-      <div className="hidden h-full overflow-hidden lg:block lg:w-[80%] 2xl:w-full">
+      <div className="absolute inset-0 h-full overflow-hidden lg:block">
         <Image
           width={2000}
           height={2000}
           src={Johnwick}
           alt="dsa"
-          className="backgroundAnimation2 h-full w-full object-cover"
+          className="backgroundAnimation2 h-full w-full object-cover brightness-[0.35]"
         />
       </div>
     </div>

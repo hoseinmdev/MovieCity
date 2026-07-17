@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 const Slider = dynamic(() => import("@/components/Slider"), {
   ssr: false,
   loading: () => (
-    <div className="mb-4 mt-2 h-[32rem] w-full animate-pulse rounded-b-2xl bg-surface2" />
+    <div className="glass mb-4 mt-2 h-[32rem] w-full animate-pulse rounded-b-2xl" />
   ),
 });
 import UsersComments from "@/components/UsersComments";
