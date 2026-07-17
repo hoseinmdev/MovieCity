@@ -3,9 +3,7 @@ import { t } from "i18next";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
-import { FaHome } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import { MdDomain } from "react-icons/md";
 const MenuBurger: React.FC = () => {
   const [customStyles, setCustomStyles] = useState({
     menu: "w-[0%]",
@@ -31,29 +29,25 @@ const MenuBurger: React.FC = () => {
     }
   };
 
-  const menuOptions = [
-    { name: "mainPage", icon: <MdDomain />, path: "/" },
-    { name: "home", icon: <FaHome />, path: "/home" },
-    // { name: "movies", icon: <MdLocalMovies />, path: "/home" },
-    // { name: "series", icon: <RiMovieFill />, path: "/home" },
-  ];
+  const menuOptions: { name: string; icon: React.ReactNode; path: string }[] =
+    [];
   return (
     <>
       <div
         onClick={menuBurgerHandler}
-        className="text-2xl text-white lg:hidden"
+        className="glass flex h-10 w-10 items-center justify-center rounded-full text-2xl text-white lg:hidden"
       >
         <CiMenuBurger />
       </div>
       <div
         className={`${customStyles.menu} fixed ${
           i18n.dir() === "rtl" ? "right-0" : "left-0"
-        } top-0 z-[100]  h-screen backdrop-blur-sm backdrop-brightness-75 transition-all duration-200`}
+        } top-0 z-[100]  h-screen backdrop-blur-sm backdrop-brightness-50 transition-all duration-200`}
       >
         <div
-          className={`${
-            i18n.dir() === "rtl" ? "right-0" : "left-0"
-          } top-0 flex h-screen w-[70%] flex-col items-center justify-between bg-black`}
+          className={`glass-strong ${
+            i18n.dir() === "rtl" ? "right-0 border-l" : "left-0 border-r"
+          } top-0 flex h-screen w-[70%] flex-col items-center justify-between`}
         >
           <div
             className={`${customStyles.menuImage} relative w-full overflow-hidden duration-300`}
@@ -61,15 +55,15 @@ const MenuBurger: React.FC = () => {
             <img
               alt=""
               src="https://image.winudf.com/v2/image1/Y29tLm1vYmVhc3lhcHAuYXBwOTA5MTkyMjQ1MjNfc2NyZWVuXzBfMTY3Njg0OTU1Ml8wMzA/screen-0.webp?fakeurl=1&type=.webp"
-              className="h-full w-full bg-cover object-cover object-right"
+              className="h-full w-full bg-cover object-cover object-right opacity-30"
             />
             <div
               className={`absolute ${
                 i18n.dir() === "rtl" ? "right-0" : "left-0"
-              } top-0 flex w-full flex-col items-start justify-start gap-6 bg-black p-4 text-white duration-300`}
+              } top-0 flex w-full flex-col items-start justify-start gap-6 p-4 text-white duration-300`}
             >
               <div
-                className="text-3xl text-primary"
+                className="glass flex h-10 w-10 items-center justify-center rounded-full text-2xl text-primary"
                 onClick={menuBurgerHandler}
               >
                 <IoMdClose />
@@ -81,11 +75,11 @@ const MenuBurger: React.FC = () => {
                       href={item.path}
                       onClick={menuBurgerHandler}
                       key={item.name}
-                      className={`flex w-full items-center justify-start gap-2 ${
+                      className={`glass glass-hover flex w-full items-center justify-start gap-2 ${
                         i18n.dir() === "rtl"
                           ? "rounded-r-lg rounded-l-3xl"
                           : "rounded-l-lg rounded-r-3xl"
-                      } border-2 border-white/50 p-2 text-white/70`}
+                      } p-2 text-white/70`}
                     >
                       <div className="text-primary">{item.icon}</div>
                       <div>{t(item.name)}</div>

@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <div
       className={createConditionalClass(
-        "sticky top-0 z-[100] flex  h-[7rem] w-full flex-col items-center justify-between gap-2 bg-black/50 p-4 backdrop-blur-md transition-all lg:h-[8rem] ",
-        { "!bg-neutral-700/50": scrollY > 300 },
+        "glass sticky top-0 z-[100] flex h-[7rem] w-full flex-col items-center justify-between gap-2 border-x-0 border-t-0 p-4 transition-all lg:h-[8rem]",
+        { "glass-strong": scrollY > 300 },
       )}
     >
       <div className="container flex flex-col items-center justify-between gap-2">
@@ -26,7 +26,7 @@ const Header = () => {
           <MenuBurger />
           <Link
             href="/"
-            className="font-EstedadFont text-3xl italic text-primary"
+            className="font-EstedadFont text-3xl italic text-primary drop-shadow-[0_0_12px_rgba(124,58,237,0.5)]"
           >
             Movie City
           </Link>
