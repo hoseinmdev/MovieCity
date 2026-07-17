@@ -16,6 +16,7 @@ const nextConfig = {
       { protocol: "https", hostname: "wallpapers.com" },
       { protocol: "https", hostname: "assets.nflxext.com" },
       { protocol: "https", hostname: "occ-0-90-6.1.nflxso.net" },
+      { protocol: "https", hostname: "images.hdqwalls.com" },
     ],
   },
 };
