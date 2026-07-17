@@ -10,13 +10,21 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="font-VazirFont bg-background" dir={i18n.dir()}>
+    <div className="relative min-h-screen font-VazirFont bg-background overflow-x-hidden" dir={i18n.dir()}>
       <Head>
         <title>Movie City</title>
       </Head>
-      <Header />
-      <div className="fadeShow bg-background">{children}</div>
-      <Footer />
+
+      {/* Ambient background orbs */}
+      <div className="ambient-orb-1" />
+      <div className="ambient-orb-2" />
+      <div className="ambient-orb-3" />
+
+      <div className="relative z-10">
+        <Header />
+        <div className="fadeShow">{children}</div>
+        <Footer />
+      </div>
     </div>
   );
 };
