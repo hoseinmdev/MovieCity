@@ -17,6 +17,7 @@ const MoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
               popularity={item.popularity}
               backgroundImageUrl={item.backgroundImageUrl}
               description={item.description}
+              genre={item.genre}
             />
           );
         }
