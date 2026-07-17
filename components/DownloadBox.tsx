@@ -31,7 +31,7 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({
     if (!isLogin) setShowModal(true)
   }
   return (
-    <div className="flex w-full items-center justify-between rounded-lg bg-surface2 p-2 text-sm text-white/80 lg:p-4 lg:text-base">
+    <div className="glass glass-hover flex w-full items-center justify-between rounded-2xl p-2 text-sm text-white/80 transition-all duration-300 lg:p-4 lg:text-base">
       <div className=" flex h-full flex-col justify-center gap-4 lg:gap-2">
         <p>{t("quality") + " : " + quality + "p"}</p>
         <p>
@@ -54,7 +54,7 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({
         <a
           href={isLogin ? link : undefined}
           onClick={isLoginHandler}
-          className="flex h-full w-40 justify-center rounded-lg bg-indigo-500 p-2 lg:p-3"
+          className="glow-primary-sm flex h-full w-40 justify-center rounded-lg bg-primary p-2 text-white transition-all duration-300 hover:bg-primaryHover lg:p-3"
         >
           {t("download") + " " + t("quality") + " " + quality}
         </a>
@@ -74,7 +74,7 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({
               <p className="">{t("note")}</p>
             </div>
             <div className="mt-8 flex w-full flex-col items-center justify-between gap-2">
-              <Link href={"/signup"} className="flex w-full  items-center justify-center gap-2 rounded-lg bg-primary p-2">
+              <Link href={"/signup"} className="glow-primary-sm flex w-full  items-center justify-center gap-2 rounded-lg bg-primary p-2 transition-all duration-300 hover:bg-primaryHover">
                 {t("signUp")}
                 <div className="text-lg text-white">
                   <MdOutlineVerifiedUser />
@@ -82,7 +82,7 @@ const DownloadBox: React.FC<DownloadBoxProps> = ({
               </Link>
               <button
                 onClick={() => setShowModal(false)}
-                className="flex w-full  items-center justify-center gap-2 rounded-lg border border-primary bg-none p-2"
+                className="glass glass-hover flex w-full  items-center justify-center gap-2 rounded-lg p-2 transition-all duration-300"
               >
                 {t("later")}
                 <div className="text-lg text-white">

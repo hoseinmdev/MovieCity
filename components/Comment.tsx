@@ -11,12 +11,10 @@ const Comment: React.FC<CommentProps> = ({ sender, text }) => {
   const { t, i18n } = useTranslation();
   return (
     <div
-      className={`flex w-full flex-col items-start justify-start gap-2 p-3 ${
-        i18n.dir() === "rtl" ? "rounded-l-full" : "rounded-r-full"
-      }  bg-surface2/80 p-2 text-white/80`}
+      className={`glass flex w-full flex-col items-start justify-start gap-2 rounded-2xl p-3 text-white/80`}
     >
       <div className="flex items-center justify-center gap-2">
-        <div className="rounded-full border-2 border-primary p-2">
+        <div className="glow-primary-sm rounded-full border-2 border-primary p-2">
           <FaUserAlt />
         </div>
         <p className="text-white/60 ">{t("aCommentFrom") + sender}</p>

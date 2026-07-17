@@ -12,13 +12,19 @@ import "swiper/css/pagination";
 import { Autoplay, Grid, Pagination } from "swiper/modules";
 import { MoviePropTypes } from "@/types";
 import MovieBox from "./common/MovieBox";
+import { BsFire } from "react-icons/bs";
 
 const TopMoviesContainer: React.FC<{ data: MoviePropTypes[] }> = ({ data }) => {
   const { t,i18n } = useTranslation();
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-2">
-        <p className="fadeShow2 text-xl text-white/80 font-EstedadFont">{t("topContent")}</p>
+        <p className="fadeShow2 flex items-center gap-2 text-xl text-white/80 font-EstedadFont">
+          <span className="text-gold">
+            <BsFire />
+          </span>
+          {t("topContent")}
+        </p>
         <div className=" container hidden w-full grid-cols-2 gap-2 lg:grid lg:grid-cols-4 lg:gap-4">
           {data?.map((item) => {
             if (item.top) {

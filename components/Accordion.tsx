@@ -1,6 +1,5 @@
-import { title } from "process";
 import React, { ReactNode, useState } from "react";
-import { AiFillCaretDown, AiOutlineUp } from "react-icons/ai";
+import { AiFillCaretDown } from "react-icons/ai";
 type AccordionProps = {
   title: string;
   children: ReactNode;
@@ -11,15 +10,15 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
 
   return (
     <div
-      className={`w-full bg-surface p-4 rounded-xl  transition-all  ${
-        open && "outline outline-primary"
+      className={`glass w-full rounded-2xl p-4 transition-all duration-300 ${
+        open ? "glow-primary-sm border-primary/40" : ""
       }`}
     >
       <div
         className="text-xl lg:text-2xl w-full flex justify-between items-center lg:cursor-pointer "
         onClick={() => setOpen(!open)}
       >
-        <p className={`${open && "text-primary brightness-125"}`}>{title}</p>
+        <p className={open ? "text-primary" : ""}>{title}</p>
         <div
           className={`${
             !open ? "rotate-180 " : "text-primary"

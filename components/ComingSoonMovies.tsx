@@ -21,12 +21,12 @@ const ComingSoonMovies: React.FC<ComingSoonMoviesProps> = ({ movies }) => {
           return (
             <div
               key={item.movieName}
-              className="relative h-auto w-full overflow-hidden rounded-lg"
+              className="glass glass-hover relative h-auto w-full overflow-hidden rounded-2xl transition-all duration-300"
             >
               <img className="w-full " src={item.imageUrl} alt="" />
-              <div className="absolute bottom-0 right-0 flex w-full items-center justify-between bg-black/80 px-2 py-2">
+              <div className="glass-strong absolute bottom-0 right-0 flex w-full items-center justify-between px-3 py-2">
                 <p>{item.movieName}</p>
-                <div className="animate-pulse rounded-md border border-white p-2 text-center text-sm text-white">
+                <div className="glow-primary-sm animate-pulse rounded-md border border-primary/60 p-2 text-center text-sm text-white">
                   {t("comingSoon")}
                 </div>
               </div>

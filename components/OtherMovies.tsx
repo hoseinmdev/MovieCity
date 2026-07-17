@@ -16,11 +16,11 @@ const OtherMovieItem: React.FC<{ movie: MoviePropTypes }> = ({ movie }) => {
   return (
     <Link
       href={`/${movie._id}`}
-      className="flex w-full flex-col gap-3 overflow-hidden rounded-lg"
+      className="glass glass-hover flex w-full flex-col gap-3 overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-[0_8px_32px_rgba(124,58,237,0.18)]"
     >
       <div className="group/trackBox relative">
         {!loaded && (
-          <div className="absolute inset-0 animate-pulse rounded-lg bg-surface3" />
+          <div className="glass absolute inset-0 animate-pulse rounded-2xl" />
         )}
         <Image
           width={400}
@@ -29,20 +29,20 @@ const OtherMovieItem: React.FC<{ movie: MoviePropTypes }> = ({ movie }) => {
           placeholder="blur"
           blurDataURL={BLUR_URL}
           onLoad={() => setLoaded(true)}
-          className={`w-full rounded-lg transition-opacity duration-500 ${
+          className={`w-full rounded-2xl transition-opacity duration-500 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
           src={movie.imageUrl}
           alt={movie.movieName}
         />
-        <div className="absolute right-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4 bg-black/60 text-center opacity-0 transition-all duration-300 group-hover/trackBox:opacity-100">
+        <div className="absolute right-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4 rounded-2xl bg-black/50 text-center opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/trackBox:opacity-100">
           <p className="text-white">{movie.movieName}</p>
-          <div className="text-4xl text-white">
+          <div className="text-4xl text-primary drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">
             <BsFillPlayFill />
           </div>
         </div>
       </div>
-      <p className="font-EstedadFont text-white/80">{movie.movieName}</p>
+      <p className="px-1 pb-1 font-EstedadFont text-white/80">{movie.movieName}</p>
     </Link>
   );
 };

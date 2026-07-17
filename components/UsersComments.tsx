@@ -47,7 +47,7 @@ const UsersComments: React.FC = () => {
             slidesPerView: 3.5,
           },
         }}
-        className="h-60 lg:h-80 w-full !rounded-3xl bg-[#27272A] !p-2 lg:!p-4"
+        className="glass h-60 lg:h-80 w-full !rounded-3xl !p-2 lg:!p-4"
         modules={[Pagination, Autoplay]}
         spaceBetween={20}
         autoplay={{ delay: 2000 }}
@@ -55,25 +55,25 @@ const UsersComments: React.FC = () => {
         {comments.map((item) => {
           return (
             <SwiperSlide
-              className=" flex max-h-48 lg:max-h-64 w-full flex-col !rounded-3xl bg-[#3F3F46]/50  p-3 lg:p-5"
+              className="glass glass-hover flex max-h-48 lg:max-h-64 w-full flex-col !rounded-3xl p-3 transition-all duration-300 lg:p-5"
               key={item.name}
             >
               <div className="flex items-center justify-start gap-2">
                 <Image
                   alt=""
                   src={item.image}
-                  className="lg:h-16 lg:w-16 w-12 h-12 bg-cover object-cover"
+                  className="glass lg:h-16 lg:w-16 w-12 h-12 rounded-full bg-cover object-cover"
                   width={50}
                   height={50}
                 />
                 <div className="flex flex-col">
                   <p className="text-base lg:text-xl text-white">{item.name}</p>
-                  <p className="animate-pulse font-bold text-primary text-sm lg:text-lg">
+                  <p className="font-bold text-primary text-sm lg:text-lg">
                     Movie city user
                   </p>
                 </div>
               </div>
-              <div className="my-4 w-full rounded-3xl bg-[#27272A] p-4 text-white">
+              <div className="glass-md my-4 w-full rounded-3xl p-4 text-white">
                 <p className="line-clamp-3 text-sm lg:text-lg">{item.comment}</p>
               </div>
             </SwiperSlide>

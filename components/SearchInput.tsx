@@ -41,14 +41,14 @@ const SearchInput: React.FC = () => {
 
   return (
     <>
-      <div className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-surface2 p-2 lg:w-3/4 lg:p-3">
+      <div className="glass glass-hover focus-within:border-primary/50 relative flex w-full items-center justify-center overflow-hidden rounded-full p-2 transition-all lg:w-3/4 lg:p-3">
         <input
           value={inputValue}
           onChange={searchInputHandler}
-          className="w-full bg-surface2 text-white/60 outline-none"
+          className="w-full bg-transparent px-2 text-white/80 outline-none placeholder:text-white/40"
           placeholder={t("search")}
         />
-        <div className="animate-bounce text-xl text-white/60 lg:text-2xl">
+        <div className="text-xl text-primary lg:text-2xl">
           <CiSearch />
         </div>
       </div>
@@ -95,7 +95,7 @@ const SearchedMovie: React.FC<SearchedMovieProps> = ({
   return (
     <Link
       href={`/${id}`}
-      className="relative max-h-[8rem] min-h-[7rem] w-full overflow-hidden rounded-lg lg:max-h-[16rem] lg:min-h-[16rem]"
+      className="glass glass-hover relative max-h-[8rem] min-h-[7rem] w-full overflow-hidden rounded-2xl transition-all lg:max-h-[16rem] lg:min-h-[16rem]"
     >
       <Image
         width={1000}

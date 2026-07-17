@@ -29,7 +29,7 @@ const SlideContent: React.FC<{
   return (
     <>
       {!loaded && (
-        <div className="absolute inset-0 z-20 animate-pulse bg-surface2" />
+        <div className="glass absolute inset-0 z-20 animate-pulse" />
       )}
       <Link className="block h-full w-full" href={`/${movie._id}`}>
         <Image
@@ -47,7 +47,7 @@ const SlideContent: React.FC<{
         />
         <div
           dir={i18nDir}
-          className="absolute right-0 top-0 z-[100] h-full w-full items-center justify-center bg-black/50 font-VazirFont backdrop-blur-[0px] duration-300 lg:flex"
+          className="absolute right-0 top-0 z-[100] h-full w-full items-center justify-center bg-gradient-to-t from-background via-background/60 to-transparent font-VazirFont duration-300 lg:flex lg:bg-gradient-to-r lg:from-background/95 lg:via-background/40 lg:to-transparent"
         >
           <div className="container flex h-full w-full items-center justify-between gap-6 p-4 text-base text-white opacity-100 transition-all duration-300">
             <div className="flex w-max flex-col items-start gap-3 lg:gap-6">
@@ -95,14 +95,14 @@ const SlideContent: React.FC<{
                 <p className="lg:text-2xl">{t("watchNow")}</p>
               </Button>
             </div>
-            <div className="hidden self-start lg:block lg:self-center">
+            <div className="glass hidden self-start rounded-xl p-2 lg:block lg:self-center">
               <Image
                 width={600}
                 height={600}
                 quality={100}
                 placeholder="blur"
                 blurDataURL={BLUR_URL}
-                className="min-h-[9rem] max-w-[6rem] rounded-lg border-2 border-white/70 bg-cover object-cover brightness-90 lg:min-h-[24rem] lg:min-w-[18rem]"
+                className="min-h-[9rem] max-w-[6rem] rounded-lg bg-cover object-cover shadow-2xl lg:min-h-[24rem] lg:min-w-[18rem]"
                 src={movie.imageUrl}
                 alt={movie.movieName}
               />
