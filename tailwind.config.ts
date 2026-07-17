@@ -16,6 +16,7 @@ const config: Config = {
         surface2: "var(--color-surface2)",
         surface3: "var(--color-surface3)",
         gold: "var(--color-gold)",
+        accent: "var(--color-accent)",
       },
       screens: {
         betterhover: { raw: "(hover: hover)" },
