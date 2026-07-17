@@ -27,18 +27,17 @@ const Button: React.FC<ButtonProps> = ({
       onClick={!isDisabled && !isLoading ? onClick : undefined}
       disabled={isDisabled || isLoading}
       className={createConditionalClass(
-        'rounded-lg px-5 py-2 text-sm font-medium transition-all lg:px-7 lg:text-base',
+        'glow-primary-sm rounded-lg px-5 py-2 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 lg:px-7 lg:text-base',
         {
-          'bg-primary text-white': type === 'primary',
-          'border-neutral-800 text-neutral-800 border bg-transparent':
-            type === 'secondary',
-          'bg-error-400 text-white': type === 'danger',
-          'border-gray4 border bg-white text-black hover:opacity-80':
-            type === 'cancel',
-          'bg-warning-400 text-white hover:opacity-80': type === 'yellow',
-          'text-white bg-primary hover:opacity-80':
+          'bg-primary text-white hover:bg-primaryHover': type === 'primary',
+          'glass glass-hover text-white': type === 'secondary',
+          'bg-red-500/90 text-white shadow-[0_0_16px_rgba(239,68,68,0.4)]':
+            type === 'danger',
+          'glass text-white hover:bg-white/10': type === 'cancel',
+          'bg-gold text-white glow-gold': type === 'yellow',
+          'text-white bg-primary hover:bg-primaryHover':
             type === 'red',
-          'cursor-not-allowed opacity-50': isDisabled || isLoading,
+          'cursor-not-allowed opacity-50 hover:translate-y-0': isDisabled || isLoading,
           [className as string]: Boolean(className),
         },
       )}

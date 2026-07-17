@@ -5,7 +5,7 @@ const TopMovieLabel: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="rounded-md border border-gold px-3 py-1 text-center text-base text-gold">
+    <div className="glow-gold rounded-md border border-gold/60 bg-gold/10 px-3 py-1 text-center text-base text-gold backdrop-blur-sm">
       {t("topMovie")}
     </div>
   );

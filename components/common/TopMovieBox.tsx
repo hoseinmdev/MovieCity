@@ -26,10 +26,10 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
     <Link
       href={`${_id}`}
       onClick={() => setClicked(true)}
-      className={`fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden text-sm dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
+      className={`glass glass-hover fadeShow1 group/trackBox relative flex h-[14.5rem] w-full flex-col items-start justify-between gap-2 overflow-hidden rounded-2xl text-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(124,58,237,0.18)] dark:text-white lg:h-auto lg:w-auto lg:cursor-pointer lg:text-base`}
     >
       {!loaded && (
-        <div className="absolute inset-0 z-10 h-[14rem] animate-pulse rounded-lg bg-surface3" />
+        <div className="glass absolute inset-0 z-10 h-[14rem] animate-pulse rounded-2xl" />
       )}
       <Image
         src={homePageImageUrl || imageUrl}
@@ -38,7 +38,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
         placeholder="blur"
         blurDataURL={BLUR_URL}
         onLoad={() => setLoaded(true)}
-        className={`h-[14rem] w-full max-w-[23rem] rounded-lg bg-cover transition-all duration-500 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${
+        className={`h-[14rem] w-full max-w-[23rem] rounded-2xl bg-cover transition-all duration-500 group-hover/trackBox:blur-sm group-hover/trackBox:brightness-50 ${
           clicked ? "blur-sm" : ""
         } ${loaded ? "opacity-100" : "opacity-0"}`}
         alt={movieName}
@@ -51,10 +51,10 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
           src={homePageImageUrl || imageUrl}
           className="relative h-full w-full opacity-40 blur-xl"
         />
-        <div className="absolute text-4xl">
+        <div className="absolute text-4xl text-primary drop-shadow-[0_0_10px_rgba(124,58,237,0.7)]">
           <AiOutlinePlayCircle />
         </div>
-        <div className="absolute animate-ping text-4xl">
+        <div className="absolute animate-ping text-4xl text-primary">
           <AiOutlinePlayCircle />
         </div>
       </div>
@@ -78,7 +78,7 @@ const TopMovieBox: React.FC<MoviePropTypes> = ({
       </div>
       <p
         dir={i18n.dir()}
-        className="w-full text-start font-EstedadFont opacity-70"
+        className="w-full px-1 pb-1 text-start font-EstedadFont text-white/80"
       >
         {movieName}
       </p>

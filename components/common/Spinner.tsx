@@ -12,8 +12,8 @@ const Spinner: React.FC<SpinnerProps> = ({ type = "primary", className }) => {
       className={createConditionalClass(
         "min-h-[1rem] min-w-[1rem] animate-spin rounded-full border-4 border-solid border-t-transparent",
         {
-          "border-blue1": type === "primary",
-          "border-yellow1": type === "secondary",
+          "border-accent": type === "primary",
+          "border-gold": type === "secondary",
           [className as string]: Boolean(className),
         }
       )}

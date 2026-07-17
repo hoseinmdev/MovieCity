@@ -7,7 +7,7 @@ type SkeletonProps = {
 const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
   return (
     <div
-      className={`animate-pulse bg-neutral-700/80 ${className}`}
+      className={`glass animate-pulse ${className}`}
     ></div>
   );
 };
